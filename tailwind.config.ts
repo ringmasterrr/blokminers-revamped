@@ -10,9 +10,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-    colors: {
-      'theme-dark': '#00283C',
-    },
     screens: {
       '2md': '992px',
       '2xl': '1440px',
@@ -29,6 +26,10 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        'theme-dark': '#00283C',
+        'theme-light': '#274A5B'
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

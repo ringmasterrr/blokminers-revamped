@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.pageHeight {
-  min-height: calc(100vh - 4rem);
+@layer utilities {
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-slower {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-slowest {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  .animate-spin-slower {
+    animation: spin-slower 7.4s linear infinite;
+  }
+  .animate-spin-slowest {
+    animation: spin-slowest 3s linear infinite;
+  }
 }

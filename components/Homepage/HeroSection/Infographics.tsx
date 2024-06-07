@@ -1,31 +1,81 @@
-import { FaSun, FaGlobe, FaShieldAlt, FaBolt } from 'react-icons/fa';
+import Image from 'next/image'
 
 export function Infographics() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="relative flex items-center justify-center h-64 w-64">
-        <div></div>
-        <div className="absolute animate-spin-slow h-40 w-40 rounded-full border border-dashed border-gray-500">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <FaGlobe className="h-8 w-8 text-blue-500" />
+    <div className='flex h-full w-full items-center justify-center border-r overflow-clip'>
+      <div className='relative ml-16 flex h-64 w-64 translate-x-32 items-center justify-center'>
+        <div className='animate-spin-superslow absolute flex h-[32rem] w-[32rem] items-center justify-center rounded-full border-2 border-gray-300'>
+          <div className='absolute -top-5 right-24 transform'>
+            <Image
+              src={'/orbit-icons/eth.svg'}
+              alt=''
+              width={200}
+              height={200}
+              className='h-24 w-24 rotate-12'
+            />
+            <div className='absolute -right-[25%] top-[90%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
           </div>
-          <div className="absolute animate-spin-slower h-32 w-32 rounded-full border border-dashed border-gray-400 top-4 left-4">
-            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
-              <FaShieldAlt className="h-8 w-8 text-green-500" />
+          <div className='absolute -bottom-4 left-24 transform'>
+            <Image
+              src={'/orbit-icons/polygon.svg'}
+              alt=''
+              width={200}
+              height={200}
+              className='h-20 w-20 rotate-[100deg]'
+            />
+            <div className='absolute -left-[40%] bottom-[110%] h-3 w-3 transform rounded-full bg-black/80 p-1'></div>
+          </div>
+          <div className='animate-spin-slow absolute flex h-96 w-96 items-center justify-center rounded-full border-2 border-gray-400'>
+            <div className='absolute -top-4 right-24 transform'>
+              <Image
+                src={'/orbit-icons/sol.svg'}
+                alt=''
+                width={200}
+                height={200}
+                className='h-16 w-16'
+              />
+              <div className='absolute right-[160%] top-[18%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
             </div>
-            <div className="absolute animate-spin-slowest h-24 w-24 rounded-full border border-dashed border-gray-300 top-4 left-4">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                <FaBolt className="h-8 w-8 text-yellow-500" />
+            <div className='absolute -bottom-4 left-24 transform'>
+              <Image
+                src={'/orbit-icons/atomic.svg'}
+                alt=''
+                width={200}
+                height={200}
+                className='h-16 w-16'
+              />
+              <div className='absolute right-[160%] bottom-[110%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
+            </div>
+            <div className='animate-spin-slower absolute flex h-64 w-64 items-center justify-center rounded-full border-2 border-gray-500'>
+              <div className='absolute -top-5 right-14 transform'>
+                <Image
+                  src={'/orbit-icons/next.svg'}
+                  alt=''
+                  width={200}
+                  height={200}
+                  className='h-16 w-16 -rotate-12'
+                />
+                <div className='absolute right-[160%] top-[30%] h-3 w-3 transform rounded-full bg-black/80 p-1'></div>
               </div>
-              <div className="absolute h-16 w-16 bg-orange-500 rounded-full flex items-center justify-center top-4 left-4">
-                <FaSun className="h-8 w-8 text-white" />
+              <div className='animate-spin-slowest absolute flex h-32 w-32 items-center justify-center rounded-full border-2 border-gray-500'>
+                <div className='absolute -top-7 transform'>
+                  <Image
+                    src={'/orbit-icons/rust.svg'}
+                    alt=''
+                    width={200}
+                    height={200}
+                    className='h-16 w-16'
+                  />
+              <div className='absolute right-[137%] -bottom-[80%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
+
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Infographics;
+export default Infographics

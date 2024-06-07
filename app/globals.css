@@ -15,13 +15,27 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+  
+  .animate-spin-superultraslow {
+    animation: spin-slow 20s linear infinite;
+  }
+  .animate-spin-superslow {
+    animation: spin-slow 22s linear infinite;
+  }
   .animate-spin-slow {
-    animation: spin-slow 12s linear infinite;
+    animation: spin-slow 24s linear infinite;
   }
   .animate-spin-slower {
-    animation: spin-slower 7.4s linear infinite;
+    animation: spin-slower 26s linear infinite;
   }
   .animate-spin-slowest {
-    animation: spin-slowest 3s linear infinite;
+    animation: spin-slowest 28s linear infinite;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    background-size: 50px 50px; /* Adjust the size as needed */
   }
 }

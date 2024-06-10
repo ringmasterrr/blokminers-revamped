@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Infographics() {
   return (
-    <div className='flex h-full w-full items-center justify-center border-r overflow-clip'>
+    <div className='flex h-full w-full items-center justify-center overflow-clip border-r'>
       <div className='relative ml-16 flex h-64 w-64 translate-x-32 items-center justify-center'>
         <div className='animate-spin-superslow absolute flex h-[32rem] w-[32rem] items-center justify-center rounded-full border-2 border-gray-300'>
           <div className='absolute -top-5 right-24 transform'>
@@ -44,7 +44,7 @@ export function Infographics() {
                 height={200}
                 className='h-16 w-16'
               />
-              <div className='absolute right-[160%] bottom-[110%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
+              <div className='absolute bottom-[110%] right-[160%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
             </div>
             <div className='animate-spin-slower absolute flex h-64 w-64 items-center justify-center rounded-full border-2 border-gray-500'>
               <div className='absolute -top-5 right-14 transform'>
@@ -66,8 +66,7 @@ export function Infographics() {
                     height={200}
                     className='h-16 w-16'
                   />
-              <div className='absolute right-[137%] -bottom-[80%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
-
+                  <div className='absolute -bottom-[80%] right-[137%] h-2 w-2 transform rounded-full bg-black/80 p-1'></div>
                 </div>
               </div>
             </div>

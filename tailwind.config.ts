@@ -28,7 +28,7 @@ const config = {
     extend: {
       colors: {
         'theme-dark': '#00283C',
-        'theme-light': '#274A5B'
+        'theme-light': '#274A5B',
       },
       keyframes: {
         'accordion-down': {

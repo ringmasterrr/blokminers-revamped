@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 export function Navbar() {
   return (
-    <nav className='sticky left-0 right-0 top-0 w-full '>
-      <div className='mx-auto flex h-20 max-w-8xl items-center justify-between px-8 '>
+    <nav className='sticky left-0 right-0 top-0 w-full'>
+      <div className='mx-auto flex h-20 max-w-8xl items-center justify-between'>
         <div>
           <Image
             src={'/Images/Navbar/logo.svg'}

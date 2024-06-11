@@ -18,10 +18,11 @@
         "arrowParens": "always",
         "proseWrap": "always",
         "htmlWhitespaceSensitivity": "css",
-        "endOfLine": "lf",
+        "endOfLine": "auto",
         "embeddedLanguageFormatting": "auto",
         "plugins": ["prettier-plugin-tailwindcss"]
       }
-    ]
+    ],
+    "linebreak-style": ["error", "unix"]
   }
 }

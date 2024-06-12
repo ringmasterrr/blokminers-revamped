@@ -4,38 +4,78 @@
 
 @layer utilities {
   @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
+
   @keyframes spin-slower {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
+
   @keyframes spin-slowest {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
-  
+
   .animate-spin-superultraslow {
     animation: spin-slow 20s linear infinite;
   }
+
   .animate-spin-superslow {
     animation: spin-slow 22s linear infinite;
   }
+
   .animate-spin-slow {
     animation: spin-slow 24s linear infinite;
   }
+
   .animate-spin-slower {
     animation: spin-slower 26s linear infinite;
   }
+
   .animate-spin-slowest {
     animation: spin-slowest 28s linear infinite;
   }
 
   .bg-grid {
-    background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0.025) 1px,
+        transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
-    background-size: 50px 50px; /* Adjust the size as needed */
+    background-size: 50px 50px;
+    /* Adjust the size as needed */
   }
+}
+
+.card {
+  box-shadow: inset 0px 0px 200px 0px #ffffff;
+  background-color: rgba(14, 98, 139, 0.35);
+  border: 2px solid lightgray;
+}
+
+.half-gradient:hover {
+  background: linear-gradient(to bottom,
+      #d8eefa 0%,
+      #ffffff 50%,
+      #ffffff 50%,
+      #ffffff 100%);
+  border-top: #00283C 4px solid;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* transition: 0.2s; */
 }

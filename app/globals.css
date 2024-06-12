@@ -39,3 +39,11 @@
     background-size: 50px 50px; /* Adjust the size as needed */
   }
 }
+
+.bg-dark{
+  background-image: url("/bg-dark.svg") ;
+}
+
+.shadow-all {
+  box-shadow: inset 0 0 15px rgba(255, 147, 49, 0.2);
+}

@@ -23,6 +23,6 @@
         "plugins": ["prettier-plugin-tailwindcss"]
       }
     ],
-    "linebreak-style": ["error", "unix"]
+    // "linebreak-style": ["error", "unix"]
   }
 }

@@ -8,7 +8,7 @@ import Box from '@/components/ui/box'
 
 export default function Home() {
   return (
-    <Page className='justify-between'>
+    <Page className='justify-between px-8'>
       {/* <Navbar /> */}
       <HeroSection />
       <Box/>

@@ -6,26 +6,27 @@ import TechStackPaths from './TechStackPaths';
 const TechStack = () => {
     const iconPaths = TechStackPaths();
   return (
-    <div className='rounded-2xl border py-4'>
+    <div className='rounded-2xl border pt-16 my-14 bg-gradient-to-b from-[#FFFFFF] to-[#00283C1F] from-50%  border-[#00283C1F] flex flex-col items-center'>
       <div>
         <Heading
           heading='Our Tech Stack and Protocols'
           message='Skilled in diverse technologies for Blockchain development. Build on robust Layer 1 Blockchains as per project requirements.'
         />
       </div>
-      <div className='flex flex-wrap items-center justify-center gap-3'>
+      <div className='flex flex-wrap items-center justify-center gap-4 my-16 w-3/4'>
         {iconPaths.map((iconPath, index) => (
           <div
             key={index}
-            className='round rounded-2xl border border-[#00283C3D] bg-[#00283C14] h-8 w-10 flex items-center justify-center gap-3'
+            className='rounded-xl border border-[#00283C3D] bg-[#00283C14] px-4 py-3 flex items-center justify-center gap-3'
           >
             <Image
-              src={iconPath}
-              alt={`icon-${index + 1}`}
+              src={iconPath.path}
+              alt={`icon-${iconPath.name}`}
               height={30}
               width={30}
-              className='w-6 h-6'
+              className='w-10 h-10'
             />
+            <span className='font-medium text-xl'>{iconPath.name}</span>
           </div>
         ))}
       </div>

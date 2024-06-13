@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const Verticals = () => (
-  <div className='relative h-[50rem] w-[50rem]'>
+  <div className='relative h-[50rem] w-[50rem] translate-x-20 translate-y-6'>
     <Image
       src={'/verticals/vertical (1).svg'}
       alt='vertical'

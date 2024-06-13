@@ -5,6 +5,7 @@ import { VerticalOfferings } from '@/components/Homepage/VerticalOfferings/Verti
 import { Navbar } from '@/components/shared/Navbar/Navbar'
 import { Page } from '@/components/shared/Page'
 import Box from '@/components/ui/box'
+import TechStack from '@/components/Homepage/Tech Stack/TechStack'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ExploreSection />
       <WhySection />
       <VerticalOfferings/>
+      <TechStack/>
     </Page>
   )
 }

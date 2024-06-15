@@ -1,5 +1,5 @@
 export const iconPaths = [
- 
+
       { path: '/TechStack/Icon (1).svg', name: 'Python' },
       { path: '/TechStack/Icon (2).svg', name: 'Go' },
       { path: '/TechStack/Icon (3).svg', name: 'Solidity' },

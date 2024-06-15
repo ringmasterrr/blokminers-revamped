@@ -7,6 +7,7 @@ import { Page } from '@/components/shared/Page'
 import Box from '@/components/ui/box'
 import TechStack from '@/components/Homepage/Tech Stack/TechStack'
 import FAQs from '@/components/Homepage/Faqs/FAQs'
+import Cta from '@/components/Homepage/CTA/Cta'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <VerticalOfferings/>
       <TechStack/>
       <FAQs/>
+      <Cta/>
     </Page>
   )
 }

@@ -8,7 +8,6 @@ import {
 
 const FAQAccordion = () => {
   return (
-    <div>
       <Accordion type='multiple' className='space-y-3'>
         <AccordionItem value='item-1' className='rounded-lg border px-4 shadow '>
           <AccordionTrigger>What is Blockchain technology?</AccordionTrigger>
@@ -87,7 +86,6 @@ const FAQAccordion = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
   )
 }
 

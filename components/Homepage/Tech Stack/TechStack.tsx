@@ -1,10 +1,9 @@
 import Heading from '@/components/shared/Heading/Heading'
 import Image from 'next/image'
 import React from 'react'
-import TechStackPaths from './TechStackPaths';
+import {iconPaths} from './TechStackPaths';
 
 const TechStack = () => {
-    const iconPaths = TechStackPaths();
   return (
     <div className='rounded-2xl border pt-16 my-14 bg-gradient-to-b from-[#FFFFFF] to-[#00283C1F] from-50%  border-[#00283C1F] flex flex-col items-center'>
       <div>

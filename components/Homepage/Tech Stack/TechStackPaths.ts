@@ -1,6 +1,5 @@
-// components/TechStackPaths.jsx
-const TechStackPaths = () => {
-  const iconPaths = [
+export const iconPaths = [
+ 
       { path: '/TechStack/Icon (1).svg', name: 'Python' },
       { path: '/TechStack/Icon (2).svg', name: 'Go' },
       { path: '/TechStack/Icon (3).svg', name: 'Solidity' },
@@ -27,7 +26,3 @@ const TechStackPaths = () => {
       { path: '/TechStack/Icon (24).svg', name: 'Hyperledger' },
   ];
 
-  return iconPaths;
-};
-
-export default TechStackPaths;

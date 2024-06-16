@@ -14,13 +14,13 @@ export function Navbar() {
             alt='logo'
           />
         </div>
-        <div className='flex gap-8 font-medium text-theme-dark'>
-          <p>Services</p>
-          <p>Industries</p>
-          <p>Case Studies</p>
-          <p>Blog</p>
-          <p>Portfolio</p>
-          <p>About Us</p>
+        <div className='flex gap-8  font-semibold text-theme-dark'>
+          <p className='cursor-pointer hover:text-gray-500'>Services</p>
+          <p className='cursor-pointer hover:text-gray-500'>Industries</p>
+          <p className='cursor-pointer hover:text-gray-500'>Case Studies</p>
+          <p className='cursor-pointer hover:text-gray-500'>Blog</p>
+          <p className='cursor-pointer hover:text-gray-500'>Portfolio</p>
+          <p className='cursor-pointer hover:text-gray-500'>About Us</p>
         </div>
         <div>
           <Button>Get Started</Button>

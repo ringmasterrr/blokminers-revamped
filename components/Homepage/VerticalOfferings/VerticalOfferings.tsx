@@ -6,7 +6,7 @@ export function VerticalOfferings() {
     <div className='bg-dark my-10 flex flex-col items-center justify-center '>
       <div className='flex w-9/12 flex-col items-center justify-center gap-6 py-10 text-white'>
         <Heading
-          color='text-white'
+          white={true}
           heading='Our Vertical Offerings'
           message='Welcome to our comprehensive suite of Vertical Offerings, where your 
           unique business needs will find their perfect match. Our diverse range

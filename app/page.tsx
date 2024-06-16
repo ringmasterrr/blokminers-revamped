@@ -7,18 +7,20 @@ import { Page } from '@/components/shared/Page'
 import Box from '@/components/ui/box'
 import TechStack from '@/components/Homepage/Tech Stack/TechStack'
 import FAQs from '@/components/Homepage/Faqs/FAQs'
+import TestimonialsSection from '@/components/Homepage/Testimonials/TestimonialsSection'
 
 export default function Home() {
   return (
     <Page className='justify-between px-8'>
       {/* <Navbar /> */}
       <HeroSection />
-      <Box/>
+      <Box />
       <ExploreSection />
       <WhySection />
-      <VerticalOfferings/>
-      <TechStack/>
-      <FAQs/>
+      <VerticalOfferings />
+      <TestimonialsSection />
+      <TechStack />
+      <FAQs />
     </Page>
   )
 }

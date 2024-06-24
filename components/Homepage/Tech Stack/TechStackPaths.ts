@@ -3,7 +3,7 @@ export const iconPaths = [
       { path: '/TechStack/Icon (1).svg', name: 'Python' },
       { path: '/TechStack/Icon (2).svg', name: 'Go' },
       { path: '/TechStack/Icon (3).svg', name: 'Solidity' },
-      { path: '/TechStack/Icon (4).svg', name: 'HTML 5' },
+      { path: '/TechStack/Icon (4).svg', name: 'HTML5' },
       { path: '/TechStack/Icon (5).svg', name: 'React' },
       { path: '/TechStack/Icon (6).svg', name: 'Rust' },
       { path: '/TechStack/Icon (7).svg', name: 'Angular' },

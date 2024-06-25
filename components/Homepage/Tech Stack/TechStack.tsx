@@ -9,7 +9,7 @@ const TechStack = () => {
   const secondHalf = iconPaths.slice(halfIndex)
 
   return (
-    <div className='masked-element my-14 flex flex-col items-center  rounded-2xl border border-[#00283C1F] bg-gradient-to-b from-[#FFFFFF] from-50% to-[#00283C1F] py-16'>
+    <div className='masked-element my-14 flex flex-col items-center  rounded-2xl border border-[#00283C1F] bg-gradient-to-b from-[#FFFFFF] from-50% to-[#00283C1F] py-16 overflow-hidden'>
       <div>
         <Heading
           heading='Our Tech Stack and Protocols'
@@ -131,3 +131,4 @@ const TechStack = () => {
 }
 
 export default TechStack
+ 

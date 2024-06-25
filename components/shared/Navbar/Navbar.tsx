@@ -8,7 +8,7 @@ export function Navbar() {
   const router = useRouter();
   
   return (
-    <nav className='sticky left-0 right-0 top-0 w-full backdrop-blur-2xl z-10 px-8'>
+    <nav className='sticky left-0 right-0 top-0 w-full bg-white z-50 px-8'>
       <div className='mx-auto flex h-20 max-w-8xl items-center justify-between'>
         <div>
           <Image

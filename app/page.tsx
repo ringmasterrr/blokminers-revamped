@@ -8,6 +8,7 @@ import TechStack from '@/components/Homepage/Tech Stack/TechStack'
 import FAQs from '@/components/Homepage/Faqs/FAQs'
 import TestimonialsSection from '@/components/Homepage/Testimonials/TestimonialsSection'
 import Cta from '@/components/Homepage/CTA/Cta'
+import { StickyScrollRevealDemo } from '@/components/Homepage/Processes/OurProcess'
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
       <HeroSection />
       <Box />
       <ExploreSection />
-      <WhySection />
       <VerticalOfferings />
+      <WhySection />
+      <StickyScrollRevealDemo/>
       <TestimonialsSection />
       <TechStack />
       <FAQs />

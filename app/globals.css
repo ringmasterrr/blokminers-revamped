@@ -188,10 +188,10 @@
 
 
 .element-to-animate {
-  animation: slideLeft 10s linear infinite ;
+  animation: slideLeft 20s linear infinite ;
 }
 .element-to-animate-rev{
-  animation: slideLeft 10s linear infinite ;
+  animation: slideLeft 20s linear infinite ;
   animation-delay: -3s;
   animation-direction: reverse;
 }

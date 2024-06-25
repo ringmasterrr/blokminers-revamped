@@ -8,7 +8,7 @@ export const CardImage = ({
   alt: string;
 }) => {
   return (
-    <div className="relative mb-2 w-20 overflow-hidden rounded-lg">
+    <div className="relative mb-2 w-16 overflow-hidden z-10 rounded-lg">
       <motion.img
         src={src}
         alt={alt}

@@ -4,7 +4,7 @@ import { Numbers } from './Numbers'
 
 export function HeroSection() {
   return (
-    <div className='flex justify-between h-[90vh] '>
+    <div className='flex justify-between min-h-[90vh] '>
       <div className='flex flex-col gap-52'>
         <Header />
         <Numbers />

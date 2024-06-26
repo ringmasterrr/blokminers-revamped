@@ -1,7 +1,8 @@
 // components/PostList.tsx
-
+"use client"
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 interface Post {
   id: number;
@@ -25,10 +26,14 @@ const truncateText = (text: string, wordLimit: number) => {
 };
 
 const PostList = ({ posts }: PostListProps) => {
+
+
+  
+
   return (
     <div className='grid grid-cols-3 gap-6'>
       {posts.map((post) => (
-        <Link href={`/blogpost/${post.id}`} key={post.id}>
+        <Link href={`/blogpost/${post.id}`}>
           <div className='mb-4 shadow-custom rounded-xl border border-[#00283C29] bg-white cursor-pointer'>
             <Image
               src={post.image}

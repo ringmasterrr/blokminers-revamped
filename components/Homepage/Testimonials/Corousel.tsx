@@ -60,6 +60,7 @@ const Corousel = () => {
     setCurrentSlide(swiper.activeIndex)
   }
 
+
   return (
     <>
       <div className='scale-x-[130%] transform'>
@@ -67,6 +68,7 @@ const Corousel = () => {
           onSwiper={setSwiperInstance}
           onSlideChange={handleSlideChange}
           spaceBetween={20}
+          // loop={true}
           // Option 1: Ensure enough slides for centering (if applicable)
           slidesPerView={3} // Adjust based on your needs
           centeredSlides={true}

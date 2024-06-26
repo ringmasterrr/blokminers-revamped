@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SearchBar from './SearchBar'
 import PostList from './PostList'
 import Pagination from './Pagenation'
 import { Post } from './Data'
 import Heading from '../shared/Heading/Heading'
+import { getAllBlogs } from '@/services/blog'
 
 interface BlogProps {
   posts: Post[]
@@ -25,6 +26,19 @@ const Blog = ({ posts }: BlogProps) => {
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+
+  const [data, setData]= useState()
+
+  useEffect(() => {
+    getAllPosts();
+    
+  }, [])
+
+  const getAllPosts =async () => { 
+   const res : any =  await getAllBlogs();
+   setData(res[0].data)
+   console.log(res[0].data)
+  }
 
   return (
     <div className='relative'>

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const hoverContentData = {
   'Finance & Banking': (
-    <div className='flex flex-col items-center rounded-lg bg-[#88caec] bg-opacity-10  p-10 text-center text-lg font-semibold text-theme-dark shadow-md'>
+    <div className='flex flex-col items-center rounded-lg bg-[#ceecff] p-10 text-center text-lg font-semibold text-theme-dark shadow-md'>
       <h2 className='mb-6 text-2xl font-bold'>Finance & Banking</h2>
       <p className='mb-10 text-theme-light'>
         We empower the real estate sector to provide beyond property - the
@@ -173,42 +173,42 @@ export const hoverContentData = {
           <div className='w-[50px]'>
             <Image
               alt='image'
-              src={'/Industries/image1.svg'}
+              src={'/Industries/assetTok.svg'}
               width={100}
               height={100}
               className='w-full'
             />
           </div>
           <div>
-            Decentralized Finance <br /> (DeFi) Solutions
+            Asset <br /> Tokenization
           </div>
         </div>
         <div className='flex flex-col items-center gap-4'>
           <div className='w-[50px]'>
             <Image
               alt='image'
-              src={'/Industries/Image2.png'}
+              src={'/Industries/immutable.svg'}
               width={100}
               height={100}
               className='w-full'
             />
           </div>
           <div>
-            Smart Contract <br /> Implementation
+          Immutable Property <br /> Records 
           </div>
         </div>
         <div className='flex flex-col items-center gap-4'>
           <div className='w-[50px]'>
             <Image
               alt='image'
-              src={'/Industries/Image3.svg'}
+              src={'/Industries/smart.svg'}
               width={100}
               height={100}
               className='w-full'
             />
           </div>
           <div>
-            Cross-Border <br /> Payments
+          Smart Contracts for  <br /> Transactions
           </div>
         </div>
         <div className='flex flex-col items-center gap-4'>
@@ -222,7 +222,7 @@ export const hoverContentData = {
             />
           </div>
           <div>
-            Regulatory Compliance <br /> and Reporting
+          Decentralized  <br /> Marketplaces
           </div>
         </div>
       </div>

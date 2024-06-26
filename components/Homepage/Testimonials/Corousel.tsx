@@ -70,6 +70,7 @@ const Corousel = () => {
           // Option 1: Ensure enough slides for centering (if applicable)
           slidesPerView={3} // Adjust based on your needs
           centeredSlides={true}
+          
           // Option 2: Set a fixed container width (optional)
           // style={{ width: '800px' }} // Adjust based on your layout
           navigation={{

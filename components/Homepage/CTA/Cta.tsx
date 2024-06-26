@@ -3,7 +3,7 @@ import React from 'react'
 
 const Cta = () => {
   return (
-    <div className='bg-gradient-to-br from-[#0066FF] to-[#009DBF] p-20 mt-10'>
+    <div className='bg-gradient-to-br from-[#0066FF] to-[#009DBF] p-20 mt-10 z-[100]'>
       <div className='relative flex items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-20'>
         <div className='w-1/2 space-y-8'>
           <h2 className='text-4xl font-bold text-white'>

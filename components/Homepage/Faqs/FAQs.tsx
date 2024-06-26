@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const FAQs = () => {
   return (
-    <div className='flex flex-col items-center justify-center gap-8 px-12'>
+    <div className='flex flex-col items-center justify-center gap-8 px-12 z-[100000]'>
       <div className='rounded-3xl border border-theme-dark px-3 py-1 font-semibold'>
         FAQs
       </div>

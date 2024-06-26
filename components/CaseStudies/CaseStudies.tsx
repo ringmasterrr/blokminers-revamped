@@ -10,21 +10,21 @@ const caseStudies = [
     category: 'DeFi Projects',
     title: 'Dex Aggregator',
     description: 'Our EVM DEX Aggregator with Limit and Market order types...',
-    image: '/images/dex-aggregator.png',
+    image: '/cases/dex.png',
   },
   {
     id: 2,
     category: 'Tokenization',
     title: 'Event Ticket Tokenization',
     description: 'Explore our Event Ticket Tokenization Case Study...',
-    image: '/images/event-ticket.png',
+    image: '/cases/ticket.png',
   },
   {
     id: 3,
     category: 'Tokenization',
     title: 'Hotel Room Tokenization',
     description: 'Discover how BlokMiners development expertise transformed the hotel industry...',
-    image: '/images/hotel-room.png',
+    image: '/cases/hotel.png',
   },
 ];
 
@@ -47,12 +47,12 @@ const CaseStudiesCards = () => {
     : caseStudies.filter(cs => cs.category === selectedCategory);
 
   return (
-    <div className="p-4">
-      <div className="flex flex-wrap gap-2 mb-6">
+    <div className="p-4 flex flex-col items-center justify-center">
+      <div className="flex flex-wrap gap-3 mb-6">
         {categories.map(category => (
           <button
             key={category}
-            className={`px-4 py-2 rounded-full ${selectedCategory === category ? 'bg-blue-600 text-white' : 'bg-gray-200'} hover:bg-blue-500 transition`}
+            className={`px-4 py-2 text-lg font-medium rounded-full ${selectedCategory === category ? 'bg-theme-dark text-white border-2 border-theme-dark' : 'bg-transparent text-theme-dark border-2 border-theme-dark'} hover:bg-theme-dark hover:text-white transition`}
             onClick={() => setSelectedCategory(category)}
           >
             {category}
@@ -60,12 +60,12 @@ const CaseStudiesCards = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 sm:grid-cols-2 gap-6 mt-12 mb-32 ">
         {filteredCaseStudies.map(cs => (
-          <div key={cs.id} className="bg-white p-6 rounded-lg shadow-md">
-            <img src={cs.image} alt={cs.title} className="w-full h-40 object-cover rounded-md mb-4" />
-            <h3 className="text-lg font-semibold mb-2">{cs.title}</h3>
-            <p className="text-gray-600">{cs.description}</p>
+          <div key={cs.id} className="bg-white p-6 rounded-2xl " style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}>
+            <h3 className="text-2xl font-semibold mb-2">{cs.title}</h3>
+            <p className="text-[#A3A3A3] mb-6 text-sm">{cs.description}</p>
+            <img src={cs.image} alt={cs.title} className="w-full h-64 object-cover rounded-md mb-4" />
           </div>
         ))}
       </div>

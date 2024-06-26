@@ -124,7 +124,7 @@ const content = [
 
 export function StickyScrollRevealDemo() {
   return (
-    <div>
+    <div className="py-20 z-[100]">
       <Heading heading="Our Processes" message="Our processes are tailored to hit it right with your idea from the start and also support optimum coordination, excellent and speedy execution of your Blockchain solution through its entirety."/>
       <StickyScroll content={content} />
     </div>

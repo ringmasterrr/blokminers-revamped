@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 
 const caseStudies = [
@@ -69,9 +70,11 @@ const CaseStudiesCards = () => {
           >
             <h3 className='mb-2 text-2xl font-semibold'>{cs.title}</h3>
             <p className='mb-6 text-sm text-[#A3A3A3]'>{cs.description}</p>
-            <img
+            <Image
               src={cs.image}
               alt={cs.title}
+              height={1000}
+              width={1000}
               className='mb-4 h-64 w-full rounded-md object-cover'
             />
           </div>

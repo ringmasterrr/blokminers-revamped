@@ -6,37 +6,6 @@ import { getBlogById } from '@/services/blog'
 import { format, parseISO } from 'date-fns'
 import { CgSpinnerTwo } from 'react-icons/cg'
 
-const blogPost = {
-  title: 'Choosing the Right DApp Development Company – Factors to Consider',
-  paragraph: [
-    'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
-    'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
-  ],
-  HighlightedPara:
-    'Choosing the right development company is paramount to success, and empowering clients with essential insights and factors to consider is crucial in this endeavor. In this comprehensive guide, we’ll explore key insights and factors to equip clients with the knowledge and confidence needed to navigate the path to DApp development success.',
-
-  author: {
-    name: 'Jade Jackson',
-    avatar: '/Processes/Build.png',
-  },
-  date: 'May 7, 2024',
-  readTime: '9 Mins',
-
-  content: [
-    {
-      title: 'Introduction',
-      text: 'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
-    },
-    {
-      title: 'The Importance of Strategic Decision-Making',
-      text: 'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
-      image: '/Processes/Build.png',
-    },
-  ],
-
-  image: '/Processes/Build.png',
-}
-
 export default function BlogPost({ postId }: { postId: string }) {
   const [blog, setBlog] = useState<any | null>(null)
   const [sections, setSections] = useState<any | null>(null)
@@ -92,11 +61,11 @@ export default function BlogPost({ postId }: { postId: string }) {
                 <div className='flex items-center space-x-4'>
                   <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
                     <Image
-                      src={blogPost.author.avatar}
+                      src={`/avatar.png`}
                       alt='Coding on a laptop'
                       height={1000}
                       width={1000}
-                      className='h-5 w-5 rounded-full object-cover'
+                      className='h-8 w-8 rounded-full object-cover'
                     />
                     <span className='ml-2 text-xl text-theme-dark'>
                       {blog.authorName}
@@ -116,7 +85,7 @@ export default function BlogPost({ postId }: { postId: string }) {
               </div>
               <div className='h-[100%] w-[50%]'>
                 <Image
-                  src={blogPost.image}
+                  src={blog.image}
                   alt='Coding on a laptop'
                   height={1000}
                   width={1000}
@@ -125,13 +94,9 @@ export default function BlogPost({ postId }: { postId: string }) {
               </div>
               <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div>
             </div>
-            <div className='p-8'>
-              <p className='text-[20px] font-medium text-theme-dark'>
-                {blogPost.HighlightedPara}
-              </p>
-            </div>
-            <div className='relative flex my-24 p-8 justify-between'>
-              <div className='w-[360px] sticky-sidebar'>
+
+            <div className='relative my-24 flex justify-between p-8'>
+              <div className='sticky top-32 h-full w-[360px]'>
                 <div className='mb-10 text-[20px] font-semibold text-theme-dark'>
                   Contents
                 </div>
@@ -139,7 +104,7 @@ export default function BlogPost({ postId }: { postId: string }) {
                   sections.map((item: any, index: any) => (
                     <p
                       key={index}
-                      className='mb-6 text-[20px]  font-bold text-theme-dark '
+                      className='mb-6 text-[20px] font-bold text-theme-dark'
                     >
                       {item.title}
                     </p>
@@ -148,8 +113,8 @@ export default function BlogPost({ postId }: { postId: string }) {
               <div className='w-[744px]'>
                 {sections &&
                   sections.map((item: any, index: any) => (
-                    <div key={index} className='mt-16 mb-16 first:mt-0'>
-                      <p className='mb-6 text-4xl font-bold text-theme-dark leading-tight w-[85%] '>
+                    <div key={index} className='mb-16 mt-16 first:mt-0'>
+                      <p className='mb-6 w-[85%] text-4xl font-bold leading-tight text-theme-dark'>
                         {item.title}
                       </p>
                       {item.image && (
@@ -159,11 +124,13 @@ export default function BlogPost({ postId }: { postId: string }) {
                             alt='Coding on a laptop'
                             height={1000}
                             width={1000}
-                            className='object-cover w-full '
+                            className='w-full object-cover'
                           />
                         </div>
                       )}
-                      <div className='mt-12 text-xl font-medium tracking-wide '>{item.content}</div>
+                      <div className='mt-12 text-xl font-medium tracking-wide'>
+                        {item.content}
+                      </div>
                     </div>
                   ))}
               </div>

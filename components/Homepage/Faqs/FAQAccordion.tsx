@@ -8,9 +8,9 @@ import {
 
 const FAQAccordion = () => {
   return (
-      <Accordion type='multiple' className='space-y-3'>
+      <Accordion type='single' collapsible  className='space-y-3'>
         <AccordionItem value='item-1' className='rounded-lg border px-4 shadow '>
-          <AccordionTrigger>What is Blockchain technology?</AccordionTrigger>
+          <AccordionTrigger id={'1'}>What is Blockchain technology?</AccordionTrigger>
           <AccordionContent>
             Blockchain is a decentralized and distributed ledger technology that
             securely records transactions across a network of computers. It uses

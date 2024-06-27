@@ -1,125 +1,186 @@
 'use client'
 import Image from 'next/image'
-import { posts } from './Data'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getBlogById } from '@/services/blog'
-
-const blogPost = {
-  title: 'Choosing the Right DApp Development Company – Factors to Consider',
-  paragraph: [
-    'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
-    'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
-  ],
-  HighlightedPara:
-    'Choosing the right development company is paramount to success, and empowering clients with essential insights and factors to consider is crucial in this endeavor. In this comprehensive guide, we’ll explore key insights and factors to equip clients with the knowledge and confidence needed to navigate the path to DApp development success.',
-
-  author: {
-    name: 'Jade Jackson',
-    avatar: '/Processes/Build.png',
-  },
-  date: 'May 7, 2024',
-  readTime: '9 Mins',
-
-  content: [
-    {
-      title: 'Introduction',
-      text: 'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
-    },
-    {
-      title: 'The Importance of Strategic Decision-Making',
-      text: 'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
-      image: '/Processes/Build.png',
-    },
-  ],
-
-  image: '/Processes/Build.png',
-}
+import { format, parseISO } from 'date-fns'
+import { CgSpinnerTwo } from 'react-icons/cg'
 
 export default function BlogPost({ postId }: { postId: string }) {
-  const [blog, setBlog] = useState({})
-  const [sections, setSections] = useState([])
+  const [blog, setBlog] = useState<any | null>(null)
+  const [sections, setSections] = useState<any | null>(null)
+  const [formattedDate, setFormattedDate] = useState<any | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const sectionRefs = useRef<HTMLDivElement[]>([])
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const navbarHeight = 80
 
   const getBlog = async () => {
-    const res: any = await getBlogById('667c12092b9b90fcc8c15505')
-    setBlog(res.blog?.blog)
-    setSections(res.blog?.sections)
-  }
+    try {
+      const res: any = await getBlogById(postId)
+      console.log(res)
+      const fetchedBlog = res?.blog[0]
+      if (fetchedBlog) {
+        setBlog(fetchedBlog)
+        setSections(fetchedBlog.sections)
 
-  console.log('blog :', blog)
-  console.log('sections :', sections)
+        const dateString: string | undefined = fetchedBlog.createdAt
+        if (dateString) {
+          const parsedDate: Date = parseISO(dateString)
+          setFormattedDate(format(parsedDate, 'MMMM do, yyyy '))
+        }
+      }
+      setTimeout(() => {
+        setLoading(false)
+      }, 1500)
+    } catch (error) {
+      console.error('Error fetching blog:', error)
+    }
+  }
 
   useEffect(() => {
     getBlog()
   }, [postId])
 
-  // const [data, setData] = useState(posts[post])
-  return (
-    <div className='bg-grid'>
-      <div className='flex w-full items-center justify-between gap-5 pb-10 pt-28'>
-        <div className='h-[100%] w-[50%] p-8'>
-          <h1 className='mb-6 text-[52px] font-extrabold leading-tight'>
-            {blogPost.title}
-          </h1>
-          {blogPost.paragraph.map((paragraph, index) => (
-            <p
-              key={index}
-              className='mb-6 text-[20px] font-medium text-gray-700'
-            >
-              {paragraph}
-            </p>
-          ))}
-          <div className='flex items-center space-x-4'>
-            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
-              <Image
-                src={blogPost.author.avatar}
-                alt='Coding on a laptop'
-                height={1000}
-                width={1000}
-                className='h-5 w-5 rounded-full object-cover'
-              />
-              <span className='ml-2 text-xl text-theme-dark'>
-                {blogPost.author.name}
-              </span>
+  const scrollToSection = (index: number) => {
+    if (sectionRefs.current[index]) {
+      const element = sectionRefs.current[index]
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = elementPosition - navbarHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  // Function to handle scroll and update active section
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + navbarHeight + 20 // Adjusted for better accuracy
+    const newActiveIndex = sectionRefs.current.findIndex((ref) => {
+      if (ref) {
+        const top = ref.getBoundingClientRect().top + window.scrollY
+        const bottom = top + ref.clientHeight
+        return scrollPosition >= top && scrollPosition <= bottom
+      }
+      return false
+    })
+
+    if (newActiveIndex !== activeIndex) {
+      setActiveIndex(newActiveIndex)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  if (loading) {
+    return (
+      <div className='flex h-screen items-center justify-center text-blue-700'>
+        <CgSpinnerTwo className='animate-spin text-8xl' />
+      </div>
+    )
+  } else
+    return (
+      <>
+        {blog && (
+          <div className='bg-grid'>
+            <div className='flex w-full items-center justify-between gap-5 pb-10 pt-28'>
+              <div className='h-[100%] w-[50%] p-8'>
+                <h1 className='mb-6 text-[52px] font-extrabold leading-tight text-theme-dark'>
+                  {blog?.title}
+                </h1>
+                <p className='mb-6 text-[20px] font-medium text-theme-dark'>
+                  {blog?.summary}
+                </p>
+                <div className='flex items-center space-x-4'>
+                  <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
+                    <Image
+                      src={`/avatar.png`}
+                      alt='Author avatar'
+                      height={1000}
+                      width={1000}
+                      className='h-8 w-8 rounded-full object-cover'
+                    />
+                    <span className='text-xl text-theme-dark'>
+                      {blog.authorName}
+                    </span>
+                  </div>
+                  <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
+                    <span className='text-xl text-theme-dark'>
+                      {formattedDate}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className='flex h-[100%] w-[40%] items-center justify-center'>
+                <Image
+                  src={blog.image}
+                  alt='Blog image'
+                  height={1000}
+                  width={1000}
+                  className='max-w-[30rem] object-cover'
+                />
+              </div>
+              <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div>
             </div>
-            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
-              <span className='text-xl text-theme-dark'>{blogPost.date}</span>
-            </div>
-            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
-              <span className='text-xl text-theme-dark'>
-                {blogPost.readTime}
-              </span>
+
+            <div className='relative my-24 flex justify-between p-8'>
+              <div className='sticky top-32 h-full w-[360px]'>
+                <div className='mb-10 text-[20px] font-semibold text-theme-dark'>
+                  Contents
+                </div>
+                {sections &&
+                  sections.map((item: any, index: any) => (
+                    <p
+                      key={index}
+                      className={`mb-6 cursor-pointer rounded-md p-2 text-[20px] font-bold ${
+                        activeIndex === index ? 'bg-[#0096E114]' : ''
+                      }`}
+                      onClick={() => scrollToSection(index)}
+                    >
+                      {item.title}
+                    </p>
+                  ))}
+              </div>
+              <div className='w-[744px]'>
+                {sections &&
+                  sections.map((item: any, index: any) => (
+                    <div
+                      key={index}
+                      className='mb-16 mt-16 first:mt-0'
+                      ref={(el) => {
+                        sectionRefs.current[index] = el as HTMLDivElement
+                      }}
+                    >
+                      <p className='mb-6 w-[85%] text-4xl font-bold leading-tight text-theme-dark'>
+                        {item.title}
+                      </p>
+                      {item.image && (
+                        <div className='w-full'>
+                          <Image
+                            src={item.image}
+                            alt='Section image'
+                            height={1000}
+                            width={1000}
+                            className='w-full object-cover'
+                          />
+                        </div>
+                      )}
+                      <div className='mt-12 text-xl font-medium tracking-wide'>
+                        {item.content}
+                      </div>
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
-        </div>
-        <div className='h-[100%] w-[50%]'>
-          <Image
-            src={blogPost.image}
-            alt='Coding on a laptop'
-            height={1000}
-            width={1000}
-            className='object-cover'
-          />
-        </div>
-        <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div>
-      </div>
-      <div className='p-8'>
-        <p className='text-[20px] font-medium text-gray-700'>
-          {blogPost.HighlightedPara}
-        </p>
-      </div>
-      <div className='my-24 p-8'>
-        <div className='w-1/3'>
-        <div className='mb-10 text-[20px] font-semibold text-theme-dark'>Contents</div>
-          {blogPost.content.map((content, index) => (
-            <p
-              key={index}
-              className='mb-6 text-[20px] font-bold text-theme-light hover:text-theme-dark '
-            >
-              {content.title}
-            </p>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
+        )}
+      </>
+    )
 }

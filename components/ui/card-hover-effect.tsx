@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { CardImage } from './CardImage'
 
-
 export const HoverEffect = ({
   items,
   className,
@@ -13,7 +12,7 @@ export const HoverEffect = ({
   items: {
     title: string
     description: string
-    image: string 
+    image: string
   }[]
   className?: string
 }) => {
@@ -36,7 +35,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className='absolute inset-0 block h-full w-full bg-gradient-to-b  from-theme-dark/20 to-transparent to-40% '
+                className='absolute inset-0 block h-full w-full bg-gradient-to-b from-theme-dark/20 to-transparent to-40%'
                 layoutId='hoverBackground'
                 initial={{ opacity: 0 }}
                 animate={{
@@ -71,7 +70,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'relative z-20 h-full w-full overflow-hidden  border-t-4 border-theme-dark/15 group-hover:border-theme-dark dark:border-white/[0.2]',
+        'relative z-20 h-full w-full overflow-hidden border-t-4 border-theme-dark/15 group-hover:border-theme-dark dark:border-white/[0.2]',
         className,
       )}
     >
@@ -91,7 +90,10 @@ export const CardTitle = ({
 }) => {
   return (
     <h4
-      className={cn('mt-8 text-2xl font-bold tracking-wide text-theme-dark', className)}
+      className={cn(
+        'mt-8 text-2xl font-bold tracking-wide text-theme-dark',
+        className,
+      )}
     >
       {children}
     </h4>

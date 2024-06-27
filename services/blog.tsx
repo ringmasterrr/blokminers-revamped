@@ -12,10 +12,8 @@ export const getAllBlogs = async () => {
 }
 
 export const getBlogById = async (id: string) => {
+  console.log("id", id)
   return (await http.get(`/blog-details/${id}`)).data
 }
 
-// export const getAllBlogs = async () => {
-//   return (await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blog/get-all-blogs`))
-// }
 

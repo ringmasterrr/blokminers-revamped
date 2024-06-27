@@ -7,6 +7,7 @@ import Pagination from './Pagenation'
 import { Post } from './Data'
 import Heading from '../shared/Heading/Heading'
 import { getAllBlogs } from '@/services/blog'
+import { CgSpinnerTwo } from 'react-icons/cg'
 
 interface BlogProps {
   posts: Post[]
@@ -15,51 +16,66 @@ interface BlogProps {
 const Blog = ({ posts }: BlogProps) => {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [currentPage, setCurrentPage] = useState<number>(1)
+  const [loading, setLoading] = useState<boolean>(true)
   const postsPerPage = 6
-
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
-
-  const indexOfLastPost = currentPage * postsPerPage
-  const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost)
-
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
-  const [data, setData]= useState()
+  const [data, setData] = useState<any | null>(null)
 
   useEffect(() => {
-    getAllPosts();
-    
+    getAllPosts()
   }, [])
 
-  const getAllPosts =async () => { 
-   const res : any =  await getAllBlogs();
-   setData(res[0].data)
-   console.log(res[0].data)
+  const [currentPosts, setCurrentPosts] = useState<any | null>(null)
+  const [filteredPosts, setFilteredPosts] = useState<any | null>(null)
+
+  const getAllPosts = async () => {
+    const res: any = await getAllBlogs()
+    const fetchedData = res[0].data
+    setData(fetchedData)
+    setCurrentPosts(fetchedData)
+    setLoading(false)
   }
+
+  useEffect(() => {
+    if (data === null) return
+    const filteredPosts = data.filter((post: any) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()),
+    )
+    const indexOfLastPost = currentPage * postsPerPage
+    const indexOfFirstPost = indexOfLastPost - postsPerPage
+    setCurrentPosts(filteredPosts.slice(indexOfFirstPost, indexOfLastPost))
+  }, [searchTerm])
 
   return (
     <div className='relative'>
-      <div className='mb-12 bg-grid pt-32'>
+      <div className='bg-grid mb-12 pt-32'>
         <Heading
           heading='Blogs'
           message='Explore our innovative research in the realm of blockchain technology and its practical applications.'
         />
       </div>
-      <div className='container mx-auto p-4 flex flex-col gap-12 items-center'>
+      <div className='container mx-auto flex flex-col items-center gap-12 p-4'>
         <SearchBar setSearchTerm={setSearchTerm} />
-        <PostList posts={currentPosts} />
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={filteredPosts.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        />
+        {loading === true ? (
+          <div className='flex h-[40vh] items-center justify-center text-blue-700'>
+            <CgSpinnerTwo className='animate-spin text-8xl' />
+          </div>
+        ) : (
+          <>
+            <PostList posts={currentPosts} />
+            {filteredPosts && (
+              <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={8}
+                paginate={paginate}
+                currentPage={currentPage}
+              />
+            )}
+          </>
+        )}
       </div>
-      <div className="absolute inset-0 bg-[#D8F6FF] bg-opacity-70 bg-blur rounded-full -top-96"></div>
-
+      <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-70'></div>
     </div>
   )
 }

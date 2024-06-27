@@ -31,7 +31,7 @@ export function Numbers() {
     return () => clearInterval(interval)
   }, [])
   return (
-    <div className='flex w-fit gap-8 fade-up'>
+    <div className='fade-up flex w-fit gap-8'>
       <div className='flex flex-col text-theme-dark'>
         <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-8xl font-extrabold text-transparent'>
           {Math.round(years)}+

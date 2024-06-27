@@ -1,5 +1,3 @@
-
-
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -53,13 +51,12 @@ const Corousel = () => {
       index: 6,
     },
   ])
-  const [swiperInstance, setSwiperInstance] = useState<Swiper | null>(null)
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperCore) => {
     setCurrentSlide(swiper.activeIndex)
   }
-
 
   return (
     <>
@@ -68,13 +65,8 @@ const Corousel = () => {
           onSwiper={setSwiperInstance}
           onSlideChange={handleSlideChange}
           spaceBetween={20}
-          // loop={true}
-          // Option 1: Ensure enough slides for centering (if applicable)
-          slidesPerView={3} // Adjust based on your needs
+          slidesPerView={3}
           centeredSlides={true}
-          
-          // Option 2: Set a fixed container width (optional)
-          // style={{ width: '800px' }} // Adjust based on your layout
           navigation={{
             prevEl: swiperInstance?.navigation?.prevEl,
             nextEl: swiperInstance?.navigation?.nextEl,
@@ -86,9 +78,8 @@ const Corousel = () => {
               <div
                 className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
               >
-                {/* <SwipeBox name={item.name} message={item.message} index={item.index} big={index === currentSlide} /> */}
-                <div className=' flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
-                  <div className=' scale-y-[120%] flex w-full items-center justify-between'>
+                <div className='flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
+                  <div className='flex w-full scale-y-[120%] items-center justify-between'>
                     <div className='flex items-center gap-2'>
                       <div className='h-12 w-12'>
                         <Image
@@ -122,26 +113,6 @@ const Corousel = () => {
           ))}
         </Swiper>
       </div>
-      {/* <div className='mt-4 text-center'>
-                <p className='text-white'>Current Slide: {currentSlide + 1}</p>
-            </div> */}
-      {/* <button
-                onClick={() => swiperInstance?.slidePrev()}
-                className='bg-black text-white'
-                aria-label='Previous Slide'
-            >
-                {' '}
-                previous{' '}
-            </button>
-            <button
-                onClick={() => swiperInstance?.slideNext()}
-                className='m-8 bg-black text-white'
-                aria-label='Next Slide'
-            >
-                {' '}
-                next{' '}
-            </button> */}
-
       <div className='mt-20 flex justify-center gap-4'>
         <button
           onClick={() => swiperInstance?.slidePrev()}
@@ -161,17 +132,3 @@ const Corousel = () => {
 }
 
 export default Corousel
-
-// function SwipeBox({ name, message, index, big }) {
-//     return (
-//         <div
-//             className={`z-10 flex h-full w-full flex-col items-center justify-center gap-10 rounded-3xl bg-red-400 p-10`}
-//         >
-//             <div className='flex w-full justify-between'>
-//                 <div>{name}</div>
-//                 <div>*****</div>
-//             </div>
-//             <div>{message}</div>
-//         </div>
-//     )
-// }

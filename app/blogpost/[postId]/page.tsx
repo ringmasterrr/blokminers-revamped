@@ -1,3 +1,4 @@
+'use client'
 import BlogPost from '@/components/Blog/BlogPost'
 import { Page } from '@/components/shared/Page'
 
@@ -8,7 +9,13 @@ const page = ({
     postId: string
   }
 }) => {
-  return <Page> <BlogPost postId={params.postId} /> </Page>
+  console.log(params.postId)
+  return (
+    <Page>
+      {' '}
+      <BlogPost postId={params.postId} />{' '}
+    </Page>
+  )
 }
 
 export default page

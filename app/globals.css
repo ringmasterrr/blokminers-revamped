@@ -4,38 +4,250 @@
 
 @layer utilities {
   @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
+
   @keyframes spin-slower {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
+
   @keyframes spin-slowest {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
-  
+
   .animate-spin-superultraslow {
     animation: spin-slow 20s linear infinite;
   }
+
   .animate-spin-superslow {
     animation: spin-slow 22s linear infinite;
   }
+
   .animate-spin-slow {
     animation: spin-slow 24s linear infinite;
   }
+
   .animate-spin-slower {
     animation: spin-slower 26s linear infinite;
   }
+
   .animate-spin-slowest {
     animation: spin-slowest 28s linear infinite;
   }
 
   .bg-grid {
-    background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0.025) 1px,
+        transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
-    background-size: 50px 50px; /* Adjust the size as needed */
+    background-size: 50px 50px;
+
+
+
   }
+}
+
+.card {
+  box-shadow: inset 0px 0px 200px 0px #ffffff;
+  background-color: rgba(14, 98, 139, 0.35);
+  border: 2px solid lightgray;
+}
+
+.half-gradient:hover {
+  background: linear-gradient(to bottom,
+      #d8eefa 0%,
+      #ffffff 50%,
+      #ffffff 50%,
+      #ffffff 100%);
+  border-top: #00283C 4px solid;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* transition: 0.2s; */
+}
+
+.bg-dark {
+  background-image: url("/bg-dark.svg");
+}
+
+.shadow-all {
+  box-shadow: inset 0 0 15px rgba(255, 147, 49, 0.2);
+}
+
+
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+.slider {
+  width: 100%;
+  height: 400px;
+}
+
+.header {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 80px;
+}
+
+.slide,
+.slide img {
+  width: 100%;
+  height: 350px;
+}
+
+.slide {
+  /* opacity: .5; */
+  transform: scale(.7);
+  transition: .5s;
+  filter: blur(5px);
+}
+
+.slide-active {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.arrow {
+  font-size: 30px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 3px #ccc;
+  display: flex;
+  width: 50px;
+  position: absolute;
+  top: 200px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.dot {
+  margin-top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 3px #ccc;
+}
+
+.dot-active {
+  background: #121227;
+  box-shadow: 0 0 15px 10px #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 7vw;
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+.element-to-animate {
+  animation: slideLeft 20s linear infinite ;
+}
+.element-to-animate-rev{
+  animation: slideLeft 20s linear infinite ;
+  animation-delay: -3s;
+  animation-direction: reverse;
+}
+
+.masked-element {
+  mask-image: linear-gradient(
+    to right,
+    hsla(0, 0%, 0%, 0) 0%,   
+    hsla(0, 0%, 0%, 1) 10%,   
+    hsla(0, 0%, 0%, 1) 90%,   
+    hsla(0, 0%, 0%, 0) 100%   
+  );
+}
+
+.masked-element-2 {
+  mask-image: linear-gradient(
+    to right,
+    hsla(0, 0%, 0%, 0) 0%,   
+    hsla(0, 0%, 0%, 1) 2%,   
+    hsla(0, 0%, 0%, 1) 98%,   
+    hsla(0, 0%, 0%, 0) 100%   
+  );
+
+}
+
+.shadow-custom {
+  box-shadow: 0px 8px 36px 0px rgba(0, 0, 0, 0.07);
+}
+
+.bg-nav{
+
+width: 1000px;
+height: 1000px;
+border-radius: 100px;
+}
+
+.bg-blur{
+  filter: blur(90px);
+  z-index: -1; /* Ensure the blur stays behind the content */
+
+}
+
+.relative {
+  position: relative;
+}
+
+.blur-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(100px); /* Adjust the blur value as needed */
+  pointer-events: none; /* Prevent the overlay from intercepting pointer events */
+  border-radius: inherit; /* Ensure rounded corners are applied if any */
 }

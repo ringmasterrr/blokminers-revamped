@@ -1,0 +1,28 @@
+export const iconPaths = [
+
+      { path: '/TechStack/Icon (1).svg', name: 'Python' },
+      { path: '/TechStack/Icon (2).svg', name: 'Go' },
+      { path: '/TechStack/Icon (3).svg', name: 'Solidity' },
+      { path: '/TechStack/Icon (4).svg', name: 'HTML5' },
+      { path: '/TechStack/Icon (5).svg', name: 'React' },
+      { path: '/TechStack/Icon (6).svg', name: 'Rust' },
+      { path: '/TechStack/Icon (7).svg', name: 'Angular' },
+      { path: '/TechStack/Icon (8).svg', name: 'iOS' },
+      { path: '/TechStack/Icon (9).svg', name: 'Ethereum' },
+      { path: '/TechStack/Icon (10).svg', name: 'Cardano' },
+      { path: '/TechStack/Icon (11).svg', name: 'Bitcoin' },
+      { path: '/TechStack/Icon (12).svg', name: 'Binance' },
+      { path: '/TechStack/Icon (13).svg', name: 'Avalanche' },
+      { path: '/TechStack/Icon (14).svg', name: 'Algorand' },
+      { path: '/TechStack/Icon (15).svg', name: 'Flow' },
+      { path: '/TechStack/Icon (16).svg', name: 'Fantom' },
+      { path: '/TechStack/Icon (17).svg', name: 'Polygon' },
+      { path: '/TechStack/Icon (18).svg', name: 'Near' },
+      { path: '/TechStack/Icon (19).svg', name: 'Harmony' },
+      { path: '/TechStack/Icon (20).svg', name: 'Tron' },
+      { path: '/TechStack/Icon (21).svg', name: 'Solana' },
+      { path: '/TechStack/Icon (22).svg', name: 'Polkadot' },
+      { path: '/TechStack/Icon (23).svg', name: 'Tezos' },
+      { path: '/TechStack/Icon (24).svg', name: 'Hyperledger' },
+  ];
+

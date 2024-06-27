@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button'
 
+
 export function Header() {
   return (
-    <div className='flex flex-col gap-6 pt-10'>
+    <div className='flex flex-col gap-6 pt-10 '>
+      
       <div className='text-6xl font-extrabold text-theme-dark'>
         Enhancing your Business <br />
         through our Secure Blockchain

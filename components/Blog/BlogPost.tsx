@@ -4,19 +4,49 @@ import { posts } from './Data'
 import { useEffect, useState } from 'react'
 import { getBlogById } from '@/services/blog'
 
+const blogPost = {
+  title: 'Choosing the Right DApp Development Company – Factors to Consider',
+  paragraph: [
+    'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
+    'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
+  ],
+  HighlightedPara:
+    'Choosing the right development company is paramount to success, and empowering clients with essential insights and factors to consider is crucial in this endeavor. In this comprehensive guide, we’ll explore key insights and factors to equip clients with the knowledge and confidence needed to navigate the path to DApp development success.',
+
+  author: {
+    name: 'Jade Jackson',
+    avatar: '/Processes/Build.png',
+  },
+  date: 'May 7, 2024',
+  readTime: '9 Mins',
+
+  content: [
+    {
+      title: 'Introduction',
+      text: 'In the ever-evolving landscape of technology, decentralized applications (DApps) stand out as revolutionary solutions leveraging blockchain technology.',
+    },
+    {
+      title: 'The Importance of Strategic Decision-Making',
+      text: 'For aspiring entrepreneurs and businesses, embarking on the journey of DApp development requires careful consideration and strategic decision-making.',
+      image: '/Processes/Build.png',
+    },
+  ],
+
+  image: '/Processes/Build.png',
+}
+
 export default function BlogPost({ postId }: { postId: string }) {
-  
   const [blog, setBlog] = useState({})
   const [sections, setSections] = useState([])
 
   const getBlog = async () => {
-    const res: any = await getBlogById("667c12092b9b90fcc8c15505")
+    const res: any = await getBlogById('667c12092b9b90fcc8c15505')
     setBlog(res.blog?.blog)
     setSections(res.blog?.sections)
   }
 
-  console.log("blog :", blog)
-  console.log("sections :", sections)
+  console.log('blog :', blog)
+  console.log('sections :', sections)
 
   useEffect(() => {
     getBlog()
@@ -24,44 +54,72 @@ export default function BlogPost({ postId }: { postId: string }) {
 
   // const [data, setData] = useState(posts[post])
   return (
-    <div>
-      {/* <div className='container mx-auto p-4'>
-        <h1 className='mb-4 text-3xl font-bold'>{blog.title}</h1>
-        <h1 className='mb-4 text-3xl font-bold'>{blog.summary}</h1>
-        <Image
-          src={data.image}
-          alt={data.title}
-          width={1500}
-          height={1500}
-          className='mb-4 h-48 w-full rounded-xl object-cover'
-        />
-        <div className='mb-4 flex gap-2 text-sm font-medium text-[#A3A3A3]'>
-          <div className='flex items-center gap-1'>
-            <Image src={'/date.svg'} alt={'date icon'} height={20} width={20} />
-            {data.date}
-          </div>
-          <span>|</span>
-          <div className='flex items-center gap-1'>
-            <Image src={'/time.svg'} alt={'time icon'} height={20} width={20} />
-            {data.time}
+    <div className='bg-grid'>
+      <div className='flex w-full items-center justify-between gap-5 pb-10 pt-28'>
+        <div className='h-[100%] w-[50%] p-8'>
+          <h1 className='mb-6 text-[52px] font-extrabold leading-tight'>
+            {blogPost.title}
+          </h1>
+          {blogPost.paragraph.map((paragraph, index) => (
+            <p
+              key={index}
+              className='mb-6 text-[20px] font-medium text-gray-700'
+            >
+              {paragraph}
+            </p>
+          ))}
+          <div className='flex items-center space-x-4'>
+            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
+              <Image
+                src={blogPost.author.avatar}
+                alt='Coding on a laptop'
+                height={1000}
+                width={1000}
+                className='h-5 w-5 rounded-full object-cover'
+              />
+              <span className='ml-2 text-xl text-theme-dark'>
+                {blogPost.author.name}
+              </span>
+            </div>
+            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
+              <span className='text-xl text-theme-dark'>{blogPost.date}</span>
+            </div>
+            <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
+              <span className='text-xl text-theme-dark'>
+                {blogPost.readTime}
+              </span>
+            </div>
           </div>
         </div>
-        <p>{data.body}</p>
-      </div> */}
-      <h1 className='mb-4 text-3xl font-bold'>{blog.title}</h1>
-      <h1 className='mb-4 text-3xl font-bold'>{blog?.summary}</h1>
-      {
-        sections && 
-        sections.map((item: any)=>{
-          return (<div>
-            <div>{item?.title}</div>
-            <div>{item?.content}</div>
-          </div>
-          )
-        })
-      }
-      <div></div>
-      yash
+        <div className='h-[100%] w-[50%]'>
+          <Image
+            src={blogPost.image}
+            alt='Coding on a laptop'
+            height={1000}
+            width={1000}
+            className='object-cover'
+          />
+        </div>
+        <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div>
+      </div>
+      <div className='p-8'>
+        <p className='text-[20px] font-medium text-gray-700'>
+          {blogPost.HighlightedPara}
+        </p>
+      </div>
+      <div className='my-24 p-8'>
+        <div className='w-1/3'>
+        <div className='mb-10 text-[20px] font-semibold text-theme-dark'>Contents</div>
+          {blogPost.content.map((content, index) => (
+            <p
+              key={index}
+              className='mb-6 text-[20px] font-bold text-theme-light hover:text-theme-dark '
+            >
+              {content.title}
+            </p>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

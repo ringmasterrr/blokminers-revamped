@@ -1,4 +1,5 @@
 import BlogPost from '@/components/Blog/BlogPost'
+import { Page } from '@/components/shared/Page'
 
 const page = ({
   params,
@@ -7,7 +8,7 @@ const page = ({
     postId: string
   }
 }) => {
-  return <BlogPost postId={params.postId} />
+  return <Page> <BlogPost postId={params.postId} /> </Page>
 }
 
 export default page

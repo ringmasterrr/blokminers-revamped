@@ -42,6 +42,7 @@ export default function BlogPost({ postId }: { postId: string }) {
   const [sections, setSections] = useState<any | null>(null)
   const [formattedDate, setFormattedDate] = useState<any | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  console.log(sections)
 
   const getBlog = async () => {
     try {
@@ -82,20 +83,12 @@ export default function BlogPost({ postId }: { postId: string }) {
           <div className='bg-grid'>
             <div className='flex w-full items-center justify-between gap-5 pb-10 pt-28'>
               <div className='h-[100%] w-[50%] p-8'>
-                <h1 className='mb-6 text-[52px] font-extrabold leading-tight'>
+                <h1 className='mb-6 text-[52px] font-extrabold leading-tight text-theme-dark'>
                   {blog?.title}
                 </h1>
-                <p className='mb-6 text-[20px] font-medium text-gray-700'>
+                <p className='mb-6 text-[20px] font-medium text-theme-dark'>
                   {blog?.summary}
                 </p>
-                {/* {blogPost.paragraph.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className='mb-6 text-[20px] font-medium text-gray-700'
-                >
-                  
-                </p>
-              ))} */}
                 <div className='flex items-center space-x-4'>
                   <div className='flex items-center rounded-full border-2 border-theme-dark/50 px-2'>
                     <Image
@@ -133,12 +126,12 @@ export default function BlogPost({ postId }: { postId: string }) {
               <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div>
             </div>
             <div className='p-8'>
-              <p className='text-[20px] font-medium text-gray-700'>
+              <p className='text-[20px] font-medium text-theme-dark'>
                 {blogPost.HighlightedPara}
               </p>
             </div>
-            <div className='my-24 p-8'>
-              <div className='w-1/3'>
+            <div className='relative flex my-24 p-8 justify-between'>
+              <div className='w-[360px] sticky-sidebar'>
                 <div className='mb-10 text-[20px] font-semibold text-theme-dark'>
                   Contents
                 </div>
@@ -146,10 +139,32 @@ export default function BlogPost({ postId }: { postId: string }) {
                   sections.map((item: any, index: any) => (
                     <p
                       key={index}
-                      className='mb-6 text-[20px] font-bold text-theme-light hover:text-theme-dark'
+                      className='mb-6 text-[20px]  font-bold text-theme-dark '
                     >
                       {item.title}
                     </p>
+                  ))}
+              </div>
+              <div className='w-[744px]'>
+                {sections &&
+                  sections.map((item: any, index: any) => (
+                    <div key={index} className='mt-16 mb-16 first:mt-0'>
+                      <p className='mb-6 text-4xl font-bold text-theme-dark leading-tight w-[85%] '>
+                        {item.title}
+                      </p>
+                      {item.image && (
+                        <div className='w-full'>
+                          <Image
+                            src={item.image}
+                            alt='Coding on a laptop'
+                            height={1000}
+                            width={1000}
+                            className='object-cover w-full '
+                          />
+                        </div>
+                      )}
+                      <div className='mt-12 text-xl font-medium tracking-wide '>{item.content}</div>
+                    </div>
                   ))}
               </div>
             </div>

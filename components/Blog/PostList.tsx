@@ -92,7 +92,6 @@ const PostList = ({ posts }: PostListProps) => {
           </Link>
         ))}
     </div>
-    // <div>Posts</div>
   )
 }
 

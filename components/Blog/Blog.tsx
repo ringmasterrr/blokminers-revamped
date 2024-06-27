@@ -18,15 +18,6 @@ const Blog = ({ posts }: BlogProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [loading, setLoading] = useState<boolean>(true)
   const postsPerPage = 6
-
-  // const filteredPosts = posts.filter((post) =>
-  //   post.title.toLowerCase().includes(searchTerm.toLowerCase()),
-  // )
-
-  // const indexOfLastPost = currentPage * postsPerPage
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage
-  // const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost)
-
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
   const [data, setData] = useState<any | null>(null)

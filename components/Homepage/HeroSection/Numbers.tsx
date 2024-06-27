@@ -11,7 +11,7 @@ export function Numbers() {
     const steps = 100
     const intervalTime = duration / steps
 
-    const incrementYears = 5 / steps
+    const incrementYears = 6 / steps
     const incrementProjects = 200 / steps
     const incrementClients = 80 / steps
 
@@ -19,7 +19,7 @@ export function Numbers() {
 
     const interval = setInterval(() => {
       if (currentStep < steps) {
-        setYears((prev) => Math.min(prev + incrementYears, 5))
+        setYears((prev) => Math.min(prev + incrementYears, 6))
         setProjects((prev) => Math.min(prev + incrementProjects, 200))
         setClients((prev) => Math.min(prev + incrementClients, 80))
         currentStep++
@@ -31,7 +31,7 @@ export function Numbers() {
     return () => clearInterval(interval)
   }, [])
   return (
-    <div className='flex w-fit gap-8'>
+    <div className='fade-up flex w-fit gap-8'>
       <div className='flex flex-col text-theme-dark'>
         <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-8xl font-extrabold text-transparent'>
           {Math.round(years)}+

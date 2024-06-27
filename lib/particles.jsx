@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useEffect, useMemo, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
@@ -543,16 +543,16 @@ export const ParticleComponent = () => {
         },
       },
     }),
-    []
+    [],
   )
 
   if (init) {
     return (
       <Particles
-        id="tsparticles"
+        id='tsparticles'
         particlesLoaded={particlesLoaded}
         options={options}
-        className="-z-50"
+        className='-z-50'
       />
     )
   }

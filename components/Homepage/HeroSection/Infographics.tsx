@@ -3,7 +3,7 @@ import Image from 'next/image'
 export function Infographics() {
   return (
     <div className='flex h-full w-full items-center justify-center overflow-clip border-r'>
-      <div className='relative ml-16 flex h-64 w-64 translate-x-32 items-center justify-center z-50'>
+      <div className='relative z-50 ml-16 flex h-64 w-64 translate-x-32 items-center justify-center'>
         <div className='animate-spin-superslow absolute flex h-[32rem] w-[32rem] items-center justify-center rounded-full border-2 border-gray-300'>
           <div className='absolute -top-5 right-24 transform'>
             <Image

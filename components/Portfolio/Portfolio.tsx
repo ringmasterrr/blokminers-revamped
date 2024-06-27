@@ -33,7 +33,7 @@ export function Portfolio() {
           />
         </div>
       </div>
-      <div className="absolute inset-0 bg-[#D8F6FF] bg-opacity-50 bg-blur rounded-full -top-96"></div>
+      <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-50'></div>
 
       <CardList />
     </div>

@@ -4,7 +4,7 @@ import { posts } from './Data'
 import { useEffect, useState } from 'react'
 import { getBlogById } from '@/services/blog'
 import { format, parseISO } from 'date-fns'
-import { CgSpinnerTwo } from "react-icons/cg";
+import { CgSpinnerTwo } from 'react-icons/cg'
 
 const blogPost = {
   title: 'Choosing the Right DApp Development Company – Factors to Consider',
@@ -59,8 +59,8 @@ export default function BlogPost({ postId }: { postId: string }) {
         }
       }
       setTimeout(() => {
-        setLoading(false);
-      }, 1500);
+        setLoading(false)
+      }, 1500)
     } catch (error) {
       console.error('Error fetching blog:', error)
     }
@@ -71,7 +71,7 @@ export default function BlogPost({ postId }: { postId: string }) {
   }, [postId])
   if (loading) {
     return (
-      <div className='flex h-screen text-blue-700 items-center justify-center'>
+      <div className='flex h-screen items-center justify-center text-blue-700'>
         <CgSpinnerTwo className='animate-spin text-8xl' />
       </div>
     )

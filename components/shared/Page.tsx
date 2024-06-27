@@ -7,9 +7,7 @@ interface IPage extends IReactNode {
 
 export function Page({ children, className }: IPage) {
   return (
-    <main
-      className={cn(`mx-auto w-full max-w-8xl `, 'pageHeight', className)}
-    >
+    <main className={cn(`mx-auto w-full max-w-8xl`, 'pageHeight', className)}>
       {children}
     </main>
   )

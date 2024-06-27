@@ -30,11 +30,9 @@ const truncateText = (text: string, wordLimit: number) => {
 const PostList = ({ posts }: PostListProps) => {
   return (
     <div className='grid grid-cols-3 gap-6'>
-
       {posts &&
-        posts.map((post) => (
-          <Link href={`/blogpost/${post._id}`}>
-
+        posts.map((post, index) => (
+          <Link href={`/blogpost/${post._id}`} key={index}>
             <div className='shadow-custom mb-4 cursor-pointer rounded-xl border border-[#00283C29] bg-white'>
               <Image
                 src={'https://picsum.photos/200'}
@@ -69,7 +67,9 @@ const PostList = ({ posts }: PostListProps) => {
                       {post.createdAt}
                     </p>
                   </div>
-                  <h2 className='mb-2 text-2xl font-bold'>{truncateText(post.title, 10)}</h2>
+                  <h2 className='mb-2 text-2xl font-bold'>
+                    {truncateText(post.title, 10)}
+                  </h2>
                   <p className='text-[#A3A3A3]'>
                     {truncateText(post.summary, 16)}
                   </p>

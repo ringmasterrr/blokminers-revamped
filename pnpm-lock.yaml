@@ -32,6 +32,9 @@ importers:
       axios:
         specifier: ^1.7.2
         version: 1.7.2
+      blokminers-ui:
+        specifier: 'link:'
+        version: 'link:'
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0

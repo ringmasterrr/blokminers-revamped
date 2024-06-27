@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import BlogPost from '@/components/Blog/BlogPost'
 import { Page } from '@/components/shared/Page'
 

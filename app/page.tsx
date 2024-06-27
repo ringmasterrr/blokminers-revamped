@@ -14,7 +14,7 @@ import { ParticleComponent } from '@/lib/particles'
 
 export default function Home() {
   return (
-    <Page className='justify-between px-8'> 
+    <Page className='justify-between '> 
     <ParticleComponent />
       <HeroSection />
       {/* <Box /> */}

@@ -6,7 +6,6 @@ import { Numbers } from './Numbers'
 export function HeroSection() {
     return (
     <div className='relative flex justify-between min-h-[90vh] bg-grid py-24'>
-    <ParticleComponent />
       <div className='flex flex-col gap-52'>
         <Header />
         <Numbers />

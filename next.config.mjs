@@ -3,10 +3,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['picsum.photos'],
+  }
 };
 
-export default {
-    images: {
-      domains: ['picsum.photos'],
-    },
-  };
+export default nextConfig;

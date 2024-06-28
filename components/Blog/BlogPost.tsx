@@ -55,9 +55,8 @@ export default function BlogPost({ postId }: { postId: string }) {
     }
   }
 
-  // Function to handle scroll and update active section
   const handleScroll = () => {
-    const scrollPosition = window.scrollY + navbarHeight + 20 // Adjusted for better accuracy
+    const scrollPosition = window.scrollY + navbarHeight + 20
     const newActiveIndex = sectionRefs.current.findIndex((ref) => {
       if (ref) {
         const top = ref.getBoundingClientRect().top + window.scrollY

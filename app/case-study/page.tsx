@@ -1,4 +1,5 @@
 import { CaseStudies } from '@/components/CaseStudies/CaseStudiesHeading'
+import { Portfolio } from '@/components/Portfolio/Portfolio'
 import { Page } from '@/components/shared/Page'
 
 export default function CaseStudiesHome() {

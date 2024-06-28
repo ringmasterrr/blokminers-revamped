@@ -497,7 +497,7 @@ export function Navbar() {
           </Menubar>
           <p
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'
-            onClick={() => router.push('/case-studies')}
+            onClick={() => router.push('/case-study')}
           >
             Case Studies
           </p>

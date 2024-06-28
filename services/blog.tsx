@@ -12,8 +12,6 @@ export const getAllBlogs = async () => {
 }
 
 export const getBlogById = async (id: string) => {
-  console.log("id", id)
+  console.log('id', id)
   return (await http.get(`/blog-details/${id}`)).data
 }
-
-

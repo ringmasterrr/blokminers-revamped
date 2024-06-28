@@ -1,6 +1,6 @@
 'use client'
-
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 const caseStudies = [
@@ -41,11 +41,16 @@ const categories = [
 
 const CaseStudiesCards = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Topics')
+  const router = useRouter()
 
   const filteredCaseStudies =
     selectedCategory === 'All Topics'
       ? caseStudies
       : caseStudies.filter((cs) => cs.category === selectedCategory)
+
+  const handleCardClick = (id: number) => {
+    router.push(`/caseStudy/${id}`)
+  }
 
   return (
     <div className='flex flex-col items-center justify-center p-4'>
@@ -65,8 +70,9 @@ const CaseStudiesCards = () => {
         {filteredCaseStudies.map((cs) => (
           <div
             key={cs.id}
-            className='rounded-2xl bg-white p-6'
+            className='cursor-pointer rounded-2xl bg-white p-6'
             style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)' }}
+            onClick={() => handleCardClick(cs.id)}
           >
             <h3 className='mb-2 text-2xl font-semibold'>{cs.title}</h3>
             <p className='mb-6 text-sm text-[#A3A3A3]'>{cs.description}</p>

@@ -60,11 +60,11 @@ const Corousel = () => {
 
   return (
     <>
-      <div className='scale-x-[130%] transform'>
+      <div className=''>
         <Swiper
           onSwiper={setSwiperInstance}
           onSlideChange={handleSlideChange}
-          spaceBetween={20}
+          spaceBetween={30}
           slidesPerView={3}
           centeredSlides={true}
           navigation={{
@@ -76,10 +76,10 @@ const Corousel = () => {
           {slideData.map((item, index) => (
             <SwiperSlide key={index} className={``}>
               <div
-                className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
+                className={` ${index !== currentSlide ? '!py-8 ' : 'h-full'} mx-auto `}
               >
-                <div className='flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
-                  <div className='flex w-full scale-y-[120%] items-center justify-between'>
+                <div className='flex h-full flex-col justify-between overflow-hidden rounded-xl  border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
+                  <div className='flex w-full items-center justify-between'>
                     <div className='flex items-center gap-2'>
                       <div className='h-12 w-12'>
                         <Image
@@ -103,7 +103,7 @@ const Corousel = () => {
                     </div>
                   </div>
                   <div
-                    className={`${index !== currentSlide && 'text-xs'} scale-y-[120%] text-sm`}
+                    className={`${index !== currentSlide && 'text-xs'}  text-sm`}
                   >
                     {item.message}
                   </div>

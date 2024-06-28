@@ -1,3 +1,12 @@
+import axios from 'axios'
+
+const http = axios.create({
+  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/case-study`,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
 const caseStudies = [
   {
     id: 1,
@@ -23,6 +32,15 @@ const caseStudies = [
   },
 ]
 
-export const getCaseStudyById = async (id: number) => {
-  return caseStudies.find((cs) => cs.id === id) || null
+// export const getCaseStudyById = async (id: number) => {
+//   return caseStudies.find((cs) => cs.id === id) || null
+// }
+
+
+export const getCaseStudyDetails = async (id: number) => {
+  return (await http.get(`/case-study-details/${id}`)).data
+}
+
+export const getAllCaseStudies = async () => {
+  return (await http.get('/get-all-case-studies')).data
 }

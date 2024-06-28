@@ -1,7 +1,8 @@
 'use client'
+import { getAllCaseStudies } from '@/services/caseStudies'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const caseStudies = [
   {
@@ -42,16 +43,47 @@ const categories = [
 const CaseStudiesCards = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Topics')
   const router = useRouter()
+  const [loading, setLoading] = useState<boolean>(true)
 
-  const filteredCaseStudies =
-    selectedCategory === 'All Topics'
-      ? caseStudies
-      : caseStudies.filter((cs) => cs.category === selectedCategory)
+  // const filteredCaseStudies =
+  //   selectedCategory === 'All Topiitem'
+  //     ? caseStudies
+  //     : caseStudies.filter((item) => item.category === selectedCategory)
 
   const handleCardClick = (id: number) => {
-    router.push(`/caseStudy/${id}`)
+    router.push(`/case-studies/${id}`)
   }
 
+  const [data, setData] = useState<any | null>(null)
+  const [filteredCaseStudies, setFilteredCaseStudies] = useState<any | null>([])
+
+  const getCaseStudies = async () => {
+    const res = await getAllCaseStudies()
+    const fetchedData = res[0].data
+    setData(fetchedData)
+    setLoading(false)
+    setFilteredCaseStudies(
+      selectedCategory === 'All Topics'
+        ? fetchedData
+        : fetchedData.filter((item: any) => item.category === selectedCategory),
+    )
+  }
+
+
+  useEffect(() => {
+    if (data === null) return
+    console.log(data)
+
+    setFilteredCaseStudies(
+      selectedCategory === 'All Topics'
+        ? data
+        : data.filter((item: any) => item.category === selectedCategory),
+    )
+  }, [selectedCategory])
+
+  useEffect(() => {
+    getCaseStudies()
+  }, [])
   return (
     <div className='flex flex-col items-center justify-center p-4'>
       <div className='mb-6 flex flex-wrap gap-3'>
@@ -67,22 +99,22 @@ const CaseStudiesCards = () => {
       </div>
 
       <div className='sm:grid-cols-2 mb-32 mt-12 grid grid-cols-3 gap-6'>
-        {filteredCaseStudies.map((cs) => (
+        {filteredCaseStudies.map((item: any) => (
           <div
-            key={cs.id}
+            key={item.id}
             className='cursor-pointer rounded-2xl bg-white p-6'
             style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)' }}
-            onClick={() => handleCardClick(cs.id)}
+            onClick={() => handleCardClick(item.id)}
           >
-            <h3 className='mb-2 text-2xl font-semibold'>{cs.title}</h3>
-            <p className='mb-6 text-sm text-[#A3A3A3]'>{cs.description}</p>
-            <Image
-              src={cs.image}
-              alt={cs.title}
+            <h3 className='mb-2 text-2xl font-semibold'>{item.title}</h3>
+            <p className='mb-6 text-sm text-[#A3A3A3]'>{item.description}</p>
+            {/* <Image
+              src={item.image}
+              alt={item.title}
               height={1000}
               width={1000}
               className='mb-4 h-64 w-full rounded-md object-cover'
-            />
+            /> */}
           </div>
         ))}
       </div>

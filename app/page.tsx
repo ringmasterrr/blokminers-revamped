@@ -3,7 +3,6 @@ import { HeroSection } from '@/components/Homepage/HeroSection/HeroSection'
 import WhySection from '@/components/Homepage/Why/WhySection'
 import { VerticalOfferings } from '@/components/Homepage/VerticalOfferings/VerticalOfferings'
 import { Page } from '@/components/shared/Page'
-import Box from '@/components/ui/box'
 import TechStack from '@/components/Homepage/Tech Stack/TechStack'
 import FAQs from '@/components/Homepage/Faqs/FAQs'
 import TestimonialsSection from '@/components/Homepage/Testimonials/TestimonialsSection'
@@ -13,10 +12,9 @@ import { ParticleComponent } from '@/lib/particles'
 
 export default function Home() {
   return (
-    <Page className='justify-between'>
+    <Page className='justify-between '>
       <ParticleComponent />
       <HeroSection />
-      {/* <Box /> */}
       <ExploreSection />
       <VerticalOfferings />
       <WhySection />

@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 const images = [
   {
     src: '/verticals/vertical (1).svg',
-    alt: 'vertical',
+    alt: 'insurance',
     height: 500,
     width: 500,
-    className: 'absolute cursor-pointer left-[590px] top-32 z-50 w-[200px] backdrop-blur',
+    className: 'absolute cursor-pointer left-[590px] top-32 z-50 2md:w-[200px] w-[141px] backdrop-blur',
     yInitial: 10,
     yAnimate: 0,
     duration: 1,

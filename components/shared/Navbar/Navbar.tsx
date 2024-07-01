@@ -447,7 +447,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[100] w-full px-8 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-[100] w-full px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
     >
       <div className='mx-auto flex h-20 max-w-8xl items-center justify-between'>
         <div onClick={() => router.push('/')}>

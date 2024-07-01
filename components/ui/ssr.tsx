@@ -19,8 +19,8 @@ export const StickyScroll = ({
   const ref = useRef<any>(null)
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
-    container: ref,
+    target: ref,
+    // container: ref,
     offset: ['start start', 'end start'],
   })
 
@@ -50,6 +50,7 @@ export const StickyScroll = ({
     'var(--electric-violet)', 
     'var(--lochmara)'
   ];
+  
   const linearGradients = [
     'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
     'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
@@ -69,13 +70,13 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className='bg relative my-40 flex h-[30rem] justify-evenly space-x-10 overflow-y-scroll rounded-xl p-10 scrollbar-hide mx-16'
+      className='bg relative my-40 flex h-[26rem] justify-evenly space-x-10 overflow-y-auto rounded-md p-10'
       ref={ref}
     >
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          'sticky top-8 h-[21rem] w-[32rem] overflow-hidden rounded-lg bg-white',
+          'sticky top-0 h-[21rem] w-[32rem] overflow-hidden rounded-md bg-white',
           contentClassName,
         )}
       >
@@ -103,7 +104,7 @@ export const StickyScroll = ({
               animate={{
                 opacity: activeCard === index ? 1 : 0.1,
               }}
-              className='max-w-sm mt-10 text-lg font-medium text-white'
+              className='max-w-sm mt-10 text-lg font-medium text-white/80'
             >
               {item.description}
             </motion.p>

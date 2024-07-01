@@ -3,6 +3,6 @@ const nextConfig = {};
 
 export default {
     images: {
-      domains: ['picsum.photos'],
+      domains: ['picsum.photos', 'example.com'],
     },
   };

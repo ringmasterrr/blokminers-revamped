@@ -38,6 +38,19 @@ const config = {
       colors: {
         'theme-dark': '#00283C',
         'theme-light': '#274A5B',
+        'blue-ribbon': '#2461FF29',
+        'dodger-blue': '#24CAFF29',
+        'heliotrope': '#9E62FE29',
+        'limeade':'#348A0029',
+        'fun-green':'#007B4029',
+        'electric-violet':'#9F24FF29',
+        'lochmara':'#007CC129'
+
+
+
+        
+
+
       },
       keyframes: {
         'accordion-down': {

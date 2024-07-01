@@ -84,6 +84,8 @@ const CaseStudiesCards = () => {
   useEffect(() => {
     getCaseStudies()
   }, [])
+
+  
   return (
     <div className='flex flex-col items-center justify-center p-4'>
       <div className='mb-6 flex flex-wrap gap-3'>
@@ -104,7 +106,7 @@ const CaseStudiesCards = () => {
             key={item.id}
             className='cursor-pointer rounded-2xl bg-white p-6'
             style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)' }}
-            onClick={() => handleCardClick(item.id)}
+            onClick={() => handleCardClick(item._id)}
           >
             <h3 className='mb-2 text-2xl font-semibold'>{item.title}</h3>
             <p className='mb-6 text-sm text-[#A3A3A3]'>{item.description}</p>

@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getAllPortfolios } from '@/services/portfolio'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'

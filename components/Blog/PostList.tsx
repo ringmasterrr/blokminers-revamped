@@ -4,27 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { parseISO, format } from 'date-fns'
-
-interface Post {
-  _id: number
-  title: string
-  summary: string
-  image: string
-  date: string
-  createdAt: string
-  authorName: string
-}
+import { IBlog } from '@/types/blogs'
+import { truncateText } from '@/utils/utils'
 
 interface PostListProps {
-  posts: Post[]
-}
-
-const truncateText = (text: string, wordLimit: number) => {
-  const words = text.split(' ')
-  if (words.length <= wordLimit) {
-    return text
-  }
-  return words.slice(0, wordLimit).join(' ') + '...'
+  posts: IBlog[]
 }
 
 const PostList = ({ posts }: PostListProps) => {

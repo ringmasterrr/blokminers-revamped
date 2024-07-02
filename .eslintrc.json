@@ -20,7 +20,7 @@
         "htmlWhitespaceSensitivity": "css",
         "endOfLine": "auto",
         "embeddedLanguageFormatting": "auto",
-        "plugins": ["prettier-plugin-tailwindcss"]
+        "plugins": ["prettier-plugin-tailwindcss", "tailwind-scrollbar-hide"]
       }
     ]
     // "linebreak-style": ["error", "unix"]

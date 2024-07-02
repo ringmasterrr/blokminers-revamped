@@ -5,14 +5,14 @@ import Heading from '../shared/Heading/Heading'
 import { IBlog } from '@/types/blogs'
 
 export interface IBlogPage {
-  search?:string
+  search?: string
   page?: number
   limit?: number
   total?: number
   blogs: IBlog[]
 }
 
-const Blog = ({search, page, blogs, limit, total}: IBlogPage) => {
+const Blog = ({ search, page, blogs, limit, total }: IBlogPage) => {
   return (
     <div className='relative'>
       <div className='bg-grid mb-12 pt-32'>
@@ -24,8 +24,8 @@ const Blog = ({search, page, blogs, limit, total}: IBlogPage) => {
       <div className='container mx-auto flex flex-col items-center gap-12 p-4'>
         <SearchBar keyword={search} />
 
-            <PostList posts={blogs} />
-              {/* <Pagination
+        <PostList posts={blogs} />
+        {/* <Pagination
                 postsPerPage={limit ?? 12}
                 totalPosts={total ?? 0}
                 currentPage={page ?? 1}

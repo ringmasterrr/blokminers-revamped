@@ -12,13 +12,13 @@ import { ParticleComponent } from '@/lib/particles'
 
 export default function Home() {
   return (
-    <Page className='justify-between '>
+    <Page className='justify-between'>
       <ParticleComponent />
       <HeroSection />
       <ExploreSection />
-      <VerticalOfferings />
-      <WhySection />
-      <StickyScrollRevealDemo />
+      {/* <VerticalOfferings /> */}
+      {/* <WhySection /> */}
+      {/* <StickyScrollRevealDemo /> */}
       <TestimonialsSection />
       <TechStack />
       <FAQs />

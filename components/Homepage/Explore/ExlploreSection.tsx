@@ -3,7 +3,7 @@ import CardContent from './CardContent'
 
 export default function ExploreSection() {
   return (
-    <div className='relative mt-12 px-24 py-32'>
+    <div className='relative 2md:mt-12 mt-4 px-24 2md:py-32 py-2'>
       <div className='bg-blur absolute inset-0 bg-[#D8F6FF] bg-opacity-60'></div>
       <Heading
         heading={'Explore our Offerings'}

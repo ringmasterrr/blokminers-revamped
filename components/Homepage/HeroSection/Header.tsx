@@ -4,11 +4,11 @@ export function Header() {
   return (
     <div className='flex flex-col gap-6 pt-10'>
       <div className='md:text-5xl text-center text-4xl font-extrabold text-theme-dark 2md:text-start 2md:text-6xl'>
-        Enhancing your Business <br />
+        Enhancing your Business <br className='2md:block hidden'/>
         through our Secure Blockchain
       </div>
       <div className='text-center text-lg font-medium text-theme-dark 2md:text-start'>
-        Experience Seamless Migration and Top-Notch <br /> Support as we Elevate
+        Experience Seamless Migration and Top-Notch <br className='2md:block hidden'/> Support as we Elevate
         your Business To New Heights
       </div>
       <div className='flex w-full justify-center gap-4 2md:justify-start'>

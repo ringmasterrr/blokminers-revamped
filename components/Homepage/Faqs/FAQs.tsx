@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const FAQs = () => {
   return (
-    <div className='flex flex-col items-center justify-center gap-8 2md:px-12 px-4'>
+    <div className='flex flex-col items-center justify-center gap-8 px-4 2md:px-12'>
       <div className='rounded-3xl border border-theme-dark px-3 py-1 font-semibold'>
         FAQs
       </div>
@@ -17,9 +17,8 @@ const FAQs = () => {
         <div className='w-full 2md:w-1/2'>
           <FAQAccordion />
         </div>
-        <div className='hidden 2md:block'>
-          {' '}
-          <Image src={'/FAQs.svg'} alt='' height={500} width={500} />
+        <div className='hidden bg-black 2md:block'>
+          <Image src={'/verticals/graph.svg'} alt='' height={500} width={500} />
         </div>
       </div>
     </div>

@@ -45,7 +45,8 @@ const images = [
     alt: 'vertical',
     height: 500,
     width: 500,
-    className: 'absolute cursor-pointer w-[140px] top-[480px] left-[230px] 2md:left-64 2md:top-[460px] 2md:w-[248px]',
+    className:
+      'absolute cursor-pointer w-[140px] top-[480px] left-[230px] 2md:left-64 2md:top-[460px] 2md:w-[248px]',
     yInitial: 5,
     yAnimate: 0,
     duration: 1.1,
@@ -56,7 +57,8 @@ const images = [
     alt: 'Retail',
     height: 500,
     width: 500,
-    className: 'absolute cursor-pointer w-[140px] top-[405px] left-[120px] 2md:left-60 2md:top-52 2md:w-[186px]',
+    className:
+      'absolute cursor-pointer w-[140px] top-[405px] left-[120px] 2md:left-60 2md:top-52 2md:w-[186px]',
     yInitial: 12,
     yAnimate: 2,
     duration: 1.3,
@@ -79,7 +81,8 @@ const images = [
     alt: 'vertical',
     height: 500,
     width: 500,
-    className: 'absolute cursor-pointer w-[140px] left-[10px] top-[520px] 2md:-left-32 2md:top-52 2md:w-[201px]',
+    className:
+      'absolute cursor-pointer w-[140px] left-[10px] top-[520px] 2md:-left-32 2md:top-52 2md:w-[201px]',
     yInitial: 8,
     yAnimate: 0,
     duration: 1.2,

@@ -8,7 +8,7 @@ export default function CardContent() {
     <div className='mb-20 mt-20 w-full'>
       <div className='grid w-full grid-cols-3 gap-4'>
         <WobbleCard
-          containerClassName='card relative col-span-2 rounded-xl'
+          containerClassName='card relative 2md:col-span-2 col-span-3 rounded-xl'
           className='flex h-[350px] flex-col gap-4 px-6 py-8'
         >
           <h1 className='text-4xl font-extrabold text-theme-dark'>
@@ -29,7 +29,7 @@ export default function CardContent() {
         </WobbleCard>
         <WobbleCard
           containerClassName='card relative  rounded-xl'
-          className='flex h-[350px] flex-col gap-4 px-6 py-8'
+          className='col-span-3 flex h-[350px] flex-col gap-4 px-6 py-8 2md:col-span-1'
         >
           <h1 className='text-4xl font-extrabold text-theme-dark'>
             Web3 Development
@@ -48,7 +48,7 @@ export default function CardContent() {
           </div>
         </WobbleCard>
         <WobbleCard
-          containerClassName='card relative row-span-2 rounded-xl'
+          containerClassName='card relative 2md:row-span-2 row-span-1 rounded-xl'
           className='flex h-full flex-col gap-4 px-6 py-8'
         >
           <div className='flex w-[80%] flex-col gap-4'>

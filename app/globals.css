@@ -252,3 +252,7 @@ border-radius: 100px;
   pointer-events: none; /* Prevent the overlay from intercepting pointer events */
   border-radius: inherit; /* Ensure rounded corners are applied if any */
 }
+
+.bggraph{
+background: url('/why/graph.svg');
+}

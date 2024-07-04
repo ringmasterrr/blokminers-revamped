@@ -4,7 +4,7 @@ import { BlogsService } from '@/services/blog'
 
 const blog = new BlogsService()
 
-export default async function page({
+export default async function Blog({
   params,
 }: {
   params: {

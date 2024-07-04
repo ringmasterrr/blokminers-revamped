@@ -4,7 +4,7 @@ import { CaseStudyService } from '@/services/caseStudies'
 
 const cases = new CaseStudyService()
 
-export default async function CaseStudiesHome({
+export default async function CaseStudiesPage({
   searchParams,
 }: {
   searchParams: {

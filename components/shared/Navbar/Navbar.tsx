@@ -448,9 +448,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[100] w-full px-4 2md:px-16 bg-white ${scrolled ? 'bg-white' : 'bg-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-[100] w-full px-4 2md:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
     >
-      <div className='mx-auto flex 2md:h-20 h-16 max-w-8xl items-center justify-between'>
+      <div className='mx-auto flex h-16 max-w-8xl items-center justify-between 2md:h-20'>
         <div onClick={() => router.push('/')}>
           <Image
             src={'/Images/Navbar/logo.svg'}

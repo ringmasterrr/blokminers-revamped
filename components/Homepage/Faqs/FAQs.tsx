@@ -17,7 +17,7 @@ const FAQs = () => {
         <div className='w-full 2md:w-1/2'>
           <FAQAccordion />
         </div>
-        <div className='hidden bg-black 2md:block'>
+        <div className='hidden 2md:block'>
           <Image src={'/FAQs.svg'} alt='' height={500} width={500} />
         </div>
       </div>

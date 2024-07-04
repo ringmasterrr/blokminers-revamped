@@ -29,7 +29,7 @@ const SearchBar = ({ keyword }: { keyword?: string }) => {
         value={searchTerm}
         onChange={handleChange}
         onKeyUp={onKeyUp}
-        className='w-full bg-transparent p-2 placeholder-[#6A6A6A] outline-none focus:border-none focus:outline-none'
+        className='w-full bg-transparent p-4 py-6 placeholder-[#6A6A6A] outline-none focus:border-none focus:outline-none'
       />
     </div>
   )

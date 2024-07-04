@@ -256,3 +256,17 @@ border-radius: 100px;
 .bggraph{
 background: url('/why/graph.svg');
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom right, #3e5b76, #182531);
+  border-radius: 999999999px;
+}

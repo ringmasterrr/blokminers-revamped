@@ -32,7 +32,7 @@ const Cta = () => {
             alt='logo'
             height={500}
             width={500}
-            className='md:block hidden w-96'
+            className='hidden w-96 md:block'
           />
         </motion.div>
 

@@ -4,13 +4,18 @@ import { BlogsService } from '@/services/blog'
 
 const blogs = new BlogsService()
 
-export default async function BlogsPage({ searchParams }: {
+export default async function BlogsPage({
+  searchParams,
+}: {
   searchParams: {
     page?: string
     search?: string
   }
 }) {
-  const data = await blogs.getAllBlogs({ keyword: searchParams.search, page: searchParams.page })
+  const data = await blogs.getAllBlogs({
+    keyword: searchParams.search,
+    page: searchParams.page,
+  })
   console.log(data)
   return (
     <Page className='justify-between px-8'>

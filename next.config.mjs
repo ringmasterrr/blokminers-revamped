@@ -4,7 +4,6 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    // remotePatterns: ['picsum.photos', "blokminers-assets.s3.amazonaws.com"],
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,6 +18,16 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  webpack(config) {
+    // Add SVGR support
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    })
+
+    return config
   },
 }
 

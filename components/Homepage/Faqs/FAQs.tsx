@@ -18,7 +18,7 @@ const FAQs = () => {
           <FAQAccordion />
         </div>
         <div className='hidden bg-black 2md:block'>
-          <Image src={'/verticals/graph.svg'} alt='' height={500} width={500} />
+          <Image src={'/FAQs.svg'} alt='' height={500} width={500} />
         </div>
       </div>
     </div>

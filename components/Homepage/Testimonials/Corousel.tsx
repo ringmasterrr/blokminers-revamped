@@ -1,46 +1,28 @@
 'use client'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import SwiperCore from 'swiper'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { GoStarFill } from 'react-icons/go'
 import Image from 'next/image'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { getAllTestimonials } from '@/services/testimonials'
+import { ITestimonial } from '@/types/testimonial'
 
 SwiperCore.use([Navigation])
 
-const Corousel = () => {
+export interface CorouselProps {
+  testimonials: ITestimonial[]
+}
 
-  interface CardProps {
-    title: string
-    designation:string
-    testimony: string
-    image: string
-    url: string
-    ratings:number
-  }
-
+export default function Corousel({ testimonials }: CorouselProps) {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const handleSlideChange = (swiper: SwiperCore) => {
     setCurrentSlide(swiper.activeIndex)
   }
-
-  const [testimonial, setTestimonial] = useState<CardProps[]>([])
-
-  useEffect(() => {
-    const fetchTestimonial = async () => {
-      const res = await getAllTestimonials()
-      console.log(res)
-      setTestimonial(res)
-    }
-    fetchTestimonial()
-  }, [])
 
   return (
     <>
@@ -57,7 +39,7 @@ const Corousel = () => {
           }}
           className='w-full'
         >
-          {testimonial.map((item, index) => (
+          {testimonials.map((item, index) => (
             <SwiperSlide key={index} className={``}>
               <div
                 className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
@@ -112,5 +94,3 @@ const Corousel = () => {
     </>
   )
 }
-
-export default Corousel

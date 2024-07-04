@@ -42,14 +42,14 @@ export const StickyScroll = ({
   })
 
   const backgroundColors = [
-    'var(--blue-ribbon)', 
-    'var(--dodger-blue)', 
-    'var(--heliotrope)', 
-    'var(--limeade)', 
-    'var(--fun-green)', 
-    'var(--electric-violet)', 
-    'var(--lochmara)'
-  ];
+    'var(--blue-ribbon)',
+    'var(--dodger-blue)',
+    'var(--heliotrope)',
+    'var(--limeade)',
+    'var(--fun-green)',
+    'var(--electric-violet)',
+    'var(--lochmara)',
+  ]
   const linearGradients = [
     'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
     'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
@@ -69,7 +69,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className='bg relative my-40 flex h-[30rem] justify-evenly space-x-10 overflow-y-scroll rounded-xl p-10 scrollbar-hide mx-16'
+      className='bg relative mx-16 my-40 flex h-[30rem] justify-evenly space-x-10 overflow-y-scroll rounded-xl p-10 scrollbar-hide'
       ref={ref}
     >
       <div

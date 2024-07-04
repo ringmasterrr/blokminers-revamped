@@ -30,11 +30,12 @@ const PostList = ({ posts }: PostListProps) => {
     <div className='grid grid-cols-3 gap-6'>
       {posts &&
         posts.map((post, index) => (
-          <Link href={`/blogpost/${post._id}`} key={index}>
+          // <Link href={`/blogpost/${post._id}`} key={index}>
+          <Link href={`/blog/${post._id}`} key={index}>
             <div className='shadow-custom mb-4 w-[350px] cursor-pointer rounded-xl border border-[#00283C29] bg-white'>
               <div className='relative mb-4 h-56 w-full overflow-hidden rounded-t-xl'>
                 <Image
-                  src={'https://picsum.photos/200'}
+                  src={post.image}
                   alt={post.title}
                   height={1500}
                   width={1500}

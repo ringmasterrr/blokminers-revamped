@@ -267,6 +267,6 @@ background: url('/why/graph.svg');
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to bottom right, #3e5b76, #182531);
+  background: rgb(47, 47, 121);
   border-radius: 999999999px;
 }

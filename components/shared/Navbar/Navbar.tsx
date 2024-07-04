@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { RiMenu4Line } from 'react-icons/ri'
 import { FaChevronDown } from 'react-icons/fa6'
 import {
   Menubar,
@@ -447,9 +448,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[100] w-full px-4 2md:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-[100] w-full px-4 2md:px-16 bg-white ${scrolled ? 'bg-white' : 'bg-transparent'}`}
     >
-      <div className='mx-auto flex h-20 max-w-8xl items-center justify-between'>
+      <div className='mx-auto flex 2md:h-20 h-16 max-w-8xl items-center justify-between'>
         <div onClick={() => router.push('/')}>
           <Image
             src={'/Images/Navbar/logo.svg'}
@@ -520,9 +521,12 @@ export function Navbar() {
             About Us
           </p>
         </div>
-        <div>
+        <div className='hidden 2md:block'>
           <Button>Get Started</Button>
         </div>
+        <button className='block h-8 w-8 text-theme-dark 2md:hidden'>
+          <RiMenu4Line className='h-full w-full stroke-1' />
+        </button>
       </div>
     </nav>
   )

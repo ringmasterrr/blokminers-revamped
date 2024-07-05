@@ -28,8 +28,8 @@ export default function Home() {
       <Page>
         <TechStack />
         <FAQs />
-        <Cta />
       </Page>
+      <Cta />
     </>
   )
 }

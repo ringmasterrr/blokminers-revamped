@@ -22,6 +22,7 @@ import { useRouter } from 'next/navigation'
 import { FaAngleRight } from 'react-icons/fa6'
 import { white } from 'tailwindcss/colors'
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export function Navbar() {
   const router = useRouter()
@@ -465,7 +466,7 @@ export function Navbar() {
             Services
             <FaChevronDown className='text-xs' />
           </p>
-          <Menubar>
+          {/* <Menubar>
             <MenubarMenu>
               <MenubarTrigger className='flex cursor-pointer items-center gap-1 border-none !bg-transparent p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
                 Industries
@@ -495,7 +496,13 @@ export function Navbar() {
                 </div>
               </MenubarContent>
             </MenubarMenu>
-          </Menubar>
+          </Menubar> */}
+          <Link
+            className='flex cursor-pointer items-center justify-center hover:text-gray-500'
+            href={'/industries'}
+          >
+            Industries
+          </Link>
           <p
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'
             onClick={() => router.push('/case-study')}

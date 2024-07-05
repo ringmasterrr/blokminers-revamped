@@ -2,9 +2,17 @@ import { ParticleComponent } from '@/lib/particles'
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
-import Section from './industriesCard'
+import Tab from './Tab'
+import Finance from './Finance'
+import Healthcare from './Healthcare'
+import RealEstate from './RealEstate'
+import Insurance from './Insurance'
+import Education from './Education'
+import Travel from './Travel'
+import Retail from './Retail'
+import Manufacture from './Manufacture'
 
-const Industries = () => {
+const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
   return (
     <div className='relative'>
       <ParticleComponent />
@@ -33,10 +41,18 @@ const Industries = () => {
           />
         </div>
       </div>
-      {/* <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-50'></div> */}
-      <Section />
+      <Tab tab={tab ?? 'Finance'} />
+      {tab === undefined && <Finance />}
+      {tab === 'Finance' && <Finance />}
+      {tab === 'Healthcare' && <Healthcare />}
+      {tab === 'Insurance' && <Insurance />}
+      {tab === 'Education' && <Education />}
+      {tab === 'Real Estate' && <RealEstate />}
+      {tab === 'Travel' && <Travel />}
+      {tab === 'Retail' && <Retail />}
+      {tab === 'Manufacturing' && <Manufacture />}
     </div>
   )
 }
 
-export default Industries
+export default IndustriesSection

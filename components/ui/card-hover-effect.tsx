@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
-import { CardImage } from './CardImage'
 
 export const HoverEffect = ({
   items,
@@ -21,7 +20,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'md:grid-cols-2 lg:grid-cols-3 grid grid-cols-4 py-10',
+        'grid grid-cols-4 py-10 md:grid-cols-2 lg:grid-cols-3',
         className,
       )}
     >
@@ -99,6 +98,7 @@ export const CardTitle = ({
     </h4>
   )
 }
+
 export const CardDescription = ({
   className,
   children,
@@ -115,5 +115,20 @@ export const CardDescription = ({
     >
       {children}
     </p>
+  )
+}
+
+export const CardImage = ({ src, alt }: { src: string; alt: string }) => {
+  return (
+    <div className='relative z-10 mb-2 w-16 overflow-hidden rounded-lg'>
+      <motion.img
+        src={src}
+        alt={alt}
+        className='h-full w-full object-cover'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
+      />
+    </div>
   )
 }

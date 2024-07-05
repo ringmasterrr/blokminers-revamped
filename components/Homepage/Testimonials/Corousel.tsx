@@ -1,56 +1,22 @@
 'use client'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import SwiperCore from 'swiper'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { GoStarFill } from 'react-icons/go'
 import Image from 'next/image'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { ITestimonial } from '@/types/testimonial'
 
 SwiperCore.use([Navigation])
 
-const Corousel = () => {
-  const [slideData] = useState([
-    {
-      name: 'First slide',
-      message:
-        'The dedication, integrity, and commitment coupled with the extensive knowledge in Web3.O makes BlokMiners stand apart from the crowd. We have taken their assistance in 3 projects and they have never failed us ever. I consider them our extended technology arm whenever we have constrained bandwidth.',
-      index: 1,
-    },
-    {
-      name: 'Second slide',
-      message:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maxime perferendis accusamus quidem facere fugiat numquam ducimus ab quis fugit, consequuntur minima, nobis consectetur? Odio facere rem aut hic? Eius!',
-      index: 2,
-    },
-    {
-      name: 'third slide',
-      message:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maxime perferendis accusamus quidem facere fugiat numquam ducimus ab quis fugit, consequuntur minima, nobis consectetur? Odio facere rem aut hic? Eius!',
-      index: 3,
-    },
-    {
-      name: 'fourth slide',
-      message:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maxime perferendis accusamus quidem facere fugiat numquam ducimus ab quis fugit, consequuntur minima, nobis consectetur? Odio facere rem aut hic? Eius!',
-      index: 4,
-    },
-    {
-      name: 'fifth slide',
-      message:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maxime perferendis accusamus quidem facere fugiat numquam ducimus ab quis fugit, consequuntur minima, nobis consectetur? Odio facere rem aut hic? Eius!',
-      index: 5,
-    },
-    {
-      name: 'six slide',
-      message:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maxime perferendis accusamus quidem facere fugiat numquam ducimus ab quis fugit, consequuntur minima, nobis consectetur? Odio facere rem aut hic? Eius!',
-      index: 6,
-    },
-  ])
+export interface CorouselProps {
+  testimonials: ITestimonial[]
+}
+
+export default function Corousel({ testimonials }: CorouselProps) {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -73,7 +39,7 @@ const Corousel = () => {
           }}
           className='w-full'
         >
-          {slideData.map((item, index) => (
+          {testimonials.map((item, index) => (
             <SwiperSlide key={index} className={``}>
               <div
                 className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
@@ -90,22 +56,20 @@ const Corousel = () => {
                         />
                       </div>
                       <div>
-                        <div>Zeeve</div>
-                        <div className='text-gray-400'>CEO</div>
+                        <div>{item.title}</div>
+                        <div className='text-gray-400'>{item.designation}</div>
                       </div>
                     </div>
                     <div className='flex gap-1 text-yellow-400'>
-                      <GoStarFill />
-                      <GoStarFill />
-                      <GoStarFill />
-                      <GoStarFill />
-                      <GoStarFill />
+                      {Array.from({ length: item.ratings }).map((_, i) => (
+                        <GoStarFill key={i} />
+                      ))}
                     </div>
                   </div>
                   <div
                     className={`${index !== currentSlide && 'text-xs'} scale-y-[120%] text-sm`}
                   >
-                    {item.message}
+                    {item.testimony}
                   </div>
                 </div>
               </div>
@@ -130,5 +94,3 @@ const Corousel = () => {
     </>
   )
 }
-
-export default Corousel

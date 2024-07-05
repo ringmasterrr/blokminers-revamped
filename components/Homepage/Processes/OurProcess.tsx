@@ -44,7 +44,7 @@ const content = [
     description:
       'This is the skeletal framework of the project and at this point, we decide the Blockchain protocol based on type, energy efficiency, bridging strength and cost. We’ll also develop frameworks and determine smart contracts, business logic and storage.',
     content: (
-      <div className='flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white'>
+      <div className='flex h-full w-full items-center justify-center text-white'>
         <Image
           src='/Processes/Architect.png'
           width={300}
@@ -60,7 +60,7 @@ const content = [
     description:
       'We write codes to support the functions and suit every consideration we have laid down in the earlier stages.',
     content: (
-      <div className='flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white'>
+      <div className='flex h-full w-full items-center justify-center text-white'>
         <Image
           src='/Processes/Build.png'
           width={300}
@@ -76,7 +76,7 @@ const content = [
     description:
       'We take pride in ourselves to minimize your go-to-market time. So, we using the best practices, gain useful feedback and fix even the smallest weaknesses, until we are ready to launch.',
     content: (
-      <div className='flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white'>
+      <div className='flex h-full w-full items-center justify-center text-white'>
         <Image
           src='/Processes/Test.png'
           width={300}
@@ -92,7 +92,7 @@ const content = [
     description:
       'We’re present through every stage in the journey even after we’ve delivered your decentralised application. Safely deploy your products at this stage, you’ll typically gain traction all things being equal and also get more feedback to further solidify the app.',
     content: (
-      <div className='flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white'>
+      <div className='flex h-full w-full items-center justify-center text-white'>
         <Image
           src='/Processes/Launch.png'
           width={300}
@@ -108,7 +108,7 @@ const content = [
     description:
       'There’s no perfect idea or software. You can only pay excellent attention to the most unnecessary details like we do. Regular updates and reviews keep your software alive as the world evolves. You can always count on our expert Blockchain tech team to readily deliver these solid upgrades.',
     content: (
-      <div className='flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white'>
+      <div className='flex h-full w-full items-center justify-center text-white'>
         <Image
           src='/Processes/Upgrade.png'
           width={300}
@@ -123,8 +123,9 @@ const content = [
 
 export function StickyScrollRevealDemo() {
   return (
-    <div className='z-[100] py-20'>
+    <div className='z-[100] bg-[#00141F] py-20'>
       <Heading
+        white
         heading='Our Processes'
         message='Our processes are tailored to hit it right with your idea from the start and also support optimum coordination, excellent and speedy execution of your Blockchain solution through its entirety.'
       />

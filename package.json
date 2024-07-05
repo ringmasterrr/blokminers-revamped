@@ -13,6 +13,7 @@
     "@radix-ui/react-menubar": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@svgr/webpack": "^8.1.0",
     "@tsparticles/all": "^3.4.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
@@ -32,7 +33,6 @@
     "styled-components": "^6.1.11",
     "swiper": "^11.1.4",
     "tailwind-merge": "^2.3.0",
-    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
@@ -46,7 +46,9 @@
     "postcss": "^8",
     "prettier": "^3.3.1",
     "prettier-plugin-tailwindcss": "^0.6.1",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
 }

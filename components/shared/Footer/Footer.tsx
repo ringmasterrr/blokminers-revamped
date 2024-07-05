@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <footer className='text-[#E0E0E0]'>
-      <div className='mx-auto flex max-w-8xl justify-between gap-10 bg-theme-dark px-10 py-10 font-light'>
+      <div className='mx-auto flex max-w-8xl flex-col justify-between gap-10 bg-theme-dark px-10 py-10 font-light 2md:flex-row'>
         <div className='flex flex-1 flex-col gap-8'>
           <div className='w-[150px]'>
             <Image
@@ -14,7 +14,7 @@ export default function Footer() {
               className='w-full'
             />
           </div>
-          <div className='max-w-[60%]'>
+          <div className='max-w-[98%] 2md:max-w-[60%]'>
             Transforming Blockchain concepts into flawless realities, Building
             greater futures through innovation and collective Knowledge
           </div>
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
         <div className='flex flex-1 flex-col gap-6'>
           <div className='text-lg font-semibold text-cyan-500'>SERVICES</div>
-          <div className='grid grid-cols-2 gap-6'>
+          <div className='grid grid-cols-1 gap-6 2md:grid-cols-2'>
             <div>Blockchain Development Services</div>
             <div>AI & ML Blockchain Development</div>
             <div>Exchange</div>
@@ -60,7 +60,7 @@ export default function Footer() {
             <div>Cloud Computing</div>
             <div>Consulting</div>
             <div>Cloud Security</div>
-            <div className='col-span-2'>Data & Analytics</div>
+            <div>Data & Analytics</div>
             <div>Smart Contract Development</div>
           </div>
         </div>

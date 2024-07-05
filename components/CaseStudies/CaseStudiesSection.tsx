@@ -3,8 +3,23 @@ import Image from 'next/image'
 import { Numbers } from '../Homepage/HeroSection/Numbers'
 import CaseStudiesCards from './CaseStudies'
 import { ParticleComponent } from '@/lib/particles'
+import { ICases } from '@/types/cases'
 
-export function CaseStudies() {
+export interface ICasesPage {
+  search?: string
+  page?: number
+  limit?: number
+  total?: number
+  cases: ICases[]
+}
+
+export function CaseStudiesSection({
+  search,
+  page,
+  cases,
+  limit,
+  total,
+}: ICasesPage) {
   return (
     <div className='relative'>
       <div className='bg-grid my-10 flex h-screen items-start justify-between pt-20'>
@@ -37,7 +52,7 @@ export function CaseStudies() {
         <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-50'></div>
         <ParticleComponent />
       </div>
-      <CaseStudiesCards />
+      <CaseStudiesCards cases={cases} />
     </div>
   )
 }

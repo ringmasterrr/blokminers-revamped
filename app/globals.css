@@ -252,3 +252,21 @@ border-radius: 100px;
   pointer-events: none; /* Prevent the overlay from intercepting pointer events */
   border-radius: inherit; /* Ensure rounded corners are applied if any */
 }
+
+.bggraph{
+background: url('/why/graph.svg');
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(47, 47, 121);
+  border-radius: 999999999px;
+}

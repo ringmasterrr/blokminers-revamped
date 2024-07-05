@@ -31,26 +31,26 @@ export function Numbers() {
     return () => clearInterval(interval)
   }, [])
   return (
-    <div className='fade-up flex w-fit gap-8'>
+    <div className='fade-up flex w-fit gap-4 md:gap-8'>
       <div className='flex flex-col text-theme-dark'>
-        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-8xl font-extrabold text-transparent'>
+        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-4xl font-extrabold text-transparent md:text-7xl 2md:text-8xl'>
           {Math.round(years)}+
         </div>
-        <div className='mt-[-25px] font-extrabold'>YEARS</div>
+        <div className='mt-[-20] font-extrabold 2md:mt-[-25px]'>YEARS</div>
         <div className='text-sm font-semibold'>of Experience</div>
       </div>
       <div className='flex flex-col text-theme-dark'>
-        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-8xl font-extrabold text-transparent'>
+        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-4xl font-extrabold text-transparent md:text-7xl 2md:text-8xl'>
           {Math.round(projects)}+
         </div>
-        <div className='mt-[-25px] font-extrabold'>PROJECTS</div>
+        <div className='mt-[-20] font-extrabold 2md:mt-[-25px]'>PROJECTS</div>
         <div className='text-sm font-semibold'>discovered</div>
       </div>
       <div className='flex flex-col text-theme-dark'>
-        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-8xl font-extrabold text-transparent'>
+        <div className='bg-gradient-to-b from-[#00283C] via-[#00283C] via-20% to-[#fff] bg-clip-text text-4xl font-extrabold text-transparent md:text-7xl 2md:text-8xl'>
           {Math.round(clients)}+
         </div>
-        <div className='mt-[-25px] font-extrabold'>CLIENTS</div>
+        <div className='mt-[-20] font-extrabold 2md:mt-[-25px]'>CLIENTS</div>
         <div className='text-sm font-semibold'>satisfied</div>
       </div>
     </div>

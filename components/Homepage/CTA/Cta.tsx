@@ -6,21 +6,21 @@ import React from 'react'
 
 const Cta = () => {
   return (
-    <div className='z-[100] mt-10 bg-gradient-to-br from-[#0066FF] to-[#009DBF] p-20'>
-      <div className='relative flex items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-20'>
-        <div className='w-1/2 space-y-8'>
-          <h2 className='text-4xl font-bold text-white'>
+    <div className='z-[100] mt-10 bg-gradient-to-br from-[#0066FF] to-[#009DBF] p-2 2md:p-20'>
+      <div className='relative flex flex-col items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-6 2md:flex-row 2md:p-20'>
+        <div className='w-full space-y-8 2md:w-1/2'>
+          <h2 className='text-lg font-bold text-white 2md:text-4xl'>
             Start your Blockchain Project with the help of our Team of Experts.
           </h2>
-          <p className='text-white'>
+          <p className='text-center text-white 2md:text-left'>
             Meet our world famous support team. They are fast, they are smart,
             and they will help you out any time.
           </p>
-          <div className='flex gap-4'>
-            <button className='rounded-md bg-white px-6 py-2 font-bold text-[#00283C]'>
+          <div className='flex justify-center gap-4 2md:justify-start'>
+            <button className='rounded-md bg-white px-4 py-2 text-xs font-bold text-[#00283C] 2md:px-6'>
               Talk To An Expert
             </button>
-            <button className='rounded-md border bg-transparent px-6 py-2 font-bold text-white'>
+            <button className='rounded-md border bg-transparent px-4 py-2 text-xs font-bold text-white 2md:px-6'>
               Get Started
             </button>
           </div>
@@ -32,7 +32,7 @@ const Cta = () => {
             alt='logo'
             height={500}
             width={500}
-            className='w-96'
+            className='hidden w-96 md:block'
           />
         </motion.div>
 

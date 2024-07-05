@@ -41,7 +41,15 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex)
   })
 
-  const backgroundColors = ['var(--blue-100)', 'var(--sky-100)']
+  const backgroundColors = [
+    'var(--blue-ribbon)',
+    'var(--dodger-blue)',
+    'var(--heliotrope)',
+    'var(--limeade)',
+    'var(--fun-green)',
+    'var(--electric-violet)',
+    'var(--lochmara)',
+  ]
   const linearGradients = [
     'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
     'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
@@ -61,13 +69,13 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className='bg relative my-40 flex h-[26rem] justify-evenly space-x-10 overflow-y-scroll rounded-md p-10 scrollbar-hide'
+      className='bg relative mx-16 my-40 flex h-[30rem] justify-evenly space-x-10 overflow-y-scroll rounded-xl p-10 scrollbar-hide'
       ref={ref}
     >
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          'sticky top-0 h-[21rem] w-[32rem] overflow-hidden rounded-md bg-white',
+          'sticky top-8 h-[21rem] w-[32rem] overflow-hidden rounded-lg bg-white',
           contentClassName,
         )}
       >
@@ -84,7 +92,7 @@ export const StickyScroll = ({
               animate={{
                 opacity: activeCard === index ? 1 : 0.1,
               }}
-              className='text-4xl font-semibold text-theme-dark'
+              className='text-4xl font-semibold text-white'
             >
               {item.title}
             </motion.h2>
@@ -95,7 +103,7 @@ export const StickyScroll = ({
               animate={{
                 opacity: activeCard === index ? 1 : 0.1,
               }}
-              className='max-w-sm mt-10 text-lg font-medium text-theme-dark'
+              className='max-w-sm mt-10 text-lg font-medium text-white'
             >
               {item.description}
             </motion.p>

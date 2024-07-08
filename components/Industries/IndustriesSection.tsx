@@ -41,16 +41,18 @@ const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
           />
         </div>
       </div>
-      <Tab tab={tab ?? 'Finance'} />
-      {tab === undefined && <Finance />}
-      {tab === 'Finance' && <Finance />}
-      {tab === 'Healthcare' && <Healthcare />}
-      {tab === 'Insurance' && <Insurance />}
-      {tab === 'Education' && <Education />}
-      {tab === 'Real Estate' && <RealEstate />}
-      {tab === 'Travel' && <Travel />}
-      {tab === 'Retail' && <Retail />}
-      {tab === 'Manufacturing' && <Manufacture />}
+      <div className=''>
+        <Tab tab={tab ?? 'Finance'} />
+        {tab === undefined && <Finance />}
+        {tab === 'Finance' && <Finance />}
+        {tab === 'Healthcare' && <Healthcare />}
+        {tab === 'Insurance' && <Insurance />}
+        {tab === 'Education' && <Education />}
+        {tab === 'Real Estate' && <RealEstate />}
+        {tab === 'Travel' && <Travel />}
+        {tab === 'Retail' && <Retail />}
+        {tab === 'Manufacturing' && <Manufacture />}
+      </div>
     </div>
   )
 }

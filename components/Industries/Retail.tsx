@@ -1,6 +1,3 @@
-
 export default function Retail() {
-  return (
-    <div>Retail</div>
-  )
+  return <div>Retail</div>
 }

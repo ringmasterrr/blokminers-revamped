@@ -12,10 +12,10 @@ export default async function CaseStudy({
   }
 }) {
   const data = await cases.getCaseStudyDetails(params.caseId)
-  console.log(data.caseStudy[0])
+  console.log(data.data)
   return (
     <Page>
-      <CaseStudyDetail caseStudy={data.caseStudy[0]} />
+      <CaseStudyDetail caseStudy={data.data} />
     </Page>
   )
 }

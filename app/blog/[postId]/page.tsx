@@ -12,10 +12,10 @@ export default async function Blog({
   }
 }) {
   const data = await blog.getBlogById(params.postId)
-  console.log(data.blog[0])
+  console.log(data.data)
   return (
     <Page>
-      <BlogPost blog={data.blog[0]} />
+      <BlogPost blog={data.data} />
     </Page>
   )
 }

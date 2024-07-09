@@ -1,6 +1,4 @@
-import * as React from 'react'
 
-import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerClose,
@@ -16,11 +14,6 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 
 export function NavbarDrawer() {
-  const [goal, setGoal] = React.useState(350)
-
-  function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
-  }
 
   return (
     <Drawer direction='left'>

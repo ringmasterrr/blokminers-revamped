@@ -2,38 +2,38 @@ import Image from 'next/image'
 
 const section = [
   {
-    title: 'Decentralized Finance (DeFi) Solutions',
+    title: 'Asset Tokenization',
     description:
-      'Unlock new financial products and services with our DeFi solutions, offering greater accessibility, inclusivity, and returns for customers and institutions alike.',
-    icon: '/industries/defi.svg',
+      'Convert real estate assets into digital tokens, making property investment more accessible, liquid, and divisible.',
+    icon: '/industries/asset.png',
   },
   {
-    title: 'Smart Contract Implementation',
+    title: 'Smart Contracts for Transactions',
     description:
-      'Automate and secure financial transactions with smart contracts, reducing administrative errors, and fraud, while enhancing operational efficiency.',
-    icon: '/industries/contract.svg',
+      'Utilize self-executing contracts with the terms of the agreement directly written into code, reducing the need for intermediaries and accelerating transaction processes.',
+    icon: '/industries/smart.png',
   },
   {
-    title: 'Cross-Border Payments',
+    title: 'Immutable Property Records',
     description:
-      'Facilitate faster, cheaper, and more transparent international transactions with blockchain-based payment solutions, breaking down barriers in global finance.',
-    icon: '/industries/cross.svg',
+      'Ensure secure, transparent, and tamper-proof record-keeping for property titles, deeds, and transactions, enhancing trust and simplifying verification processes.',
+    icon: '/industries/records.svg',
   },
   {
-    title: 'Regulatory Compliance and Reporting',
+    title: 'Decentralized Marketplaces',
     description:
-      'Leverage blockchain’s immutable ledger for accurate, tamper-proof record-keeping, ensuring compliance with financial regulations and reporting requirements.',
-    icon: '/industries/regulatory.svg',
+      'Facilitate direct property buying, selling, and leasing through decentralized platforms, removing barriers and reducing costs.',
+    icon: '/industries/decentralized.svg',
   },
 ]
 
 export default function RealEstate() {
   return (
     <div className='bg-[#EBEFEF]' id='healthcare'>
-      <div className='mb-12 flex flex-col items-center gap-24 px-32 py-12 text-center'>
+      <div className='mb-2 flex flex-col items-center gap-24 p-32 text-center'>
         <div>
           <h1 className='text-6xl font-bold text-gray-900'>Real Estate</h1>
-          <p className='mt-4 text-lg text-gray-700'>
+          <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
             the power of blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -44,16 +44,16 @@ export default function RealEstate() {
         </div>
         <div className='flex flex-col items-center'>
           <h2 className='w-[80%] text-4xl font-bold text-gray-900'>
-            Establishing a value-based network.
+            Transforming Finance and Banking with BlokMiners’ Blockchain
+            Solutions
           </h2>
-          <p className='mt-4 text-lg text-gray-700'>
-            Customers nowadays seek experiences, not solely products.
-            Manufacturers need to construct connected, cognitive, and
-            cooperative networks that facilitate adaptable innovation on a grand
-            scale. This necessitates an approach resembling the neural system,
-            where the manufacturing value chain imitates the human nervous
-            system—automatically detecting new data, grasping its significance,
-            and promptly reacting.
+          <p className='mt-6 text-lg text-gray-700'>
+            Step into the future of finance with BlokMiners, where we harness
+            the power of blockchain to revolutionize the banking and finance
+            industry. In an era where transparency, security, and efficiency are
+            more critical than ever, BlokMiners is at the forefront of providing
+            blockchain solutions that redefine financial operations, enhance
+            customer trust, and streamline regulatory compliance.
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function RealEstate() {
         {section.map((item) => (
           <div
             key={item.title}
-            className='rounded-2xl bg-white p-8 text-start shadow-md'
+            className='flex flex-col justify-between rounded-2xl bg-white p-8 text-start shadow-md'
           >
             <h3 className='text-xl font-semibold text-gray-900'>
               {item.title}

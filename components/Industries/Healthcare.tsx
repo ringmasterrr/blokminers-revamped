@@ -33,7 +33,7 @@ export default function Healthcare() {
       <div className='mb-12 flex flex-col items-center gap-24 p-32 text-center'>
         <div>
           <h1 className='text-6xl font-bold text-gray-900'>Healthcare</h1>
-          <p className='mt-4 text-lg text-gray-700'>
+          <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
             the power of blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -66,26 +66,6 @@ export default function Healthcare() {
           </p>
         </div>
       </div>
-      {/* <div className='grid grid-cols-1 gap-8 p-20 md:grid-cols-2'>
-        {section.map((item) => (
-          <div
-            key={item.title}
-            className='rounded-2xl bg-white p-8 text-start shadow-md'
-          >
-            <h3 className='text-xl font-semibold text-gray-900'>
-              {item.title}
-            </h3>
-            <p className='mt-2 text-gray-700'>{item.description}</p>
-            <Image
-              height={1000}
-              width={1000}
-              src={item.icon}
-              alt={item.title}
-              className='mx-auto my-6 mb-4 w-full'
-            />
-          </div>
-        ))}
-      </div> */}
     </div>
   )
 }

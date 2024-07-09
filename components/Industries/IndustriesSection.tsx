@@ -49,7 +49,7 @@ const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
         {tab === 'Insurance' && <Insurance />}
         {tab === 'Education' && <Education />}
         {tab === 'Real Estate' && <RealEstate />}
-        {tab === 'Travel' && <Travel />}
+        {tab === 'Travel and logistics' && <Travel />}
         {tab === 'Retail' && <Retail />}
         {tab === 'Manufacturing' && <Manufacture />}
       </div>

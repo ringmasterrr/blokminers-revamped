@@ -29,12 +29,12 @@ export default function Finance() {
   ]
   return (
     <div className='bg-[#EBEFEF]' id='finance'>
-      <div className='mb-12 flex flex-col items-center gap-24 px-32 py-12 text-center'>
+      <div className='mb-2 flex flex-col items-center gap-24 p-32 text-center'>
         <div>
           <h1 className='text-6xl font-bold text-gray-900'>
             Finance and Banking
           </h1>
-          <p className='mt-4 text-lg text-gray-700'>
+          <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
             the power of blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -48,7 +48,7 @@ export default function Finance() {
             Transforming Finance and Banking with BlokMiners&apos; Blockchain
             Solutions
           </h2>
-          <p className='mt-4 text-lg text-gray-700'>
+          <p className='mt-6 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
             the power of blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are

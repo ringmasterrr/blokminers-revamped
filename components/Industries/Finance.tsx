@@ -6,25 +6,25 @@ export default function Finance() {
       title: 'Decentralized Finance (DeFi) Solutions',
       description:
         'Unlock new financial products and services with our DeFi solutions, offering greater accessibility, inclusivity, and returns for customers and institutions alike.',
-      icon: '/path/to/defi-icon.svg',
+      icon: '/industries/defi.svg',
     },
     {
       title: 'Smart Contract Implementation',
       description:
         'Automate and secure financial transactions with smart contracts, reducing administrative errors, and fraud, while enhancing operational efficiency.',
-      icon: '/path/to/smart-contract-icon.svg',
+      icon: '/industries/contract.svg',
     },
     {
       title: 'Cross-Border Payments',
       description:
         'Facilitate faster, cheaper, and more transparent international transactions with blockchain-based payment solutions, breaking down barriers in global finance.',
-      icon: '/path/to/cross-border-icon.svg',
+      icon: '/industries/cross.svg',
     },
     {
       title: 'Regulatory Compliance and Reporting',
       description:
         'Leverage blockchain’s immutable ledger for accurate, tamper-proof record-keeping, ensuring compliance with financial regulations and reporting requirements.',
-      icon: '/path/to/regulatory-icon.svg',
+      icon: '/industries/regulatory.svg',
     },
   ]
   return (
@@ -73,7 +73,7 @@ export default function Finance() {
               width={1000}
               src={item.icon}
               alt={item.title}
-              className='mx-auto my-6 mb-4 h-12 w-6'
+              className='mx-auto my-6 mb-4 w-full'
             />
           </div>
         ))}

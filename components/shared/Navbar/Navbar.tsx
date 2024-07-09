@@ -23,6 +23,7 @@ import { FaAngleRight } from 'react-icons/fa6'
 import { white } from 'tailwindcss/colors'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { NavbarDrawer } from './NavbarDrawer'
 
 export function Navbar() {
   const router = useRouter()
@@ -466,16 +467,16 @@ export function Navbar() {
             Services
             <FaChevronDown className='text-xs' />
           </p>
-          {/* <Menubar>
+          <Menubar>
             <MenubarMenu>
               <MenubarTrigger className='flex cursor-pointer items-center gap-1 border-none !bg-transparent p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
                 Industries
                 <FaChevronDown className='text-xs' />
               </MenubarTrigger>
-              <MenubarContent className='min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
+              <MenubarContent className='z-[120] min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
                 <div
-                  onMouseLeave={() => setHoveredItem(null)}
-                  className='flex gap-4'
+                // onMouseLeave={() => setHoveredItem(null)}
+                // className='flex gap-4'
                 >
                   <div className='h-fit rounded-lg bg-white'>
                     <div className='z-60 flex h-fit w-[240px] cursor-pointer flex-col rounded-lg bg-[#88caec] bg-opacity-15 font-semibold text-gray-500'>
@@ -483,26 +484,26 @@ export function Navbar() {
                         <div
                           key={item}
                           className='flex items-center justify-between gap-6 border-b-2 border-theme-light border-opacity-20 p-3 text-sm last:border-b-0 hover:bg-theme-dark hover:text-white hover:first:rounded-t-lg hover:last:rounded-b-lg'
-                          onMouseEnter={() => setHoveredItem(item)}
+                          // onMouseEnter={() => setHoveredItem(item)}
                         >
                           <p>{item}</p> <FaAngleRight />
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className='max-w-[600px] rounded-lg bg-white'>
+                  {/* <div className='max-w-[600px] rounded-lg bg-white'>
                     {hoveredItem && hoverContent[hoveredItem]}
-                  </div>
+                  </div> */}
                 </div>
               </MenubarContent>
             </MenubarMenu>
-          </Menubar> */}
-          <Link
+          </Menubar>
+          {/* <Link
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'
             href={'/industries'}
           >
             Industries
-          </Link>
+          </Link> */}
           <p
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'
             onClick={() => router.push('/case-study')}
@@ -531,9 +532,9 @@ export function Navbar() {
         <div className='hidden 2md:block'>
           <Button>Get Started</Button>
         </div>
-        <button className='block h-8 w-8 text-theme-dark 2md:hidden'>
-          <RiMenu4Line className='h-full w-full stroke-1' />
-        </button>
+        <div className='2md:hidden'>
+          <NavbarDrawer />
+        </div>
       </div>
     </nav>
   )

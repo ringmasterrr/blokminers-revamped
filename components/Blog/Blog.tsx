@@ -14,23 +14,21 @@ export interface IBlogPage {
 
 const Blog = ({ search, page, blogs, limit, total }: IBlogPage) => {
   return (
-    <div className='relative'>
+    <div className='relative flex flex-col gap-10 items-center'>
       <div className='bg-grid mb-12 pt-32'>
         <Heading
           heading='Blogs'
           message='Explore our innovative research in the realm of blockchain technology and its practical applications.'
         />
       </div>
-      <div className='container mx-auto flex flex-col items-center gap-12 p-4'>
-        <SearchBar keyword={search} />
+      <SearchBar keyword={search} />
 
-        <PostList posts={blogs} />
-        {/* <Pagination
+      <PostList posts={blogs} />
+      {/* <Pagination
                 postsPerPage={limit ?? 12}
                 totalPosts={total ?? 0}
                 currentPage={page ?? 1}
               /> */}
-      </div>
       <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-70'></div>
     </div>
   )

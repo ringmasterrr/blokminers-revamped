@@ -18,7 +18,7 @@ export default async function BlogsPage({
   })
   console.log(data)
   return (
-    <Page className='justify-between px-8'>
+    <Page>
       <Blog blogs={data.data} page={data.page} search={searchParams.search} />
     </Page>
   )

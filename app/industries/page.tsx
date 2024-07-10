@@ -1,4 +1,13 @@
+import Education from '@/components/Industries/Education'
+import Finance from '@/components/Industries/Finance'
+import Healthcare from '@/components/Industries/Healthcare'
 import IndustriesSection from '@/components/Industries/IndustriesSection'
+import Insurance from '@/components/Industries/Insurance'
+import Manufacturing from '@/components/Industries/Manufacturing'
+import RealEstate from '@/components/Industries/RealEstate'
+import Retail from '@/components/Industries/Retail'
+import Tab from '@/components/Industries/Tab'
+import Travel from '@/components/Industries/Travel'
 import { Page } from '@/components/shared/Page'
 
 export default function IndustriesPage({
@@ -6,15 +15,22 @@ export default function IndustriesPage({
 }: {
   searchParams: {
     tab?: string
-    main?: string
   }
 }) {
-  console.log(searchParams.tab ?? 'Finance')
-  console.log(searchParams.main)
-
+  const tab = searchParams.tab
   return (
     <Page className='justify-between px-8'>
       <IndustriesSection tab={searchParams.tab} />
+      <Tab tab={tab ?? 'finance'} />
+      {tab === undefined && <Finance />}
+      {tab === 'finance' && <Finance />}
+      {tab === 'healthcare' && <Healthcare />}
+      {tab === 'insurance' && <Insurance />}
+      {tab === 'education' && <Education />}
+      {tab === 'realestate' && <RealEstate />}
+      {tab === 'travel' && <Travel />}
+      {tab === 'retail' && <Retail />}
+      {tab === 'manufacturing' && <Manufacturing />}
     </Page>
   )
 }

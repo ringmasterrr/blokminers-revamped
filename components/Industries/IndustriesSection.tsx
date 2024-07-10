@@ -2,15 +2,6 @@ import { ParticleComponent } from '@/lib/particles'
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
-import Tab from './Tab'
-import Finance from './Finance'
-import Healthcare from './Healthcare'
-import RealEstate from './RealEstate'
-import Insurance from './Insurance'
-import Education from './Education'
-import Travel from './Travel'
-import Retail from './Retail'
-import Manufacture from './Manufacture'
 
 const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
   return (
@@ -40,18 +31,6 @@ const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
             className='w-[35rem]'
           />
         </div>
-      </div>
-      <div className=''>
-        <Tab tab={tab ?? 'Finance'} />
-        {tab === undefined && <Finance />}
-        {tab === 'Finance' && <Finance />}
-        {tab === 'Healthcare' && <Healthcare />}
-        {tab === 'Insurance' && <Insurance />}
-        {tab === 'Education' && <Education />}
-        {tab === 'Real Estate' && <RealEstate />}
-        {tab === 'Travel and logistics' && <Travel />}
-        {tab === 'Retail' && <Retail />}
-        {tab === 'Manufacturing' && <Manufacture />}
       </div>
     </div>
   )

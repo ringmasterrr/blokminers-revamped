@@ -7,7 +7,7 @@ import React from 'react'
 const Cta = () => {
   return (
     <div className='flex w-full items-center justify-center'>
-      <div className='z-[100] mt-10 max-w-8xl bg-theme-dark p-2 2md:p-20'>
+      <div className='z-[100] mt-10 max-w-8xl bg-gradient-to-r from-[#0066FF] to-[#009DBF] py-10 px-2 2md:p-20'>
         <div className='relative flex flex-col items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-6 2md:flex-row 2md:p-20'>
           <div className='w-full space-y-8 2md:w-1/2'>
             <h2 className='text-lg font-bold text-white 2md:text-4xl'>

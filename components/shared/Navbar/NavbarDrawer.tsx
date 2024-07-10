@@ -3,10 +3,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
 import {
@@ -29,10 +25,10 @@ export function NavbarDrawer() {
   const tab = searchParams.get('tab') || 'defaultTabValue'
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
-  // const finalPath = pathname?+"tab="+tab
   const finalPath = `${pathname}?tab=${tab}`
 
   useEffect(() => {
+    console.log(pathname)
     setOpen(false)
   }, [pathname, tab])
   return (
@@ -60,7 +56,6 @@ export function NavbarDrawer() {
               </div>
             </DrawerClose>
           </div>
-          {/* <Button className='w-fit'>Get Started</Button> */}
           <Accordion type='single' collapsible className='mt-4 w-full'>
             <AccordionItem value='item-1'>
               <AccordionTrigger className='px-4 py-3 text-theme-dark'>
@@ -105,30 +100,14 @@ export function NavbarDrawer() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          {/* <Accordion type='single' collapsible className='w-full'>
-            <AccordionItem value='item-1'>
-              <AccordionTrigger>Industries</AccordionTrigger>
-              <AccordionContent className='flex flex-col gap-4 pl-4'>
-                <Link href={'/industries'}>Finance</Link>
-                <Link href={'/industries'}>Healthcare</Link>
-                <Link href={'/industries'}>Insurance</Link>
-                <Link href={'/industries'}>Education</Link>
-                <Link href={'/industries'}>Consulting</Link>
-                <Link href={'/industries'}>Real Estate</Link>
-                <Link href={'/industries'}>Travel & Logistics</Link>
-                <Link href={'/industries'}>Retail</Link>
-                <Link href={'/industries'}>Manufacturing</Link>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion> */}
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname === '/case-study' ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-4 py-3 text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
             href={'/case-study'}
           >
             Case Studies
           </Link>
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname === '/blog' ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-4 py-3 text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
             href={'/blog'}
           >
             Blog

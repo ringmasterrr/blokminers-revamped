@@ -15,7 +15,7 @@ export interface IBlogPage {
 const Blog = ({ search, page, blogs, limit, total }: IBlogPage) => {
   return (
     <div className='relative flex flex-col gap-10 items-center'>
-      <div className='bg-grid mb-12 pt-32'>
+      <div className='bg-grid mb-12 2md:pt-32 pt-20'>
         <Heading
           heading='Blogs'
           message='Explore our innovative research in the realm of blockchain technology and its practical applications.'

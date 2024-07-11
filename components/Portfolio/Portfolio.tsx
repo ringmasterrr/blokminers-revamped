@@ -8,7 +8,7 @@ export function Portfolio({ data }: { data: any }) {
   return (
     <div className='relative'>
       <ParticleComponent />
-      <div className='bg-grid my-10 flex 2md:h-screen flex-col items-start justify-between pt-20 2md:flex-row'>
+      <div className='bg-grid my-10 flex 2md:min-h-[700px] flex-col items-start justify-between pt-20 2md:flex-row'>
         <div className='flex w-full flex-col items-center justify-between gap-14 2md:w-1/2 2md:items-start 2md:gap-28 2md:pt-10'>
           <div className='flex flex-col items-center gap-6 2md:items-start'>
             <div className='text-center text-[32px] font-extrabold text-theme-dark md:text-6xl 2md:text-start'>

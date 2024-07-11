@@ -33,7 +33,7 @@ function ServicesSection({ tab }: { tab: string | undefined }) {
           </div>
           <div className='w-[300px] 2md:w-[45%]'>
             <Image
-              src={'/industries/industries.svg'}
+              src={'/Industries/industries.svg'}
               alt=''
               width={2000}
               height={2000}

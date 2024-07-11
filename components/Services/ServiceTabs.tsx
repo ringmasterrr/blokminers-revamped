@@ -7,42 +7,42 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
     {
       category: 'Blockchain',
       path: 'blockchain',
-      logo: '/industries/financelogo.svg',
+      logo: '/Industries/financelogo.svg',
     },
     {
       category: 'Web3',
       path: 'web3',
-      logo: '/industries/healthcarelogo.svg',
+      logo: '/Industries/healthcarelogo.svg',
     },
     {
       category: 'AI/ML',
       path: 'aiml',
-      logo: '/industries/insurancelogo.svg',
+      logo: '/Industries/insurancelogo.svg',
     },
     {
       category: 'Blockchain Development',
       path: 'blockchaindevelopment',
-      logo: '/industries/educationlogo.svg',
+      logo: '/Industries/educationlogo.svg',
     },
     {
       category: 'Consulting',
       path: 'consulting',
-      logo: '/industries/realestatelogo.svg',
+      logo: '/Industries/realestatelogo.svg',
     },
     {
       category: 'Data & Analytics',
       path: 'dataanalytics',
-      logo: '/industries/travellogo.svg',
+      logo: '/Industries/travellogo.svg',
     },
     {
       category: 'Cyber Security',
       path: 'cybersecurity',
-      logo: '/industries/manufacturinglogo.svg',
+      logo: '/Industries/manufacturinglogo.svg',
     },
     {
       category: 'Cloud',
       path: 'cloud',
-      logo: '/industries/retaillogo.svg',
+      logo: '/Industries/retaillogo.svg',
     },
   ]
 

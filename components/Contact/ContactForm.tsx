@@ -1,70 +1,119 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@radix-ui/react-select'
+'use client'
+import PhoneInput from 'react-phone-number-input'
 import { Input } from '../ui/input'
-import Link from 'next/link'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '../ui/form'
 import { Button } from '../ui/button'
-const FormSchema = z.object({
-  email: z
-    .string({
-      required_error: 'Please select an email to display.',
-    })
-    .email(),
-})
+import { ChangeEvent, useEffect, useState } from 'react'
+import { ContactService } from '@/services/contact'
+
+const contact = new ContactService()
 
 function ContactForm() {
-  // const form = useForm<z.infer<typeof FormSchema>>({
-  //   resolver: zodResolver(FormSchema),
-  // })
+  const [value, setValue] = useState('')
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    number: '',
+    category: '',
+  })
+  const handleChange = (e: any) => {
+    setData({ ...data, [e.target.name]: e.target.value })
+  }
 
-  // function onSubmit(data: z.infer<typeof FormSchema>) {
-  //   console.log(data)
-  // }
+  const [message, setMessage] = useState<string | null>()
+  const [error, setError] = useState<string | null>()
+  useEffect(() => {
+    setData({ ...data, number: value })
+  }, [value])
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    const response = await contact.createContact(data)
+    if (response) {
+      console.log(response)
+      if(response.success === true){
+        setMessage('Thank you! We will get back to you soon!')
+        setTimeout(() => {
+          setMessage(null)
+        }, 5000);
+      }else{
+        setError('Something went wrong!')
+        setTimeout(() => {
+          setMessage(null)
+        }, 5000);
+      }
+    }
+  }
   return (
-    <div className='flex flex-col sm:w-[450px] w-full gap-10 2md:mt-0 mt-16'>
+    <div className='mt-16 flex w-full flex-col gap-10 sm:w-[450px] 2md:mt-0'>
       <div className='flex flex-col gap-4 text-theme-dark'>
-        <div className='sm:text-4xl text-3xl font-bold'>Let's work together</div>
-        <div className=' font-medium'>Get in touch today!</div>
+        <div className='text-3xl font-bold sm:text-4xl'>
+          Let's work together
+        </div>
+        <div className='font-medium'>Get in touch today!</div>
       </div>
-      <form className='flex w-full flex-col gap-3' action=''>
+      <form
+        onSubmit={handleSubmit}
+        className='flex w-full flex-col gap-3'
+        action=''
+      >
         <Input
+          value={data.name}
+          onChange={handleChange}
+          name='name'
+          required={true}
           type='text'
           placeholder='Name'
           className='w-full border-2 bg-theme-light bg-opacity-5 p-4 text-base placeholder-[#6A6A6A] outline-2 focus:outline'
         />
         <Input
+          value={data.email}
+          onChange={handleChange}
+          name='email'
           type='email'
+          required={true}
           placeholder='Email'
           className='w-full border-2 bg-theme-light bg-opacity-5 p-4 text-base placeholder-[#6A6A6A] outline-2 focus:outline'
         />
-        <Input
-          type='number'
+        <PhoneInput
+          name='phone'
+          required={true}
+          international
           placeholder='Phone'
+          value={value}
+          onChange={setValue}
           className='w-full border-2 bg-theme-light bg-opacity-5 p-4 text-base placeholder-[#6A6A6A] outline-2 focus:outline'
         />
-        <select className='w-full cursor-pointer rounded-lg border-2 bg-theme-light bg-opacity-5 p-2 text-base text-[#6A6A6A] outline-2 focus:outline'>
-          <option value='' disabled selected>
+        <select
+          name='category'
+          onChange={handleChange}
+          value={data.category}
+          required={true}
+          className='w-full cursor-pointer rounded-lg border-2 bg-theme-light bg-opacity-5 p-3 text-base text-[#6A6A6A] outline-2 focus:outline'
+        >
+          <option value='Software Development' selected>
             Software Development
           </option>
-          <option value='frontend'>Frontend Development</option>
-          <option value='backend'>Backend Development</option>
-          <option value='fullstack'>Full Stack Development</option>
+          <option value='Consultation'>Consultation</option>
+          <option value='Designing'>Designing</option>
+          <option value='Smart Contract Development'>
+            Smart Contract Development
+          </option>
+          <option value='Smart Contract Audit'>Smart Contract Audit</option>
         </select>
         <textarea
+          value={data.message}
+          onChange={handleChange}
+          required={true}
           className='h-[150px] w-full rounded-lg border-2 bg-theme-light bg-opacity-5 p-4 text-base text-[#6A6A6A] outline-2 focus:outline'
-          name=''
+          name='message'
           placeholder='Message'
           id=''
         ></textarea>
-        <Button className='rounded-lg mt-4 text-lg'>Submit</Button>
+        <Button type='submit' className='mt-4 rounded-lg text-lg'>
+          Submit
+        </Button>
+        {error && <p className='text-red-500 w-full text-center'>{error}</p>}
+        {message && <p className='text-green-600 w-full text-center'>{message}</p>}
       </form>
     </div>
   )

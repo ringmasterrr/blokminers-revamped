@@ -26,13 +26,27 @@ export default function Corousel({ testimonials }: CorouselProps) {
 
   return (
     <>
-      <div className='scale-x-[130%] transform'>
+      <div className='mx-8 transform 2md:mx-0 2md:scale-x-[130%]'>
         <Swiper
           onSwiper={setSwiperInstance}
           onSlideChange={handleSlideChange}
           spaceBetween={20}
           slidesPerView={3}
           centeredSlides={true}
+          breakpoints={{
+            0: {
+              // for screens 0px and up
+              slidesPerView: 1,
+            },
+            992: {
+              // for screens 640px and up
+              slidesPerView: 1,
+            },
+            1024: {
+              // for screens 1024px and up
+              slidesPerView: 3,
+            },
+          }}
           navigation={{
             prevEl: swiperInstance?.navigation?.prevEl,
             nextEl: swiperInstance?.navigation?.nextEl,
@@ -45,7 +59,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
                 className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
               >
                 <div className='flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
-                  <div className='flex w-full scale-y-[120%] items-center justify-between'>
+                  <div className='flex w-full items-center justify-between 2md:scale-y-[120%]'>
                     <div className='flex items-center gap-2'>
                       <div className='h-12 w-12'>
                         <Image
@@ -67,7 +81,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
                     </div>
                   </div>
                   <div
-                    className={`${index !== currentSlide && 'text-xs'} scale-y-[120%] text-sm`}
+                    className={`${index !== currentSlide && 'text-xs'} text-sm 2md:scale-y-[120%]`}
                   >
                     {item.testimony}
                   </div>

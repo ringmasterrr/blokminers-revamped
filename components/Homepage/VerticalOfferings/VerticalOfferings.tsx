@@ -4,7 +4,7 @@ import Verticals from './VerticalCardComponent'
 export function VerticalOfferings() {
   return (
     <div className='bg-dark z-[100] mx-auto mt-10 flex max-w-8xl flex-col items-center justify-center py-20'>
-      <div className='flex w-9/12 flex-col items-center justify-center gap-6 py-10 text-white'>
+      <div className='flex flex-col items-center justify-center gap-6 py-10 text-white'>
         <Heading
           white={true}
           heading='Our Vertical Offerings'

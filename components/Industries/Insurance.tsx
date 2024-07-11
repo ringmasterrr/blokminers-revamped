@@ -5,25 +5,25 @@ const section = [
     title: 'Decentralized Finance (DeFi) Solutions',
     description:
       'Unlock new financial products and services with our DeFi solutions, offering greater accessibility, inclusivity, and returns for customers and institutions alike.',
-    icon: '/industries/defi.svg',
+    icon: '/Industries/defi.svg',
   },
   {
     title: 'Smart Contract Implementation',
     description:
       'Automate and secure financial transactions with smart contracts, reducing administrative errors, and fraud, while enhancing operational efficiency.',
-    icon: '/industries/contract.svg',
+    icon: '/Industries/contract.svg',
   },
   {
     title: 'Cross-Border Payments',
     description:
       'Facilitate faster, cheaper, and more transparent international transactions with blockchain-based payment solutions, breaking down barriers in global finance.',
-    icon: '/industries/cross.svg',
+    icon: '/Industries/cross.svg',
   },
   {
     title: 'Regulatory Compliance and Reporting',
     description:
       'Leverage blockchain’s immutable ledger for accurate, tamper-proof record-keeping, ensuring compliance with financial regulations and reporting requirements.',
-    icon: '/industries/regulatory.svg',
+    icon: '/Industries/regulatory.svg',
   },
 ]
 
@@ -46,7 +46,7 @@ export default function Insurance() {
           <Image
             height={604}
             width={424}
-            src={'/industries/insurance.svg'}
+            src={'/Industries/insurance.svg'}
             alt={'insurance'}
             className='mx-auto w-full'
           />

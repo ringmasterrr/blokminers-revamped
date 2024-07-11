@@ -5,25 +5,25 @@ const section = [
     title: 'Supply Chain Transparency',
     description:
       'Implement blockchain to create an immutable ledger of all transactions and movements across your supply chain, offering unparalleled transparency and traceability from raw materials to finished products.',
-    icon: '/industries/manufacturing1.png',
+    icon: '/Industries/manufacturing1.png',
   },
   {
     title: 'Smart Contracts for Automation',
     description:
       'Utilize smart contracts to automate contractual obligations and transactions, reducing delays, eliminating manual errors, and cutting operational costs.',
-    icon: '/industries/manufacturing2.png',
+    icon: '/Industries/manufacturing2.png',
   },
   {
     title: 'Counterfeit Protection',
     description:
       'Secure your products and brand reputation by leveraging blockchain’s tamper-proof nature, ensuring the authenticity of your goods through every phase of the supply chain.',
-    icon: '/industries/manufacturing3.png',
+    icon: '/Industries/manufacturing3.png',
   },
   {
     title: 'Decentralized Operations',
     description:
       'Facilitate direct property buying, selling, and leasing through decentralized platforms, removing barriers and reducing costs.',
-    icon: '/industries/manufacturing4.png',
+    icon: '/Industries/manufacturing4.png',
   },
 ]
 

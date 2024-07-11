@@ -5,25 +5,25 @@ const section = [
     title: 'Blockchain for Enhanced Transparency and Security',
     description:
       'Convert real estate assets into digital tokens, making property investment more accessible, liquid, and divisible.',
-    icon: '/industries/travel1.svg',
+    icon: '/Industries/travel1.svg',
   },
   {
     title: 'AI-Powered Optimization',
     description:
       'Utilize self-executing contracts with the terms of the agreement directly written into code, reducing the need for intermediaries and accelerating transaction processes.',
-    icon: '/industries/travel2.svg',
+    icon: '/Industries/travel2.svg',
   },
   {
     title: 'Digital Transformation for Seamless Operations',
     description:
       'Ensure secure, transparent, and tamper-proof record-keeping for property titles, deeds, and transactions, enhancing trust and simplifying verification processes.',
-    icon: '/industries/travel3.svg',
+    icon: '/Industries/travel3.svg',
   },
   {
     title: 'Data-Driven Insights for Strategic Decision-Making',
     description:
       'Facilitate direct property buying, selling, and leasing through decentralized platforms, removing barriers and reducing costs.',
-    icon: '/industries/travel4.svg',
+    icon: '/Industries/travel4.svg',
   },
 ]
 

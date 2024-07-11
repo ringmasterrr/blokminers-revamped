@@ -5,25 +5,25 @@ const section = [
     title: 'Asset Tokenization',
     description:
       'Convert real estate assets into digital tokens, making property investment more accessible, liquid, and divisible.',
-    icon: '/industries/asset.png',
+    icon: '/Industries/asset.png',
   },
   {
     title: 'Smart Contracts for Transactions',
     description:
       'Utilize self-executing contracts with the terms of the agreement directly written into code, reducing the need for intermediaries and accelerating transaction processes.',
-    icon: '/industries/smart.png',
+    icon: '/Industries/smart.png',
   },
   {
     title: 'Immutable Property Records',
     description:
       'Ensure secure, transparent, and tamper-proof record-keeping for property titles, deeds, and transactions, enhancing trust and simplifying verification processes.',
-    icon: '/industries/records.svg',
+    icon: '/Industries/records.svg',
   },
   {
     title: 'Decentralized Marketplaces',
     description:
       'Facilitate direct property buying, selling, and leasing through decentralized platforms, removing barriers and reducing costs.',
-    icon: '/industries/decentralized.svg',
+    icon: '/Industries/decentralized.svg',
   },
 ]
 

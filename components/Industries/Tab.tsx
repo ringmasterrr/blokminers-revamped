@@ -8,38 +8,38 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
     {
       category: 'Finance',
       path: 'finance',
-      logo: '/industries/financelogo.svg',
+      logo: '/Industries/financelogo.svg',
     },
     {
       category: 'Healthcare',
       path: 'healthcare',
-      logo: '/industries/healthcarelogo.svg',
+      logo: '/Industries/healthcarelogo.svg',
     },
     {
       category: 'Insurance',
       path: 'insurance',
-      logo: '/industries/insurancelogo.svg',
+      logo: '/Industries/insurancelogo.svg',
     },
     {
       category: 'Education',
       path: 'education',
-      logo: '/industries/educationlogo.svg',
+      logo: '/Industries/educationlogo.svg',
     },
     {
       category: 'Real Estate',
       path: 'realestate',
-      logo: '/industries/realestatelogo.svg',
+      logo: '/Industries/realestatelogo.svg',
     },
     {
       category: 'Travel & Logistics',
       path: 'travel',
-      logo: '/industries/travellogo.svg',
+      logo: '/Industries/travellogo.svg',
     },
-    { category: 'Retail', path: 'retail', logo: '/industries/retaillogo.svg' },
+    { category: 'Retail', path: 'retail', logo: '/Industries/retaillogo.svg' },
     {
       category: 'Manufacturing',
       path: 'manufacturing',
-      logo: '/industries/manufacturinglogo.svg',
+      logo: '/Industries/manufacturinglogo.svg',
     },
   ]
 

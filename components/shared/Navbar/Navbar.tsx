@@ -9,7 +9,7 @@ import {
   MenubarTrigger,
 } from '@/components/ui/menubar'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { NavbarDrawer } from './NavbarDrawer'
 import { industries, services } from '@/lib/items'
@@ -132,10 +132,14 @@ export function Navbar() {
           </Link>
         </div>
         <div className='hidden xl:block'>
-          <Button onClick={()=> router.push('/contact-us')}>Get Started</Button>
+          <Button onClick={() => router.push('/contact-us')}>
+            Get Started
+          </Button>
         </div>
         <div className='xl:hidden'>
-          <NavbarDrawer />
+          <Suspense>
+            <NavbarDrawer />
+          </Suspense>
         </div>
       </div>
     </nav>

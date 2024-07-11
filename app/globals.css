@@ -292,6 +292,13 @@ background: url('/why/graph.svg');
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.ellipsis-multiline-blog-portfolio {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* Add this to your global CSS file */
 .glassy-bg {

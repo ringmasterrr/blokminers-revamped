@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { FaChevronDown } from 'react-icons/fa6'
+import { useRouter } from 'next/navigation'
 import {
   Menubar,
   MenubarContent,
@@ -29,6 +30,8 @@ export function Navbar() {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [scrolled])
+
+  const router = useRouter()
 
   return (
     <nav
@@ -129,7 +132,7 @@ export function Navbar() {
           </Link>
         </div>
         <div className='hidden xl:block'>
-          <Button>Get Started</Button>
+          <Button onClick={()=> router.push('/contact-us')}>Get Started</Button>
         </div>
         <div className='xl:hidden'>
           <NavbarDrawer />

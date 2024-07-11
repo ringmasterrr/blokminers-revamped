@@ -22,7 +22,7 @@ const CaseStudiesCards = ({ cases, search }: ICasesPage) => {
     <div className='flex flex-col items-center justify-center p-4'>
       <FilterCaseStudy />
 
-      <div className='mb-32 mt-12 grid grid-cols-3 gap-6 sm:grid-cols-2'>
+      <div className='mb-32 mt-12 grid grid-cols-1 gap-6 2md:grid-cols-3'>
         {cases.map((item: any) => (
           <Link
             href={`/case-study/${item._id}`}

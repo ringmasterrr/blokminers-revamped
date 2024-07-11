@@ -22,10 +22,10 @@ export function CaseStudiesSection({
 }: ICasesPage) {
   return (
     <div className='relative'>
-      <div className='bg-grid my-10 flex h-screen items-start justify-between pt-20'>
-        <div className='flex w-1/2 flex-col justify-between gap-28 pt-10'>
-          <div className='flex flex-col gap-6'>
-            <div className='text-6xl font-extrabold text-theme-dark'>
+      <div className='bg-grid my-10 flex flex-col items-center justify-between pt-20 text-center 2md:flex-row 2md:items-start 2md:text-left'>
+        <div className='flex flex-col items-center justify-between gap-12 pt-10 2md:w-1/2 2md:items-start 2md:gap-28'>
+          <div className='flex flex-col items-center gap-6 2md:items-start'>
+            <div className='text-4xl font-extrabold text-theme-dark 2md:text-5xl lg:text-6xl'>
               Our Successful Cases
             </div>
             <div className='max-w-[520px] text-lg font-medium text-theme-dark'>
@@ -33,7 +33,7 @@ export function CaseStudiesSection({
               facing comparable challenges and analyze their incremental
               execution processes.
             </div>
-            <div className='flex gap-4'>
+            <div className='flex w-fit gap-4'>
               <Button>Talk To Our Experts</Button>
             </div>
           </div>

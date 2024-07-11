@@ -63,14 +63,14 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
                 className={`flex items-center ${i ? 'justify-end' : 'flex-row'} rounded-md border text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex text-xs items-center gap-2 rounded-md p-3 ${
+                  className={`flex items-center gap-2 rounded-md p-3 text-xs ${
                     tab === item.path
                       ? 'bg-white text-theme-dark'
                       : 'opacity-50'
                   }`}
                 >
                   <Image src={item.logo} alt='logo' height={20} width={20} />
-                  <div >{item.category}</div>
+                  <div>{item.category}</div>
                 </div>
               </Link>
             </>

@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/Homepage/Testimonials/Testimonials
 import Cta from '@/components/Homepage/CTA/Cta'
 import { StickyScrollRevealDemo } from '@/components/Homepage/Processes/OurProcess'
 import { ParticleComponent } from '@/lib/particles'
+import { OurProcess } from '@/components/Homepage/Process/OurProcess'
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
       {/* <Page>
         <WhySection />
       </Page> */}
-
+      <OurProcess />
       {/* <StickyScrollRevealDemo /> */}
       <TestimonialsSection />
       <Page>

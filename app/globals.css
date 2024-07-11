@@ -293,3 +293,8 @@ background: url('/why/graph.svg');
   text-overflow: ellipsis;
 }
 
+/* Add this to your global CSS file */
+.glassy-bg {
+  @apply bg-gradient-to-r;
+  background-image: linear-gradient(122.99deg, rgba(0, 109, 164, 0.16) -2.34%, rgba(0, 40, 60, 0.16) 89.88%);
+}

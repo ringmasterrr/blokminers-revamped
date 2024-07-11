@@ -122,76 +122,90 @@ const aimlData = [
   {
     image: '/services/aiml/image1.svg',
     title: 'AI Development',
-    content: 'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.'
+    content:
+      'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.',
   },
   {
     image: '/services/aiml/image2.svg',
     title: 'Large Language Model Dev',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
   {
     image: '/services/aiml/image3.svg',
     title: 'Enterprise AI Chatbot Dev',
-    content: 'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.'
+    content:
+      'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.',
   },
   {
     image: '/services/aiml/image4.svg',
     title: 'Enterprise AI Devlopment',
-    content: 'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.'
+    content:
+      'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.',
   },
   {
     image: '/services/aiml/image5.svg',
     title: 'ML Model Engineering',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
   {
     image: '/services/aiml/image6.svg',
     title: 'Machine Learning Devlopment',
-    content: 'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.'
+    content:
+      'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.',
   },
   {
     image: '/services/aiml/image7.svg',
     title: 'Embeddings as a Service',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
 ]
 const blockchainDevData = [
   {
     image: '/services/blockchain/image1.svg',
     title: 'AI/ML Blockchain Development Service',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
 ]
 const consultingData = [
   {
     image: '/services/consulting/image1.svg',
     title: 'Supply Chain Service',
-    content: 'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.'
+    content:
+      'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.',
   },
   {
     image: '/services/consulting/image2.svg',
     title: 'Financial Transformation',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
   {
     image: '/services/consulting/image3.svg',
     title: 'Technical Stack & Architecture',
-    content: 'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.'
+    content:
+      'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.',
   },
   {
     image: '/services/consulting/image4.svg',
     title: 'Monetization Strategy',
-    content: 'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.'
+    content:
+      'Transform your business landscape with our expert blockchain development services at BlokMiners. Our seasoned team of blockchain developers specializes in delivering secure, transparent, and customized solutions tailored to your unique needs.',
   },
   {
     image: '/services/consulting/image5.svg',
     title: 'Marketing & Distribution Strategy',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
   {
     image: '/services/consulting/image6.svg',
     title: 'Product Roadmapping',
-    content: 'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.'
+    content:
+      'BlokMiners is at the forefront of blockchain innovation, specializing in the development of both Layer 1 and Layer 2 blockchain solutions. With a deep understanding of the intricacies of distributed ledger technology, BlokMiners crafts groundbreaking Layer 1 blockchains that serve as the foundational infrastructure for various applications. These robust and scalable networks provide the backbone for secure and decentralized transactions, revolutionizing industries ranging from finance to supply chain management.',
   },
 ]
 
@@ -199,23 +213,25 @@ const dataAnalyticsData = [
   {
     image: '/services/dataAnalytics/image1.svg',
     title: 'Data & Analytics',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
 ]
 const cloudData = [
   {
     image: '/services/cloud/image1.svg',
     title: 'Cloud Computing',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
 ]
-
 
 const cybersecurityData = [
   {
     image: '/services/cybersecurity/image1.svg',
     title: 'Cybersecurity',
-    content: 'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.'
+    content:
+      'BlokMiners is a pioneering development company specializing in creating cutting-edge blockchain frameworks. With a strong focus on innovation and reliability, they craft versatile frameworks that empower businesses to harness the potential of distributed ledger technology. Leveraging their expertise, BlokMiners delivers tailored solutions that address various industry needs, from supply chain management to financial services.',
   },
 ]
 

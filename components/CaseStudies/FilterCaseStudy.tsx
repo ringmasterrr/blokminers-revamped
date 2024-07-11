@@ -25,11 +25,11 @@ export default function FilterCaseStudy() {
 
   return (
     <>
-      <div className='mb-6 flex flex-wrap gap-3'>
+      <div className='mb-6 flex flex-wrap items-center justify-center gap-3'>
         {categories.map((category) => (
           <button
             key={category}
-            className={`rounded-full px-4 py-2 text-lg font-medium ${selectedCategory === category ? 'border-2 border-theme-dark bg-theme-dark text-white' : 'border-2 border-theme-dark bg-transparent text-theme-dark'} transition hover:bg-theme-dark hover:text-white`}
+            className={`rounded-full px-2 py-2 text-base font-medium 2md:px-4 2md:text-lg ${selectedCategory === category ? 'border-2 border-theme-dark bg-theme-dark text-white' : 'border-2 border-theme-dark bg-transparent text-theme-dark'} transition hover:bg-theme-dark hover:text-white`}
             onClick={() => handleclick(category)}
           >
             {category}

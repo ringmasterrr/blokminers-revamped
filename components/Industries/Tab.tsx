@@ -51,34 +51,35 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
   // }
 
   return (
-    <div className='py-4'>
-      <div className='container mx-auto px-4'>
-        <div className='mb-12 flex items-center justify-center text-center'>
-          <div className='mb-4 flex w-fit justify-center gap-2 space-x-4 rounded-md bg-[#EBEFEF] p-2'>
-            {industries.map((industries, index) => (
+    <div className='mx-auto my-16 w-fit px-4'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 xl:flex xl:gap-4'>
+        {industries.map((item, index) => {
+          let i = false
+          if (index % 2 === 0) {
+            i = true
+          }
+          return (
+            <>
               <Link
-                href={`?tab=${industries.path}`}
+                href={`?tab=${item.path}`}
                 scroll={false}
                 key={index}
-                className={`rounded-md border px-3 py-2 text-gray-800 ${
-                  tab === industries.path
-                    ? 'bg-white text-theme-dark'
-                    : 'opacity-50'
-                }`}
+                className={`flex items-center ${i ? 'justify-end' : 'flex-row'} rounded-md border text-gray-800 xl:justify-center`}
               >
-                <div className='flex items-center justify-center gap-2'>
-                  <Image
-                    src={industries.logo}
-                    alt='logo'
-                    height={20}
-                    width={20}
-                  />
-                  {industries.category}
+                <div
+                  className={`flex items-center gap-2 rounded-md p-3 text-xs ${
+                    tab === item.path
+                      ? 'bg-white text-theme-dark'
+                      : 'opacity-50'
+                  }`}
+                >
+                  <Image src={item.logo} alt='logo' height={20} width={20} />
+                  <div>{item.category}</div>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
+            </>
+          )
+        })}
       </div>
     </div>
     // <div className='py-4'>

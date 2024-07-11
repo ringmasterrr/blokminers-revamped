@@ -19,7 +19,7 @@ export default function IndustriesPage({
 }) {
   const tab = searchParams.tab
   return (
-    <Page className='justify-between px-8'>
+    <>
       <IndustriesSection tab={searchParams.tab} />
       <Tab tab={tab ?? 'finance'} />
       {tab === undefined && <Finance />}
@@ -31,6 +31,6 @@ export default function IndustriesPage({
       {tab === 'travel' && <Travel />}
       {tab === 'retail' && <Retail />}
       {tab === 'manufacturing' && <Manufacturing />}
-    </Page>
+    </>
   )
 }

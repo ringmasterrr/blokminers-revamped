@@ -1,13 +1,19 @@
 import axios from 'axios'
+import BindService from './bindService'
 
-const http = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/portfolio`,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+export class PortfolioService extends BindService {
+  private http
 
-
-export const getAllPortfolios = async () => {
-  return (await http.get('/getAll')).data
+  constructor() {
+    super()
+    this.http = axios.create({
+      baseURL: `${process.env.NEXT_PUBLIC_API_URL}/portfolio`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  }
+  public getAllPortfolios = async () => {
+    return (await this.http.get('/getAll')).data
+  }
 }

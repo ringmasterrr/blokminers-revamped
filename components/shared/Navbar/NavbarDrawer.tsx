@@ -19,6 +19,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import { industries, services } from '@/lib/items'
+import { Button } from '@/components/ui/button'
 
 export function NavbarDrawer() {
   const searchParams = useSearchParams()
@@ -124,6 +125,7 @@ export function NavbarDrawer() {
           >
             About Us
           </Link>
+          <Button className='w-fit m-4 rounded-lg '>Get Started</Button>
         </div>
       </DrawerContent>
     </Drawer>

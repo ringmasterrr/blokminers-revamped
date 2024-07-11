@@ -63,7 +63,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
                     <div className='flex items-center gap-2'>
                       <div className='h-12 w-12'>
                         <Image
-                          src={'/Corousel/zeeve.svg'}
+                          src={'/Corousel/Zeeve.svg'}
                           width={100}
                           height={80}
                           alt='zeeve'

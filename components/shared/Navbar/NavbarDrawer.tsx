@@ -39,14 +39,14 @@ export function NavbarDrawer() {
         </button>
       </DrawerTrigger>
       <DrawerContent className='z-[150] h-full max-w-[350px] bg-white'>
-        <div className='flex h-full flex-col py-4'>
+        <div className='flex h-full flex-col py-4 overflow-y-auto scrollbar-hide'>
           <div className='flex items-center justify-between px-4'>
             <Link href={'/'}>
               <Image
                 src={'/Images/Navbar/logo.svg'}
                 width={100}
                 height={100}
-                className='w-32 cursor-pointer'
+                className='w-36 cursor-pointer'
                 alt='logo'
               />
             </Link>
@@ -56,9 +56,9 @@ export function NavbarDrawer() {
               </div>
             </DrawerClose>
           </div>
-          <Accordion type='single' collapsible className='mt-4 w-full'>
+          <Accordion type='single' collapsible className='mt-8 w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='px-4 py-3 text-theme-dark'>
+              <AccordionTrigger className='p-4 text-lg text-theme-dark'>
                 Serivices
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -67,9 +67,9 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-6 ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-6 text-lg ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
-                    <div className='flex gap-4'>
+                    <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
                       {item.category}
                     </div>
@@ -80,7 +80,7 @@ export function NavbarDrawer() {
           </Accordion>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='px-4 py-3 text-theme-dark'>
+              <AccordionTrigger className='p-4 text-lg text-theme-dark'>
                 Industries
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -89,9 +89,9 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-6 ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 text-lg pl-6 ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
-                    <div className='flex gap-4'>
+                    <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
                       {item.category}
                     </div>
@@ -101,25 +101,25 @@ export function NavbarDrawer() {
             </AccordionItem>
           </Accordion>
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
+            className={`p-4 text-lg text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
             href={'/case-study'}
           >
             Case Studies
           </Link>
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
+            className={`p-4 text-lg text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
             href={'/blog'}
           >
             Blog
           </Link>
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
+            className={`p-4 text-lg text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
             href={'/portfolio'}
           >
             Portfolio
           </Link>
           <Link
-            className={`px-4 py-3 text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
+            className={`p-4 text-lg text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
             href={'/'}
           >
             About Us

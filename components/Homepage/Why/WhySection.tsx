@@ -3,8 +3,9 @@ import { BlockContent } from './BlockContent'
 
 export default function WhySection() {
   return (
-    <div className='z-[10000000] my-24'>
+    <div className='mx-auto max-w-8xl bg-theme-dark py-28'>
       <Heading
+        white
         heading={'Why BlokMiners'}
         message={
           'Opt for BlokMiners for pioneering blockchain solutions driving transparent and secure digital transformations.'

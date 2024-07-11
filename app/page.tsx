@@ -20,9 +20,9 @@ export default function Home() {
         <ExploreSection />
       </Page>
       <VerticalOfferings />
-      {/* <Page>
-        <WhySection />
-      </Page> */}
+
+      <WhySection />
+
       <OurProcess />
       {/* <StickyScrollRevealDemo /> */}
       <TestimonialsSection />

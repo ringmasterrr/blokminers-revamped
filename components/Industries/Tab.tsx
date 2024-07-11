@@ -8,38 +8,38 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
     {
       category: 'Finance',
       path: 'finance',
-      logo: '/Industries/financelogo.svg',
+      logo: '/industries/financelogo.svg',
     },
     {
       category: 'Healthcare',
       path: 'healthcare',
-      logo: '/Industries/healthcarelogo.svg',
+      logo: '/industries/healthcarelogo.svg',
     },
     {
       category: 'Insurance',
       path: 'insurance',
-      logo: '/Industries/insurancelogo.svg',
+      logo: '/industries/insurancelogo.svg',
     },
     {
       category: 'Education',
       path: 'education',
-      logo: '/Industries/educationlogo.svg',
+      logo: '/industries/educationlogo.svg',
     },
     {
       category: 'Real Estate',
       path: 'realestate',
-      logo: '/Industries/realestatelogo.svg',
+      logo: '/industries/realestatelogo.svg',
     },
     {
       category: 'Travel & Logistics',
       path: 'travel',
-      logo: '/Industries/travellogo.svg',
+      logo: '/industries/travellogo.svg',
     },
     { category: 'Retail', path: 'retail', logo: '/industries/retaillogo.svg' },
     {
       category: 'Manufacturing',
       path: 'manufacturing',
-      logo: '/Industries/manufacturinglogo.svg',
+      logo: '/industries/manufacturinglogo.svg',
     },
   ]
 
@@ -52,7 +52,7 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 xl:flex 2md:gap-4'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 2md:gap-4 xl:flex'>
         {industries.map((item, index) => {
           return (
             <>
@@ -63,7 +63,7 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
                 className={`flex items-center rounded-md border text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex items-center w-full gap-2 rounded-md p-3 text-xs ${
+                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs ${
                     tab === item.path
                       ? 'bg-white text-theme-dark'
                       : 'opacity-50'

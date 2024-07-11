@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import React from 'react'
+import Link from 'next/link'
 
 const Cta = () => {
   return (
@@ -19,9 +20,9 @@ const Cta = () => {
               and they will help you out any time.
             </p>
             <div className='flex justify-center gap-4 2md:justify-start'>
-              <button className='rounded-md bg-white px-4 py-2 text-xs font-bold text-[#00283C] 2md:px-6'>
+              <Link href={'/contact-us'} className='rounded-md bg-white px-4 py-2 text-xs font-bold text-[#00283C] 2md:px-6'>
                 Talk To An Expert
-              </button>
+              </Link>
               <button className='rounded-md border bg-transparent px-4 py-2 text-xs font-bold text-white 2md:px-6'>
                 Get Started
               </button>

@@ -48,22 +48,22 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 xl:flex xl:gap-4'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 2md:flex xl:gap-4'>
         {services.map((item, index) => {
-          let i = false
-          if (index % 2 === 0) {
-            i = true
-          }
+          // let i = false
+          // if (index % 2 === 0) {
+          //   i = true
+          // }
           return (
             <>
               <Link
                 href={`?tab=${item.path}`}
                 scroll={false}
                 key={index}
-                className={`flex items-center ${i ? 'justify-end' : 'flex-row'} rounded-md border text-gray-800 xl:justify-center`}
+                className={`flex items-center  rounded-md border text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex items-center gap-2 rounded-md p-3 text-xs ${
+                  className={`flex items-center w-full gap-2 rounded-md p-3 text-xs ${
                     tab === item.path
                       ? 'bg-white text-theme-dark'
                       : 'opacity-50'

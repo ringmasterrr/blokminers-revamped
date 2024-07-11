@@ -51,14 +51,17 @@ export const ProcessCards = () => {
   return (
     <>
       {content.map((item, index) => (
-        <div key={index} className='flex items-center justify-center gap-8'>
+        <div
+          key={index}
+          className='flex flex-col items-center justify-center gap-8 2md:flex-row'
+        >
           {index % 2 === 0 ? (
-            <>
-              <div className='glassy-bg flex h-[336px] w-[550px] translate-x-20 flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg'>
+            <div className='flex flex-col-reverse items-center justify-center 2md:flex-row'>
+              <div className='glassy-bg flex h-[21rem] w-[34.4rem] -translate-y-5 flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg 2md:-translate-y-0 2md:translate-x-20 translate-x-5'>
                 <div className='text-3xl font-bold'>{item.title}</div>
                 <div>{item.description}</div>
               </div>
-              <div className='glassy-bg py-18 flex h-[383px] w-[580px] items-center justify-center rounded-2xl p-8'>
+              <div className='glassy-bg py-18 flex h-[24rem] w-[36rem] items-center justify-center rounded-2xl p-8'>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -66,10 +69,10 @@ export const ProcessCards = () => {
                   height={300}
                 />
               </div>
-            </>
+            </div>
           ) : (
-            <>
-              <div className='glassy-bg py-18 flex h-[383px] w-[580px] translate-x-20 items-center justify-center rounded-2xl p-8'>
+            <div className='flex flex-col items-center justify-center 2md:flex-row'>
+              <div className='glassy-bg py-18 flex h-[24rem] w-[36rem] translate-y-5 items-center justify-center rounded-2xl p-8 2md:translate-x-20 2md:translate-y-0'>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -77,11 +80,11 @@ export const ProcessCards = () => {
                   height={300}
                 />
               </div>
-              <div className='glassy-bg flex h-[336px] w-[550px] flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg'>
+              <div className='glassy-bg flex h-[21rem] w-[34.4rem] flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg'>
                 <div className='text-3xl font-bold'>{item.title}</div>
                 <div>{item.description}</div>
               </div>
-            </>
+            </div>
           )}
         </div>
       ))}

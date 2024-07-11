@@ -13,7 +13,7 @@ const CardList = ({ data }: { data: any }) => {
           >
             <div>
               <h2 className='mb-2 text-2xl font-semibold'>{card.title}</h2>
-              <p className='mb-6 text-sm text-[#A3A3A3]'>{card.description}</p>
+              <p className='mb-6 text-sm text-[#A3A3A3] ellipsis-multiline-blog-portfolio'>{card.description}</p>
             </div>
             <Image
               src={card.image}

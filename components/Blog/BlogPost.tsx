@@ -68,10 +68,10 @@ export default function BlogPost({ blog }: IBlogProp) {
                 width={1000}
                 className='h-8 w-8 rounded-full object-cover'
               />
-              <span className='text-lg text-theme-dark'>{blog.authorName}</span>
+              <span className='2md:text-lg text-sm text-theme-dark'>{blog.authorName}</span>
             </div>
             <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
-              <span className='text-lg text-theme-dark'>
+              <span className='2md:text-lg text-sm text-theme-dark'>
                 {format(parseISO(blog.createdAt), 'MMMM do, yyyy ')}
               </span>
             </div>

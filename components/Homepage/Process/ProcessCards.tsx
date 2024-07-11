@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const content = [
   {
@@ -20,7 +23,6 @@ const content = [
       'We lay out a detailed conceptual workflow by collaborating closely with you to see how your idea becomes a product. We’ll determine the relevance of Blockchain to your project, the best Blockchain model to deploy, gain clarity on the specifics of your idea and work with it.',
     image: '/OurProcess/design.svg',
   },
-
   {
     title: 'Build',
     description:
@@ -47,18 +49,37 @@ const content = [
   },
 ]
 
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+}
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+}
+
 export const ProcessCards = () => {
   return (
     <>
       {content.map((item, index) => (
-        <div key={index} className='flex items-center justify-center gap-8'>
+        <div
+          key={index}
+          className='flex flex-col items-center justify-center gap-8 2md:flex-row'
+        >
           {index % 2 === 0 ? (
-            <>
-              <div className='glassy-bg flex h-[336px] w-[550px] translate-x-20 flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg'>
+            <motion.div
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              variants={fadeInLeft}
+              className='flex flex-col-reverse items-center justify-center 2md:flex-row'
+            >
+              <div className='glassy-bg flex h-[21rem] w-[20rem] -translate-y-5 translate-x-5 flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg 2md:w-[34.4rem] 2md:-translate-y-0 2md:translate-x-20'>
                 <div className='text-3xl font-bold'>{item.title}</div>
                 <div>{item.description}</div>
               </div>
-              <div className='glassy-bg py-18 flex h-[383px] w-[580px] items-center justify-center rounded-2xl p-8'>
+              <div className='glassy-bg py-18 flex h-[24rem] w-[20rem] items-center justify-center rounded-2xl p-8 2md:w-[36rem]'>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -66,10 +87,16 @@ export const ProcessCards = () => {
                   height={300}
                 />
               </div>
-            </>
+            </motion.div>
           ) : (
-            <>
-              <div className='glassy-bg py-18 flex h-[383px] w-[580px] translate-x-20 items-center justify-center rounded-2xl p-8'>
+            <motion.div
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              variants={fadeInRight}
+              className='flex flex-col items-center justify-center 2md:flex-row'
+            >
+              <div className='glassy-bg py-18 flex h-[24rem] w-[20rem] translate-x-5 translate-y-5 items-center justify-center rounded-2xl p-8 2md:w-[36rem] 2md:translate-x-20 2md:translate-y-0'>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -77,11 +104,11 @@ export const ProcessCards = () => {
                   height={300}
                 />
               </div>
-              <div className='glassy-bg flex h-[336px] w-[550px] flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg'>
+              <div className='glassy-bg flex h-[21rem] w-[20rem] flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg 2md:w-[36rem]'>
                 <div className='text-3xl font-bold'>{item.title}</div>
                 <div>{item.description}</div>
               </div>
-            </>
+            </motion.div>
           )}
         </div>
       ))}

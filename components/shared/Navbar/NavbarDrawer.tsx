@@ -29,7 +29,7 @@ export function NavbarDrawer() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const finalPath = `${pathname}?tab=${tab}`
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     console.log(pathname)
@@ -62,7 +62,7 @@ export function NavbarDrawer() {
           </div>
           <Accordion type='single' collapsible className='mt-8 w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='px-6 mt-2 py-4 text-lg font-bold text-theme-dark'>
+              <AccordionTrigger className='mt-2 px-6 py-4 text-lg font-bold text-theme-dark'>
                 Serivices
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -71,7 +71,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-10 text-lg font-semibold ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -84,7 +84,7 @@ export function NavbarDrawer() {
           </Accordion>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='px-6 mt-2 py-4 text-lg font-bold text-theme-dark'>
+              <AccordionTrigger className='mt-2 px-6 py-4 text-lg font-bold text-theme-dark'>
                 Industries
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -93,7 +93,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-10 text-lg font-semibold ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -105,30 +105,35 @@ export function NavbarDrawer() {
             </AccordionItem>
           </Accordion>
           <Link
-            className={`px-6 py-4 mt-2 text-lg font-bold text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
             href={'/case-study'}
           >
             Case Studies
           </Link>
           <Link
-            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
             href={'/blog'}
           >
             Blog
           </Link>
           <Link
-            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
             href={'/portfolio'}
           >
             Portfolio
           </Link>
           <Link
-            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
             href={'/'}
           >
             About Us
           </Link>
-          <Button onClick={() => router.push('/contact-us')} className='m-4 my-6 w-fit'>Get Started</Button>
+          <Button
+            onClick={() => router.push('/contact-us')}
+            className='m-4 my-6 w-fit'
+          >
+            Get Started
+          </Button>
         </div>
       </DrawerContent>
     </Drawer>

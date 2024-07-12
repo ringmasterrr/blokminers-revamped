@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
 import { Page } from '../shared/Page'
+import Link from 'next/link'
 
 const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
   return (
@@ -16,11 +17,10 @@ const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
             </div>
             <div className='max-w-[520px] text-center text-lg font-medium text-theme-dark 2md:text-start'>
               This is the page about the
-              <br className='hidden 2md:block' /> Industries section of Blokminers
+              <br className='hidden 2md:block' /> Industries section of
+              Blokminers
             </div>
-            <div className='flex gap-4'>
-              <Button>Get Started</Button>
-            </div>
+            <Link className='py-2.5 px-6 bg-theme-dark text-white rounded-full font-medium' href={'/contact-us'}>Get Started</Link>
           </div>
           <div className='w-[300px] 2md:w-[45%]'>
             <Image

@@ -9,7 +9,7 @@ import Image from 'next/image'
 const contact = new ContactService()
 
 function ContactForm() {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState<any>('')
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -33,6 +33,14 @@ function ContactForm() {
       console.log(response)
       if (response.success === true) {
         setMessage('Thank you! We will get back to you soon!')
+        setData({
+          name: '',
+          email: '',
+          message: '',
+          number: '',
+          category: '',
+        })
+        setValue('')
         setTimeout(() => {
           setMessage(null)
         }, 5000)
@@ -115,6 +123,8 @@ function ContactForm() {
             value={value}
             onChange={setValue}
             className='w-full border-2 bg-theme-light bg-opacity-5 p-4 text-base placeholder-[#6A6A6A] outline-2 focus:outline'
+            country='IN'
+            defaultCountry='IN'
           />
           <select
             name='category'
@@ -145,10 +155,16 @@ function ContactForm() {
           <Button type='submit' className='mt-4 rounded-lg text-lg'>
             Submit
           </Button>
-          {error && <p className='w-full text-center text-red-500'>{error}</p>}
-          {message && (
-            <p className='w-full text-center text-green-600'>{message}</p>
-          )}
+          <div className='h-4'> 
+            {error && (
+              <p className='w-full text-center text-red-500'>{error}</p>
+            )}
+            {message && (
+              <p className='w-full text-center font-semibold text-green-600'>
+                {message}
+              </p>
+            )}
+          </div>
         </form>
       </div>
     </div>

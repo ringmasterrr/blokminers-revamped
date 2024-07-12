@@ -12,6 +12,7 @@ import CyberSecurity from './CyberSecurity'
 import Cloud from './Cloud'
 import { Page } from '../shared/Page'
 import { serviceData } from '@/lib/services'
+import Link from 'next/link'
 
 function ServicesSection({ tab }: { tab: string | undefined }) {
   return (
@@ -27,9 +28,7 @@ function ServicesSection({ tab }: { tab: string | undefined }) {
               This is the page about the
               <br className='hidden 2md:block' /> Services section of Blokminers
             </div>
-            <div className='flex gap-4'>
-              <Button>Get Started</Button>
-            </div>
+            <Link className='py-2.5 px-6 bg-theme-dark text-white rounded-full font-medium' href={'/contact-us'}>Get Started</Link>
           </div>
           <div className='w-[300px] 2md:w-[45%]'>
             <Image

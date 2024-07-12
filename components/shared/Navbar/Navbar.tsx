@@ -124,12 +124,12 @@ export function Navbar() {
           >
             Portfolio
           </Link>
-          <Link
+          {/* <Link
             href={'/about-us'}
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'
           >
             About Us
-          </Link>
+          </Link> */}
         </div>
         <div className='hidden xl:block'>
           <Button onClick={() => router.push('/contact-us')}>

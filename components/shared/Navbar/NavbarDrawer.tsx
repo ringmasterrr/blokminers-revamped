@@ -20,6 +20,8 @@ import { usePathname } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import { industries, services } from '@/lib/items'
 import { Button } from '@/components/ui/button'
+import { RxCross2 } from 'react-icons/rx'
+import { useRouter } from 'next/navigation'
 
 export function NavbarDrawer() {
   const searchParams = useSearchParams()
@@ -27,39 +29,40 @@ export function NavbarDrawer() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const finalPath = `${pathname}?tab=${tab}`
+  const router = useRouter();
 
   useEffect(() => {
     console.log(pathname)
     setOpen(false)
   }, [pathname, tab])
   return (
-    <Drawer direction='left' open={open} onOpenChange={setOpen}>
+    <Drawer direction='top' open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <button className='h-8 w-8 text-theme-dark'>
           <RiMenu4Line className='h-full w-full stroke-1' />
         </button>
       </DrawerTrigger>
-      <DrawerContent className='z-[150] h-full max-w-[350px] bg-white'>
-        <div className='flex h-full flex-col py-4 overflow-y-auto scrollbar-hide'>
-          <div className='flex items-center justify-between px-4'>
+      <DrawerContent className='z-[150] h-full w-full bg-white'>
+        <div className='flex h-full flex-col overflow-y-auto py-4 scrollbar-hide'>
+          <div className='flex items-center justify-between px-6'>
             <Link href={'/'}>
               <Image
                 src={'/Images/Navbar/logo.svg'}
                 width={100}
                 height={100}
-                className='w-36 cursor-pointer'
+                className='w-40 cursor-pointer'
                 alt='logo'
               />
             </Link>
             <DrawerClose>
-              <div className='text-theme-dark'>
-                <X />
+              <div className='h-8 w-8 font-extrabold text-theme-dark'>
+                <RxCross2 className='h-full w-full' />
               </div>
             </DrawerClose>
           </div>
           <Accordion type='single' collapsible className='mt-8 w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='p-4 text-lg text-theme-dark'>
+              <AccordionTrigger className='px-6 mt-2 py-4 text-lg font-bold text-theme-dark'>
                 Serivices
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -68,7 +71,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-6 text-lg ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg font-semibold ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -81,7 +84,7 @@ export function NavbarDrawer() {
           </Accordion>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='p-4 text-lg text-theme-dark'>
+              <AccordionTrigger className='px-6 mt-2 py-4 text-lg font-bold text-theme-dark'>
                 Industries
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
@@ -90,7 +93,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 text-lg pl-6 ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg font-semibold ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -102,30 +105,30 @@ export function NavbarDrawer() {
             </AccordionItem>
           </Accordion>
           <Link
-            className={`p-4 text-lg text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-6 py-4 mt-2 text-lg font-bold text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
             href={'/case-study'}
           >
             Case Studies
           </Link>
           <Link
-            className={`p-4 text-lg text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
             href={'/blog'}
           >
             Blog
           </Link>
           <Link
-            className={`p-4 text-lg text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
             href={'/portfolio'}
           >
             Portfolio
           </Link>
           <Link
-            className={`p-4 text-lg text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
+            className={`px-6 mt-2 py-4 text-lg font-bold text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
             href={'/'}
           >
             About Us
           </Link>
-          <Button className='w-fit m-4 rounded-lg '>Get Started</Button>
+          <Button onClick={() => router.push('/contact-us')} className='m-4 my-6 w-fit'>Get Started</Button>
         </div>
       </DrawerContent>
     </Drawer>

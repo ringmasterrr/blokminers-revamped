@@ -10,20 +10,36 @@ export interface IBlogProp {
 }
 
 export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
+  const [open, setOpen] = useState(false)
   const sectionRefs = useRef<HTMLDivElement[]>([])
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const navbarHeight = 80
 
-  const scrollToSection = (index: number) => {
-    if (sectionRefs.current[index]) {
-      const element = sectionRefs.current[index]
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY
-      const offsetPosition = elementPosition - navbarHeight
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
+  const scrollToSection = (index: number, value: boolean) => {
+    if (value === true) {
+      if (sectionRefs.current[index]) {
+        const element = sectionRefs.current[index]
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = elementPosition - navbarHeight
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }
+    } else {
+      setTimeout(() => {
+        if (sectionRefs.current[index]) {
+          const element = sectionRefs.current[index]
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY
+          const offsetPosition = elementPosition - navbarHeight
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          })
+        }
+      }, 500)
     }
   }
 
@@ -48,7 +64,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [activeIndex])
 
   return (
     <>
@@ -89,7 +105,6 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
             className=''
           />
         </div>
-        {/* <div className='bg-nav bg-blur absolute -top-[60rem] left-[20rem] bg-[#D8F6FF]'></div> */}
       </div>
 
       {caseStudy.sections.length > 0 && (
@@ -98,7 +113,10 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
             <ContentDrawer
               sections={caseStudy.sections}
               activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
               scrollToSection={scrollToSection}
+              setOpen={setOpen}
+              open={open}
             />
           </div>
           <div className='sticky top-32 hidden h-full w-[360px] 2md:block'>
@@ -112,7 +130,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                   className={`mb-6 cursor-pointer rounded-md p-2 text-[20px] font-bold ${
                     activeIndex === index ? 'bg-[#0096E114]' : ''
                   }`}
-                  onClick={() => scrollToSection(index)}
+                  onClick={() => scrollToSection(index, true)}
                 >
                   {item.title}
                 </p>
@@ -129,7 +147,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                     sectionRefs.current[index] = el as HTMLDivElement
                   }}
                 >
-                  <p className='mb-6 w-[85%] text-4xl font-bold leading-tight text-theme-dark'>
+                  <p className='mb-6 w-[85%] 2md:text-4xl text-2xl font-bold leading-tight text-theme-dark'>
                     {item.title}
                   </p>
                   {item.image && (
@@ -143,7 +161,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                       />
                     </div>
                   )}
-                  <div className='mt-12 text-xl font-medium tracking-wide'>
+                  <div className='2md:mt-12 mt-4 2md:text-xl text-lg font-medium tracking-wide'>
                     {item.content}
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { format, parseISO } from 'date-fns'
 import { IBlog } from '@/types/blogs'
+import { ContentDrawer } from './ContentDrawer'
 
 export interface IBlogProp {
   caseStudy: IBlog
@@ -51,12 +52,12 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
 
   return (
     <>
-      <div className='flex w-full 2md:flex-row flex-col items-center justify-between gap-10 pb-10 2md:mt-28 mt-20 2md:p-8 p-2'>
+      <div className='mt-20 flex w-full flex-col items-center justify-between gap-10 p-2 pb-10 2md:mt-28 2md:flex-row 2md:p-8'>
         <div className='h-[100%] 2md:w-[60%]'>
           <h1 className='mb-6 text-3xl font-extrabold text-theme-dark xl:text-5xl xl:leading-tight'>
             {caseStudy?.title}
           </h1>
-          <p className='mb-6 2md:text-xl text-lg font-medium text-theme-dark'>
+          <p className='mb-6 text-lg font-medium text-theme-dark 2md:text-xl'>
             {caseStudy?.summary}
           </p>
           <div className='flex items-center space-x-4'>
@@ -68,16 +69,18 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                 width={1000}
                 className='h-8 w-8 rounded-full object-cover'
               />
-              <span className='2md:text-lg text-sm text-theme-dark'>{caseStudy.authorName}</span>
+              <span className='text-sm text-theme-dark 2md:text-lg'>
+                {caseStudy.authorName}
+              </span>
             </div>
             <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
-              <span className='2md:text-lg text-sm text-theme-dark'>
+              <span className='text-sm text-theme-dark 2md:text-lg'>
                 {format(parseISO(caseStudy.createdAt), 'MMMM do, yyyy ')}
               </span>
             </div>
           </div>
         </div>
-        <div className='flex h-[100%] 2md:w-[40%] items-center justify-center'>
+        <div className='flex h-[100%] items-center justify-center 2md:w-[40%]'>
           <Image
             src={caseStudy.image}
             alt='Blog image'
@@ -90,8 +93,15 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
       </div>
 
       {caseStudy.sections.length > 0 && (
-        <div className='relative my-24 flex justify-between p-8'>
-          <div className='sticky top-32 h-full w-[360px]'>
+        <div className='relative my-24 flex flex-col justify-between p-2 2md:flex-row 2md:p-8'>
+          <div className='fixed left-0 top-[50%] block h-full items-center 2md:hidden'>
+            <ContentDrawer
+              sections={caseStudy.sections}
+              activeIndex={activeIndex}
+              scrollToSection={scrollToSection}
+            />
+          </div>
+          <div className='sticky top-32 hidden h-full w-[360px] 2md:block'>
             <div className='mb-10 text-[20px] font-semibold text-theme-dark'>
               Contents
             </div>
@@ -108,7 +118,8 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                 </p>
               ))}
           </div>
-          <div className='w-[744px]'>
+
+          <div className='2md:w-[744px]'>
             {caseStudy.sections &&
               caseStudy.sections.map((item: any, index: any) => (
                 <div

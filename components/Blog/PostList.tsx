@@ -76,9 +76,9 @@ const PostList = ({ posts }: PostListProps) => {
           <Link
             href={`/blog/${post._id}`}
             key={index}
-            className='flex max-w-[400px] justify-center'
+            className='flex w-[350px] justify-center sm:w-[400px]'
           >
-            <div className='shadow-custom max-w-[400px] cursor-pointer rounded-xl border border-[#00283C29] bg-white'>
+            <div className='shadow-custom w-[350px] cursor-pointer rounded-xl border border-[#00283C29] bg-white sm:w-[400px]'>
               <div className='relative mb-4 h-56 w-full overflow-hidden rounded-t-xl'>
                 <Image
                   src={post.image}
@@ -95,7 +95,7 @@ const PostList = ({ posts }: PostListProps) => {
               <div className='flex min-h-[290px] flex-col gap-4 p-4 pb-8'>
                 <div className='flex gap-2'>
                   <p className='flex items-center gap-1 text-sm font-medium text-[#A3A3A3]'>
-                    <img
+                    <Image
                       src={'/date.svg'}
                       alt={'icon'}
                       height={20}
@@ -114,7 +114,7 @@ const PostList = ({ posts }: PostListProps) => {
                 <div className='flex flex-grow items-end justify-between'>
                   <button className='flex items-center gap-2 font-semibold text-theme-dark'>
                     Read now
-                    <img
+                    <Image
                       src={'/arrow.svg'}
                       alt={'icon'}
                       height={20}

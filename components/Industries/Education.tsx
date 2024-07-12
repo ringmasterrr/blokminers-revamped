@@ -30,9 +30,11 @@ const section = [
 export default function Education() {
   return (
     <div className='bg-[#EBEFEF]' id='Education'>
-      <div className='mb-12 flex flex-col items-center gap-24 p-32 text-center'>
+      <div className='mb-12 flex flex-col items-center gap-24 p-10 text-center 2md:p-32'>
         <div>
-          <h1 className='text-6xl font-bold text-gray-900'>Education</h1>
+          <h1 className='text-4xl font-bold text-gray-900 2md:text-6xl'>
+            Education
+          </h1>
           <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
             the power of blockchain to revolutionize the banking and finance

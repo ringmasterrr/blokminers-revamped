@@ -25,6 +25,7 @@
     "blokminers-ui": "link:",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.13",
     "date": "^2.0.5",
     "date-fns": "^3.6.0",
     "fns": "^1.0.0",

@@ -60,7 +60,7 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
                 href={`?tab=${item.path}`}
                 scroll={false}
                 key={index}
-                className={`flex items-center rounded-md border text-gray-800 xl:justify-center`}
+                className={`flex items-center rounded-md text-gray-800 xl:justify-center`}
               >
                 <div
                   className={`flex w-full items-center gap-2 rounded-md p-3 text-xs ${

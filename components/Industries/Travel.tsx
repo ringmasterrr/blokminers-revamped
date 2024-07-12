@@ -30,9 +30,9 @@ const section = [
 export default function Travel() {
   return (
     <div className='bg-[#EBEFEF]' id='healthcare'>
-      <div className='mb-2 flex flex-col items-center gap-24 p-32 text-center'>
+      <div className='mb-2 flex flex-col items-center gap-24 p-10 text-center 2md:p-32'>
         <div>
-          <h1 className='text-6xl font-bold text-gray-900'>
+          <h1 className='text-4xl font-bold text-gray-900 2md:text-6xl'>
             Travel and Logistics
           </h1>
           <p className='mt-10 text-lg text-gray-700'>
@@ -59,7 +59,7 @@ export default function Travel() {
           </p>
         </div>
       </div>
-      <div className='grid grid-cols-1 gap-8 p-20 md:grid-cols-2'>
+      <div className='grid grid-cols-1 gap-8 p-10 md:grid-cols-2 2md:p-32'>
         {section.map((item) => (
           <div
             key={item.title}

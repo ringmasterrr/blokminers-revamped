@@ -56,6 +56,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      country-flag-icons:
+        specifier: ^1.5.13
+        version: 1.5.13
       date:
         specifier: ^2.0.5
         version: 2.0.5

@@ -21,7 +21,7 @@ const SearchBar = ({ keyword }: { keyword?: string }) => {
   }
 
   return (
-    <div className='mb-4 flex max-w-[600px] w-full items-center justify-start rounded-2xl bg-[#D5EBFF] px-8'>
+    <div className='mb-4 flex max-w-[600px] w-full items-center justify-start rounded-2xl bg-[#D5EBFF] sm:px-8 px-4'>
       <Image src={'/search.svg'} alt='' height={20} width={20} />
       <Input
         type='text'

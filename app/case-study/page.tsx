@@ -19,12 +19,12 @@ export default async function CaseStudiesPage({
   console.log(data)
   return (
     <Page className='justify-between px-4 2md:px-8'>
-      mau
-      {/* <CaseStudiesSection
+      <CaseStudiesSection
         cases={data.data}
         page={data.page}
         search={searchParams.search}
-      /> */}
+        totalPages = {data.totalPages}
+      />
     </Page>
   )
 }

@@ -17,25 +17,25 @@ import { industries, services } from '@/lib/items'
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolled = window.scrollY > 0
-  //     if (isScrolled !== scrolled) {
-  //       setScrolled(isScrolled)
-  //     }
-  //   }
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled)
+      }
+    }
 
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [scrolled])
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [scrolled])
 
   const router = useRouter()
 
   return (
     <nav
-      className={`sticky left-0 right-0 top-0 z-[100] w-full px-2 2md:px-4 xl:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-[100] w-full px-2 2md:px-4 xl:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
     >
       <div className='mx-auto flex h-16 max-w-8xl items-center justify-between p-4 md:p-8 2md:h-20'>
         <Link href={'/'}>

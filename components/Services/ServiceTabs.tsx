@@ -1,54 +1,62 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { FaShieldAlt } from 'react-icons/fa'
+import { FaCode } from 'react-icons/fa6'
+import { IoCloudy, IoGlobeOutline, IoStatsChart } from 'react-icons/io5'
+import { LuBrainCircuit } from 'react-icons/lu'
+import { RiMoneyDollarCircleFill } from 'react-icons/ri'
+import { TbBriefcaseFilled } from 'react-icons/tb'
+import { SiBlockchaindotcom } from "react-icons/si";
 
 function ServiceTabs({ tab }: { tab: string | undefined }) {
-  const services = [
+   const services = [
     {
       category: 'Blockchain',
       path: 'blockchain',
-      logo: '/Industries/financelogo.svg',
+      icon: <SiBlockchaindotcom className='h-full w-full' />,
     },
     {
       category: 'Web3',
       path: 'web3',
-      logo: '/Industries/healthcarelogo.svg',
+      icon: <IoGlobeOutline className='h-full w-full' />,
     },
     {
       category: 'AI/ML',
       path: 'aiml',
-      logo: '/Industries/insurancelogo.svg',
+      icon: <LuBrainCircuit className='h-full w-full' />,
     },
     {
       category: 'Blockchain Development',
       path: 'blockchaindevelopment',
-      logo: '/Industries/educationlogo.svg',
+      icon: <FaCode className='h-full w-full' />,
     },
     {
       category: 'Consulting',
       path: 'consulting',
-      logo: '/Industries/realestatelogo.svg',
+      icon: <TbBriefcaseFilled className='h-full w-full' />,
     },
     {
       category: 'Data & Analytics',
       path: 'dataanalytics',
-      logo: '/Industries/travellogo.svg',
+      icon: <IoStatsChart className='h-full w-full' />,
     },
     {
       category: 'Cyber Security',
       path: 'cybersecurity',
-      logo: '/Industries/manufacturinglogo.svg',
+      icon: <FaShieldAlt className='h-full w-full' />,
     },
     {
       category: 'Cloud',
       path: 'cloud',
-      logo: '/Industries/retaillogo.svg',
+      icon: <IoCloudy className='h-full w-full' />,
     },
   ]
+  
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 2md:flex xl:gap-4'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 xl:flex xl:gap-4'>
         {services.map((item, index) => {
           // let i = false
           // if (index % 2 === 0) {
@@ -63,13 +71,13 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
                 className={`flex items-center rounded-md text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs ${
-                    tab === item.path
-                      ? 'bg-white text-theme-dark'
+                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs sm:text-base ${
+                    tab === `${item.path}`
+                      ? 'bg-theme-dark text-white'
                       : 'opacity-50'
                   }`}
                 >
-                  <Image src={item.logo} alt='logo' height={20} width={20} />
+                  <div className='h-5 w-5'>{item.icon}</div>
                   <div>{item.category}</div>
                 </div>
               </Link>

@@ -23,7 +23,7 @@ export default async function CaseStudiesPage({
         cases={data.data}
         page={data.page}
         search={searchParams.search}
-        totalPages = {data.totalPages}
+        totalPages={data.totalPages}
       />
     </Page>
   )

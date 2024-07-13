@@ -7,10 +7,10 @@ import { IoCloudy, IoGlobeOutline, IoStatsChart } from 'react-icons/io5'
 import { LuBrainCircuit } from 'react-icons/lu'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 import { TbBriefcaseFilled } from 'react-icons/tb'
-import { SiBlockchaindotcom } from "react-icons/si";
+import { SiBlockchaindotcom } from 'react-icons/si'
 
 function ServiceTabs({ tab }: { tab: string | undefined }) {
-   const services = [
+  const services = [
     {
       category: 'Blockchain',
       path: 'blockchain',
@@ -52,7 +52,6 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
       icon: <IoCloudy className='h-full w-full' />,
     },
   ]
-  
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>

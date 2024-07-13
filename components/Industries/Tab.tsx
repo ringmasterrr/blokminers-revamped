@@ -1,12 +1,19 @@
 import Link from 'next/link'
 import { FaShoppingCart } from 'react-icons/fa'
-import { FaHandHoldingMedical, FaStethoscope, FaUserGraduate } from 'react-icons/fa6'
+import {
+  FaHandHoldingMedical,
+  FaStethoscope,
+  FaUserGraduate,
+} from 'react-icons/fa6'
 import { HiMiniBuildingOffice2 } from 'react-icons/hi2'
-import { MdOutlineAirplanemodeActive, MdPrecisionManufacturing } from 'react-icons/md'
+import {
+  MdOutlineAirplanemodeActive,
+  MdPrecisionManufacturing,
+} from 'react-icons/md'
 import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 
 const Tab = ({ tab }: { tab: string | undefined }) => {
-   const industries = [
+  const industries = [
     {
       category: 'Finance',
       path: 'finance',
@@ -48,7 +55,6 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
       icon: <MdPrecisionManufacturing className='h-full w-full' />,
     },
   ]
-
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>

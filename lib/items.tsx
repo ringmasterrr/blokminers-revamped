@@ -13,6 +13,7 @@ import { TbBriefcaseFilled } from "react-icons/tb";
 import { IoStatsChart } from "react-icons/io5";
 import { FaShieldAlt } from "react-icons/fa";
 import { IoCloudy } from "react-icons/io5";
+import { SiBlockchaindotcom } from "react-icons/si";
 export const industries = [
   {
     category: 'Finance',
@@ -60,7 +61,7 @@ export const services = [
   {
     category: 'Blockchain',
     path: '/services?tab=blockchain',
-    icon: <RiMoneyDollarCircleFill className='h-full w-full' />,
+    icon: <SiBlockchaindotcom className='h-full w-full' />,
   },
   {
     category: 'Web3',

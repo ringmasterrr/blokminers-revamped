@@ -13,7 +13,11 @@ export class PortfolioService extends BindService {
       },
     })
   }
-  public getAllPortfolios = async () => {
-    return (await this.http.get('/getAll')).data
+  public getAllPortfolios = async (keyword: string) => {
+    return (
+      await this.http.get('/getAll', {
+        params: { keyword },
+      })
+    ).data
   }
 }

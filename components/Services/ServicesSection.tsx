@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Button } from '../ui/button'
 import { ParticleComponent } from '@/lib/particles'
 import ServiceTabs from './ServiceTabs'
 import Blockchain from './Blockchain'

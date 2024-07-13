@@ -4,7 +4,7 @@ import { ProcessCards } from './ProcessCards'
 
 export const OurProcess = () => {
   return (
-    <div className='relative mx-6 my-20 space-y-20'>
+    <div className='relative mx-6 my-20 space-y-20 overflow-clip'>
       <Heading
         heading='Our Process'
         message='Our processes are tailored to hit it right with your idea from the start and also support optimum coordination, excellent and speedy execution of your Blockchain solution through its entirety.'

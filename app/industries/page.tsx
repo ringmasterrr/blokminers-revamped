@@ -8,9 +8,12 @@ import RealEstate from '@/components/Industries/RealEstate'
 import Retail from '@/components/Industries/Retail'
 import Tab from '@/components/Industries/Tab'
 import Travel from '@/components/Industries/Travel'
+import CardList from '@/components/Portfolio/PortfolioCards'
 import { Page } from '@/components/shared/Page'
+import { PortfolioService } from '@/services/portfolio'
+const portfolio = new PortfolioService()
 
-export default function IndustriesPage({
+export default async function IndustriesPage({
   searchParams,
 }: {
   searchParams: {
@@ -18,6 +21,8 @@ export default function IndustriesPage({
   }
 }) {
   const tab = searchParams.tab
+  const portfolioData = await portfolio.getAllPortfolios()
+
   return (
     <>
       <IndustriesSection tab={searchParams.tab} />
@@ -31,6 +36,7 @@ export default function IndustriesPage({
       {tab === 'travel' && <Travel />}
       {tab === 'retail' && <Retail />}
       {tab === 'manufacturing' && <Manufacturing />}
+      <CardList data={portfolioData} />
     </>
   )
 }

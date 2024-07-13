@@ -65,7 +65,7 @@ export const ProcessCards = () => {
       {content.map((item, index) => (
         <div
           key={index}
-          className='flex flex-col items-center justify-center gap-8 2md:flex-row'
+          className='flex flex-col items-center justify-center gap-8 overflow-clip 2md:flex-row'
         >
           {index % 2 === 0 ? (
             <motion.div

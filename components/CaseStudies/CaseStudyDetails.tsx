@@ -147,7 +147,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                     sectionRefs.current[index] = el as HTMLDivElement
                   }}
                 >
-                  <p className='mb-6 w-[85%] 2md:text-4xl text-2xl font-bold leading-tight text-theme-dark'>
+                  <p className='mb-6 w-[85%] text-2xl font-bold leading-tight text-theme-dark 2md:text-4xl'>
                     {item.title}
                   </p>
                   {item.image && (
@@ -161,7 +161,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                       />
                     </div>
                   )}
-                  <div className='2md:mt-12 mt-4 2md:text-xl text-lg font-medium tracking-wide'>
+                  <div className='mt-4 text-lg font-medium tracking-wide 2md:mt-12 2md:text-xl'>
                     {item.content}
                   </div>
                 </div>

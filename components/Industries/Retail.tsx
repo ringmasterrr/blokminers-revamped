@@ -29,7 +29,7 @@ const section = [
 
 export default function Retail() {
   return (
-    <div className='bg-[#EBEFEF]' id='Retail'>
+    <div className='bg-[#EBEFEF]'>
       <div className='mb-12 flex flex-col items-center gap-24 p-10 text-center 2md:p-32'>
         <div>
           <h1 className='text-4xl font-bold text-gray-900 2md:text-6xl'>

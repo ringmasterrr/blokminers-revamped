@@ -1,54 +1,54 @@
-// 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
-// import { useRouter } from 'next/navigation'
+import { FaShoppingCart } from 'react-icons/fa'
+import { FaHandHoldingMedical, FaStethoscope, FaUserGraduate } from 'react-icons/fa6'
+import { HiMiniBuildingOffice2 } from 'react-icons/hi2'
+import { MdOutlineAirplanemodeActive, MdPrecisionManufacturing } from 'react-icons/md'
+import { RiMoneyDollarCircleFill } from 'react-icons/ri'
 
 const Tab = ({ tab }: { tab: string | undefined }) => {
-  const industries = [
+   const industries = [
     {
       category: 'Finance',
       path: 'finance',
-      logo: '/Industries/financelogo.svg',
+      icon: <RiMoneyDollarCircleFill className='h-full w-full' />,
     },
     {
       category: 'Healthcare',
       path: 'healthcare',
-      logo: '/Industries/healthcarelogo.svg',
+      icon: <FaStethoscope className='h-full w-full' />,
     },
     {
       category: 'Insurance',
       path: 'insurance',
-      logo: '/Industries/insurancelogo.svg',
+      icon: <FaHandHoldingMedical className='h-full w-full' />,
     },
     {
       category: 'Education',
       path: 'education',
-      logo: '/Industries/educationlogo.svg',
+      icon: <FaUserGraduate className='h-full w-full' />,
     },
     {
       category: 'Real Estate',
       path: 'realestate',
-      logo: '/Industries/realestatelogo.svg',
+      icon: <HiMiniBuildingOffice2 className='h-full w-full' />,
     },
     {
       category: 'Travel & Logistics',
       path: 'travel',
-      logo: '/Industries/travellogo.svg',
+      icon: <MdOutlineAirplanemodeActive className='h-full w-full' />,
     },
-    { category: 'Retail', path: 'retail', logo: '/Industries/retaillogo.svg' },
+    {
+      category: 'Retail',
+      path: 'retail',
+      icon: <FaShoppingCart className='h-full w-full' />,
+    },
     {
       category: 'Manufacturing',
       path: 'manufacturing',
-      logo: '/Industries/manufacturinglogo.svg',
+      icon: <MdPrecisionManufacturing className='h-full w-full' />,
     },
   ]
 
-  // const router = useRouter()
-
-  // const handleNavigation = (path: string, event: any) => {
-  //   event.preventDefault()
-  //   router.replace(`?tab=${path}`, undefined, { scroll: false })
-  // }
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
@@ -63,13 +63,13 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
                 className={`flex items-center rounded-md text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs ${
-                    tab === item.path
-                      ? 'bg-white text-theme-dark'
+                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs sm:text-base ${
+                    tab === `${item.path}`
+                      ? 'bg-theme-dark text-white'
                       : 'opacity-50'
                   }`}
                 >
-                  <Image src={item.logo} alt='logo' height={20} width={20} />
+                  <div className='h-5 w-5'>{item.icon}</div>
                   <div>{item.category}</div>
                 </div>
               </Link>
@@ -78,36 +78,6 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
         })}
       </div>
     </div>
-    // <div className='py-4'>
-    //   <div className='container mx-auto px-4'>
-    //     <div className='mb-12 flex items-center justify-center text-center'>
-    //       <div className='mb-4 flex w-fit justify-center gap-2 space-x-4 rounded-md bg-[#EBEFEF] p-2'>
-    //         {industries.map((industry, index) => (
-    //           <a
-    //             href={`?tab=${industry.path}`}
-    //             onClick={(event) => handleNavigation(industry.path, event)}
-    //             key={index}
-    //             className={`rounded-md border px-3 py-2 text-gray-800 ${
-    //               tab === industry.path
-    //                 ? 'bg-white text-theme-dark'
-    //                 : 'opacity-50'
-    //             }`}
-    //           >
-    //             <div className='flex items-center justify-center gap-2'>
-    //               <Image
-    //                 src={industry.logo}
-    //                 alt='logo'
-    //                 height={20}
-    //                 width={20}
-    //               />
-    //               {industry.category}
-    //             </div>
-    //           </a>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 

@@ -9,7 +9,6 @@ import Retail from '@/components/Industries/Retail'
 import Tab from '@/components/Industries/Tab'
 import Travel from '@/components/Industries/Travel'
 import CardList from '@/components/Portfolio/PortfolioCards'
-import { Page } from '@/components/shared/Page'
 import { PortfolioService } from '@/services/portfolio'
 const portfolio = new PortfolioService()
 

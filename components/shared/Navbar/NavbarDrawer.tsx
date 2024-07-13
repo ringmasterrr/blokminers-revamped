@@ -36,13 +36,13 @@ export function NavbarDrawer() {
     setOpen(false)
   }, [pathname, tab])
   return (
-    <Drawer direction='top' open={open} onOpenChange={setOpen}>
+    <Drawer direction='left' open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <button className='h-8 w-8 text-theme-dark'>
           <RiMenu4Line className='h-full w-full stroke-1' />
         </button>
       </DrawerTrigger>
-      <DrawerContent className='z-[150] h-full w-full bg-white'>
+      <DrawerContent className='z-[150] h-full w-[375px] bg-white'>
         <div className='flex h-full flex-col overflow-y-auto py-4 scrollbar-hide'>
           <div className='flex items-center justify-between px-6'>
             <Link href={'/'}>
@@ -62,8 +62,8 @@ export function NavbarDrawer() {
           </div>
           <Accordion type='single' collapsible className='mt-8 w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='mt-2 px-6 py-4 text-lg font-bold text-theme-dark'>
-                Serivices
+              <AccordionTrigger className='mt-2 tracking-wider px-6 py-4 text-lg font-bold text-theme-dark'>
+                SERVICES
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
                 {services.map((item, index) => (
@@ -71,7 +71,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-10 text-lg font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg tracking-wide uppercase font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -84,8 +84,8 @@ export function NavbarDrawer() {
           </Accordion>
           <Accordion type='single' collapsible className='w-full'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='mt-2 px-6 py-4 text-lg font-bold text-theme-dark'>
-                Industries
+              <AccordionTrigger className='mt-2 tracking-wider px-6 py-4 text-lg font-bold text-theme-dark'>
+                INDUSTRIES
               </AccordionTrigger>
               <AccordionContent className='flex flex-col py-0'>
                 {industries.map((item, index) => (
@@ -93,7 +93,7 @@ export function NavbarDrawer() {
                     href={item.path}
                     scroll={false}
                     key={index}
-                    className={`py-2 pl-10 text-lg font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
+                    className={`py-2 pl-10 text-lg tracking-wide uppercase font-semibold text-theme-dark ${item.path === finalPath ? 'bg-theme-dark text-white' : ''} `}
                   >
                     <div className='flex items-center gap-4'>
                       <div className='h-[18px] w-[18px]'>{item.icon}</div>
@@ -105,32 +105,32 @@ export function NavbarDrawer() {
             </AccordionItem>
           </Accordion>
           <Link
-            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg tracking-wider font-bold text-theme-dark ${pathname.startsWith('/case-study') ? 'bg-theme-dark text-white' : ''}`}
             href={'/case-study'}
           >
-            Case Studies
+            CASE STUDIES
           </Link>
           <Link
-            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg tracking-wider font-bold text-theme-dark ${pathname.startsWith('/blog') ? 'bg-theme-dark text-white' : ''}`}
             href={'/blog'}
           >
-            Blog
+            BLOG
           </Link>
           <Link
-            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg tracking-wider font-bold text-theme-dark ${pathname === '/portfolio' ? 'bg-theme-dark text-white' : ''}`}
             href={'/portfolio'}
           >
-            Portfolio
+            PORTFOLIO
           </Link>
           <Link
-            className={`mt-2 px-6 py-4 text-lg font-bold text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
+            className={`mt-2 px-6 py-4 text-lg tracking-wider font-bold text-theme-dark ${pathname === '/about-us' ? 'bg-theme-dark text-white' : ''}`}
             href={'/'}
           >
-            About Us
+            ABOUT US
           </Link>
           <Button
             onClick={() => router.push('/contact-us')}
-            className='m-4 my-6 w-fit'
+            className='m-4 my-6 w-fit tracking-wider text-base'
           >
             Get Started
           </Button>

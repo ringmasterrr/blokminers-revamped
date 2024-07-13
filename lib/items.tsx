@@ -6,6 +6,13 @@ import { HiMiniBuildingOffice2 } from 'react-icons/hi2'
 import { MdOutlineAirplanemodeActive } from 'react-icons/md'
 import { FaShoppingCart } from 'react-icons/fa'
 import { MdPrecisionManufacturing } from 'react-icons/md'
+import { IoGlobeOutline } from "react-icons/io5";
+import { LuBrainCircuit } from "react-icons/lu";
+import { FaCode } from "react-icons/fa6";
+import { TbBriefcaseFilled } from "react-icons/tb";
+import { IoStatsChart } from "react-icons/io5";
+import { FaShieldAlt } from "react-icons/fa";
+import { IoCloudy } from "react-icons/io5";
 export const industries = [
   {
     category: 'Finance',
@@ -58,36 +65,36 @@ export const services = [
   {
     category: 'Web3',
     path: '/services?tab=web3',
-    icon: <FaStethoscope className='h-full w-full' />,
+    icon: <IoGlobeOutline className='h-full w-full' />,
   },
   {
     category: 'AI/ML',
     path: '/services?tab=aiml',
-    icon: <FaHandHoldingMedical className='h-full w-full' />,
+    icon: <LuBrainCircuit className='h-full w-full' />,
   },
   {
     category: 'Blockchain Development',
     path: '/services?tab=blockchaindevelopment',
-    icon: <FaUserGraduate className='h-full w-full' />,
+    icon: <FaCode className='h-full w-full' />,
   },
   {
     category: 'Consulting',
     path: '/services?tab=consulting',
-    icon: <HiMiniBuildingOffice2 className='h-full w-full' />,
+    icon: <TbBriefcaseFilled className='h-full w-full' />,
   },
   {
     category: 'Data & Analytics',
     path: '/services?tab=dataanalytics',
-    icon: <MdOutlineAirplanemodeActive className='h-full w-full' />,
+    icon: <IoStatsChart className='h-full w-full' />,
   },
   {
     category: 'Cyber Security',
     path: '/services?tab=cybersecurity',
-    icon: <FaShoppingCart className='h-full w-full' />,
+    icon: <FaShieldAlt className='h-full w-full' />,
   },
   {
     category: 'Cloud',
     path: '/services?tab=cloud',
-    icon: <MdPrecisionManufacturing className='h-full w-full' />,
+    icon: <IoCloudy className='h-full w-full' />,
   },
 ]

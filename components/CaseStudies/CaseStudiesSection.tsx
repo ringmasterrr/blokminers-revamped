@@ -4,6 +4,7 @@ import { Numbers } from '../Homepage/HeroSection/Numbers'
 import CaseStudiesCards from './CaseStudies'
 import { ParticleComponent } from '@/lib/particles'
 import { ICases } from '@/types/cases'
+import Pagination from '../shared/Pagination'
 
 export interface ICasesPage {
   search?: string
@@ -11,6 +12,7 @@ export interface ICasesPage {
   limit?: number
   total?: number
   cases: ICases[]
+  totalPages?: number
 }
 
 export function CaseStudiesSection({
@@ -19,6 +21,7 @@ export function CaseStudiesSection({
   cases,
   limit,
   total,
+  totalPages,
 }: ICasesPage) {
   return (
     <div className='relative'>
@@ -53,6 +56,11 @@ export function CaseStudiesSection({
         <ParticleComponent />
       </div>
       <CaseStudiesCards cases={cases} />
+      <Pagination
+        search={search ?? undefined}
+        page={page ?? 1}
+        totalPages={totalPages ?? 1}
+      />
     </div>
   )
 }

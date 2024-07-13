@@ -20,7 +20,7 @@ export default async function IndustriesPage({
   }
 }) {
   const tab = searchParams.tab
-  const portfolioData = await portfolio.getAllPortfolios()
+  const portfolioData = await portfolio.getAllPortfolios(searchParams.tab ?? '')
 
   return (
     <>

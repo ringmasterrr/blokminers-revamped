@@ -1,5 +1,4 @@
 import ServicesSection from '@/components/Services/ServicesSection'
-import { Page } from '@/components/shared/Page'
 import { PortfolioService } from '@/services/portfolio'
 import CardList from '@/components/Portfolio/PortfolioCards'
 
@@ -12,14 +11,13 @@ async function page({
     tab?: string
   }
 }) {
-  const portfolioData = await portfolio.getAllPortfolios()
-
+  const portfolioData = await portfolio.getAllPortfolios(searchParams.tab ?? '')
+  console.log(portfolioData)
   return (
+    
     <div>
-      {/* <Page> */}
-      <ServicesSection tab={searchParams.tab} />
-      {/* </Page> */}
-      <CardList data={portfolioData} />
+      <ServicesSection tab={searchParams.tab}/>
+      <CardList  data={portfolioData} />
     </div>
   )
 }

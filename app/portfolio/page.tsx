@@ -4,7 +4,7 @@ import { PortfolioService } from '@/services/portfolio'
 const portfolio = new PortfolioService()
 
 export default async function CaseStudiesHome() {
-  const portfolioData = await portfolio.getAllPortfolios()
+  const portfolioData = await portfolio.getAllPortfolios('')
   console.log(portfolioData)
   return (
     <Page className='justify-between px-8'>

@@ -28,7 +28,12 @@ function ServicesSection({ tab }: { tab: string | undefined }) {
               This is the page about the
               <br className='hidden 2md:block' /> Services section of Blokminers
             </div>
-            <Link className='py-2.5 px-6 bg-theme-dark text-white rounded-full font-medium' href={'/contact-us'}>Get Started</Link>
+            <Link
+              className='rounded-full bg-theme-dark px-6 py-2.5 font-medium text-white'
+              href={'/contact-us'}
+            >
+              Get Started
+            </Link>
           </div>
           <div className='w-[300px] 2md:w-[45%]'>
             <Image

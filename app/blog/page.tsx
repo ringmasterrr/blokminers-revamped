@@ -19,8 +19,7 @@ export default async function BlogsPage({
   console.log(data)
   return (
     <Page>
-      mau
-      {/* <Blog blogs={data.data} page={data.page} search={searchParams.search} /> */}
+      <Blog blogs={data.data} page={data.page} search={searchParams.search} />
     </Page>
   )
 }

@@ -17,19 +17,19 @@ import { industries, services } from '@/lib/items'
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolled = window.scrollY > 0
-  //     if (isScrolled !== scrolled) {
-  //       setScrolled(isScrolled)
-  //     }
-  //   }
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled)
+      }
+    }
 
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [scrolled])
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [scrolled])
 
   const router = useRouter()
 

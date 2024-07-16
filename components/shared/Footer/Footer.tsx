@@ -73,7 +73,6 @@ export default function Footer() {
             {services.map((item: any) => (
               <Link
                 href={item.path}
-                scroll={false}
                 key={item}
                 className='flex w-fit items-center justify-between gap-6 border-theme-light border-opacity-20 py-4 text-sm text-gray-500 hover:text-white'
               >

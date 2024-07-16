@@ -1,3 +1,4 @@
+import { services } from '@/lib/items'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaCopyright } from 'react-icons/fa'
@@ -68,17 +69,17 @@ export default function Footer() {
         </div>
         <div className='flex flex-1 flex-col gap-6'>
           <div className='text-lg font-semibold text-cyan-500'>SERVICES</div>
-          <div className='grid grid-cols-1 gap-6 2md:grid-cols-2'>
-            <div>Blockchain Development Services</div>
-            <div>AI & ML Blockchain Development</div>
-            <div>Exchange</div>
-            <div>Metaverse & Gaming</div>
-            <div>AI Developement</div>
-            <div>Cloud Computing</div>
-            <div>Consulting</div>
-            <div>Cloud Security</div>
-            <div>Data & Analytics</div>
-            <div>Smart Contract Development</div>
+          <div className='z-60 grid h-fit cursor-pointer grid-cols-2 flex-col rounded-lg font-semibold text-gray-500'>
+            {services.map((item: any) => (
+              <Link
+                href={item.path}
+                scroll={false}
+                key={item}
+                className='flex w-fit items-center justify-between gap-6 border-theme-light border-opacity-20 py-4 text-sm text-gray-500 hover:text-white'
+              >
+                <div className='flex gap-4'>{item.category}</div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

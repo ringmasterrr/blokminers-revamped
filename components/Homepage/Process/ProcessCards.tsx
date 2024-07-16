@@ -59,6 +59,17 @@ const fadeInRight = {
   visible: { opacity: 1, x: 0 },
 }
 
+const animationVariants = {
+  fadeInLeft: {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.5 } },
+  },
+  fadeInRight: {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.5 } },
+  },
+}
+
 export const ProcessCards = () => {
   return (
     <>
@@ -72,7 +83,7 @@ export const ProcessCards = () => {
               initial='hidden'
               whileInView='visible'
               viewport={{ once: true }}
-              variants={fadeInLeft}
+              variants={animationVariants.fadeInLeft}
               className='flex flex-col-reverse items-center justify-center 2md:flex-row'
             >
               <div className='glassy-bg flex h-[21rem] w-[20rem] -translate-y-5 translate-x-5 flex-col items-start justify-center space-y-4 rounded-2xl p-8 backdrop-blur-lg 2md:w-[34.4rem] 2md:-translate-y-0 2md:translate-x-20'>
@@ -93,7 +104,7 @@ export const ProcessCards = () => {
               initial='hidden'
               whileInView='visible'
               viewport={{ once: true }}
-              variants={fadeInRight}
+              variants={animationVariants.fadeInRight}
               className='flex flex-col items-center justify-center 2md:flex-row'
             >
               <div className='glassy-bg py-18 flex h-[24rem] w-[20rem] translate-x-5 translate-y-5 items-center justify-center rounded-2xl p-8 2md:w-[36rem] 2md:translate-x-20 2md:translate-y-0'>

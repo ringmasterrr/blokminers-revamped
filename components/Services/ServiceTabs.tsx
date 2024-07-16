@@ -55,7 +55,7 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 xl:flex xl:gap-4'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#88caec] bg-opacity-15 p-2 xl:flex xl:gap-4'>
         {services.map((item, index) => {
           // let i = false
           // if (index % 2 === 0) {

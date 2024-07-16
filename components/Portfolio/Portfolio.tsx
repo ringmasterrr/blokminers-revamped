@@ -18,7 +18,12 @@ export function Portfolio({ data }: { data: any }) {
             <div className='max-w-[520px] text-center text-lg font-medium text-theme-dark 2md:text-start'>
               Explore How we turn ideas into reality.
             </div>
-            <Link className='py-2.5 px-4 bg-theme-dark text-white rounded-full font-medium' href={'/contact-us'}>Talk To Our Experts</Link>
+            <Link
+              className='rounded-full bg-theme-dark px-4 py-2.5 font-medium text-white'
+              href={'/contact-us'}
+            >
+              Talk To Our Experts
+            </Link>
             <div className='2md:hidden'>
               <Image
                 src={'/portfolio.png'}

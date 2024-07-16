@@ -232,9 +232,6 @@
   z-index: -1; /* Ensure the blur stays behind the content */
 }
 
-.relative {
-  position: relative;
-}
 
 .blur-background {
   position: absolute;

@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { FaCopyright } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -19,33 +21,48 @@ export default function Footer() {
             greater futures through innovation and collective Knowledge
           </div>
           <div className='flex items-center gap-4'>
-            <div className='w-[30px]'>
-              <Image
-                src={'/logos/fblogo.svg'}
-                alt='logo'
-                width={200}
-                height={200}
-                className='w-full'
-              />
-            </div>
-            <div className='w-[30px]'>
-              <Image
-                src={'/logos/linkednlogo.svg'}
-                alt='logo'
-                width={200}
-                height={200}
-                className='w-full'
-              />
-            </div>
-            <div className='w-[30px]'>
-              <Image
-                src={'/logos/xlogo.svg'}
-                alt='logo'
-                width={200}
-                height={200}
-                className='w-full'
-              />
-            </div>
+            <Link href={'https://www.goodfirms.co/company/blokminers'}>
+              <div className='w-[30px]'>
+                <Image
+                  src={'/goodfirms.svg'}
+                  alt='logo'
+                  width={200}
+                  height={200}
+                  className='w-full'
+                />
+              </div>
+            </Link>
+            <Link
+              href={'https://www.linkedin.com/company/theblokminers/mycompany/'}
+            >
+              <div className='w-[30px]'>
+                <Image
+                  src={'/logos/linkednlogo.svg'}
+                  alt='logo'
+                  width={200}
+                  height={200}
+                  className='w-full'
+                />
+              </div>
+            </Link>
+            <Link
+              href={'https://x.com/blokminershq?s=21&t=QHYqpOiQqrEX0HQz30GtQQ'}
+            >
+              <div className='w-[30px]'>
+                <Image
+                  src={'/logos/xlogo.svg'}
+                  alt='logo'
+                  width={200}
+                  height={200}
+                  className='w-full'
+                />
+              </div>
+            </Link>
+            <Link href={'https://clutch.co/profile/blokminers#highlights'}>
+              <div className='h-full w-[30px] text-3xl'>
+                <FaCopyright />
+              </div>
+            </Link>
           </div>
           <div>© 2024. BlokMiners. All Rights Reserved.</div>
         </div>

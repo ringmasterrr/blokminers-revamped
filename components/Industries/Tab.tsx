@@ -58,7 +58,7 @@ const Tab = ({ tab }: { tab: string | undefined }) => {
 
   return (
     <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#EBEFEF] p-2 2md:gap-4 xl:flex'>
+      <div className='grid grid-cols-2 justify-center rounded-md bg-[#88caec] bg-opacity-15 p-2 2md:gap-4 xl:flex'>
         {industries.map((item, index) => {
           return (
             <>

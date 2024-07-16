@@ -35,9 +35,8 @@ export default async function IndustriesPage({
       {tab === 'travel' && <Travel />}
       {tab === 'retail' && <Retail />}
       {tab === 'manufacturing' && <Manufacturing />}
-      <div className='w-60'>
-        <CardList data={portfolioData} />
-      </div>
+
+      <CardList data={portfolioData} />
     </div>
   )
 }

@@ -18,7 +18,9 @@ export function Header() {
       </div>
       <div className='flex w-full justify-center gap-4 2md:justify-start'>
         <Button onClick={() => Router.push('/contact-us')}>Get Started</Button>
-        <Button variant={'outline'}>Learn More</Button>
+        <Button onClick={() => Router.push('/services')} variant={'outline'}>
+          Learn More
+        </Button>
       </div>
     </div>
   )

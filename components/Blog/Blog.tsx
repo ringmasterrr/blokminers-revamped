@@ -19,7 +19,7 @@ const Blog = ({ search, page, blogs, limit, total, totalPages }: IBlogPage) => {
       <div className='bg-grid mb-12 pt-20 2md:pt-32'>
         <Heading
           heading='Blogs'
-          message='Explore our innovative research in the realm of blockchain technology and its practical applications.'
+          message='Explore our innovative research in the realm of Blockchain technology and its practical applications.'
         />
       </div>
       <SearchBar keyword={search} />

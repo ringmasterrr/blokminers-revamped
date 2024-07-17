@@ -27,7 +27,7 @@ export const cards = [
   {
     title: 'Cryptolution',
     subheading:
-      'Explore our Event Ticket Tokenization Case Study, a compelling narrative of how blockchain innovation reshaped conventional event ticketing...',
+      'Explore our Event Ticket Tokenization Case Study, a compelling narrative of how Blockchain innovation reshaped conventional event ticketing...',
     image: '/portfolio/meta.png',
   },
   {

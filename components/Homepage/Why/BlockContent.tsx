@@ -12,7 +12,7 @@ export const items = [
   {
     title: 'Tech Advantage',
     description:
-      "We leverage expertise in blockchain and AI/ML for clients' competitive edge in today's dynamic market.",
+      "We leverage expertise in Blockchain and AI/ML for clients' competitive edge in today's dynamic market.",
     image: '/why/tech.svg',
   },
   {
@@ -30,7 +30,7 @@ export const items = [
   {
     title: 'Security Priority',
     description:
-      'We provide secure blockchain implementations and cybersecurity measures to safeguard digital assets.',
+      'We provide secure Blockchain implementations and cybersecurity measures to safeguard digital assets.',
     image: '/why/security.svg',
   },
 ]

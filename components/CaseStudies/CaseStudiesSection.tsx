@@ -5,6 +5,7 @@ import CaseStudiesCards from './CaseStudies'
 import { ParticleComponent } from '@/lib/particles'
 import { ICases } from '@/types/cases'
 import Pagination from '../shared/Pagination'
+import Link from 'next/link'
 
 export interface ICasesPage {
   search?: string
@@ -36,9 +37,12 @@ export function CaseStudiesSection({
               facing comparable challenges and analyze their incremental
               execution processes.
             </div>
-            <div className='flex w-fit gap-4'>
-              <Button>Talk To Our Experts</Button>
-            </div>
+            <Link
+              className='rounded-full bg-theme-dark px-6 py-2.5 font-medium text-white'
+              href={'/contact-us'}
+            >
+              Talk To Our Experts
+            </Link>
           </div>
           <Numbers />
         </div>

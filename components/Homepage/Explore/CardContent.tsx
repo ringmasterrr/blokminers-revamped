@@ -16,7 +16,7 @@ export default function CardContent() {
           </h1>
           <p className='text-lg font-semibold text-theme-dark'>
             Harness the power of decentralized solutions{' '}
-            <br className='hidden 2md:block' /> with our blockchain development
+            <br className='hidden 2md:block' /> with our Blockchain development
             expertise.
           </p>
           <div className='absolute bottom-0 right-[50%] h-[50%] min-w-[300px] translate-x-1/2 2md:right-0 2md:aspect-auto 2md:h-auto 2md:w-[45%] 2md:translate-x-0'>
@@ -144,7 +144,7 @@ export default function CardContent() {
               AI/ML Blockchain Development
             </h1>
             <p className='ml-auto text-lg font-semibold text-theme-dark 2md:w-[75%]'>
-              Uniting the realms of AI/ML and blockchain, we pioneer solutions
+              Uniting the realms of AI/ML and Blockchain, we pioneer solutions
               that marry the strengths of both technologies.
             </p>
           </div>

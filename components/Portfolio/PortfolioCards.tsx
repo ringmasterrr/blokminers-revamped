@@ -8,7 +8,7 @@ const CardList = ({ data }: { data: any }) => {
         <div className='flex items-center justify-center' key={index}>
           <Link
             href={card.url}
-            className='flex max-w-[450px] flex-col justify-between rounded-2xl bg-white p-6'
+            className='flex max-w-[450px] flex-col justify-between rounded-2xl bg-white p-6 h-full'
             style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)' }}
           >
             <div>

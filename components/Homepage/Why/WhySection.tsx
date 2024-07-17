@@ -8,7 +8,7 @@ export default function WhySection() {
         white
         heading={'Why BlokMiners'}
         message={
-          'Opt for BlokMiners for pioneering blockchain solutions driving transparent and secure digital transformations.'
+          'Opt for BlokMiners for pioneering Blockchain solutions driving transparent and secure digital transformations.'
         }
       />
       <BlockContent />

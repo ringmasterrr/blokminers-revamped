@@ -13,12 +13,12 @@ const IndustriesSection = ({ tab }: { tab: string | undefined }) => {
         <div className='bg-grid flex min-h-[500px] flex-col items-center justify-between 2md:min-h-[700px] 2md:flex-row'>
           <div className='mb-20 flex flex-col items-center gap-6 pt-10 2md:w-[55%] 2md:items-start 2md:gap-8'>
             <div className='text-3xl font-extrabold text-theme-dark md:text-4xl 2md:text-5xl xl:text-6xl'>
-              Blokminers Industries
+              BlokMiners Industries
             </div>
             <div className='max-w-[520px] text-center text-lg font-medium text-theme-dark 2md:text-start'>
               This is the page about the
               <br className='hidden 2md:block' /> Industries section of
-              Blokminers
+              BlokMiners
             </div>
             <Link
               className='rounded-full bg-theme-dark px-6 py-2.5 font-medium text-white'

@@ -4,7 +4,7 @@ const section = [
   {
     title: 'Supply Chain Transparency',
     description:
-      'Implement blockchain to create an immutable ledger of all transactions and movements across your supply chain, offering unparalleled transparency and traceability from raw materials to finished products.',
+      'Implement Blockchain to create an immutable ledger of all transactions and movements across your supply chain, offering unparalleled transparency and traceability from raw materials to finished products.',
     icon: '/Industries/manufacturing1.png',
   },
   {
@@ -16,7 +16,7 @@ const section = [
   {
     title: 'Counterfeit Protection',
     description:
-      'Secure your products and brand reputation by leveraging blockchain’s tamper-proof nature, ensuring the authenticity of your goods through every phase of the supply chain.',
+      'Secure your products and brand reputation by leveraging Blockchain’s tamper-proof nature, ensuring the authenticity of your goods through every phase of the supply chain.',
     icon: '/Industries/manufacturing3.png',
   },
   {
@@ -37,10 +37,10 @@ export default function Manufacturing() {
           </h1>
           <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
-            the power of blockchain to revolutionize the banking and finance
+            the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
             more critical than ever, BlokMiners is at the forefront of providing
-            blockchain solutions that redefine financial operations, enhance
+            Blockchain solutions that redefine financial operations, enhance
             customer trust, and streamline regulatory compliance.
           </p>
         </div>
@@ -50,11 +50,11 @@ export default function Manufacturing() {
           </h2>
           <p className='mt-6 text-lg text-gray-700'>
             Dive into the era of smart manufacturing with BlokMiners, where
-            blockchain technology propels the industry towards unprecedented
+            Blockchain technology propels the industry towards unprecedented
             efficiency, transparency, and security. As the manufacturing sector
             faces the challenges of globalization, complex supply chains, and
             increasing demands for authenticity and sustainability, BlokMiners
-            emerges as a pioneering force, integrating blockchain solutions to
+            emerges as a pioneering force, integrating Blockchain solutions to
             drive innovation and resilience.
           </p>
         </div>

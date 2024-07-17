@@ -13,6 +13,13 @@ import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { NavbarDrawer } from './NavbarDrawer'
 import { industries, services } from '@/lib/items'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -48,64 +55,71 @@ export function Navbar() {
           />
         </Link>
         <div className='hidden gap-8 font-semibold text-theme-dark xl:flex'>
-          <Menubar>
-            <MenubarMenu>
-              <MenubarTrigger className='flex cursor-pointer items-center gap-1 border-none !bg-transparent p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
-                Services
-                <FaChevronDown className='text-xs' />
-              </MenubarTrigger>
-              <MenubarContent className='z-[120] min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
-                <div>
-                  <div className='h-fit rounded-lg bg-white'>
-                    <div className='z-60 flex h-fit w-[240px] cursor-pointer flex-col rounded-lg bg-[#88caec] bg-opacity-15 font-semibold text-gray-500'>
-                      {services.map((item: any) => (
-                        <Link
-                          href={item.path}
-                          scroll={false}
-                          key={item}
-                          className='flex items-center justify-between gap-6 border-b-2 border-theme-light border-opacity-20 p-3 text-sm text-gray-500 last:border-b-0 hover:bg-theme-dark hover:text-white hover:first:rounded-t-lg hover:last:rounded-b-lg'
-                        >
-                          <div className='flex gap-4'>
-                            <div className='h-[20px] w-[20px]'>{item.icon}</div>
-                            {item.category}
-                          </div>
-                        </Link>
-                      ))}
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className='flex cursor-pointer items-center gap-1 border-none p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
+                  Services
+                  {/* <FaChevronDown className='text-xs' /> */}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className='z-[120] min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
+                  <div>
+                    <div className='h-fit rounded-lg bg-white'>
+                      <div className='z-60 flex h-fit w-[240px] cursor-pointer flex-col rounded-lg bg-[#88caec] bg-opacity-15 font-semibold text-gray-500'>
+                        {services.map((item: any) => (
+                          <Link
+                            href={item.path}
+                            scroll={false}
+                            key={item}
+                            className='flex items-center justify-between gap-6 border-b-2 border-theme-light border-opacity-20 p-3 text-sm text-gray-500 last:border-b-0 hover:bg-theme-dark hover:text-white hover:first:rounded-t-lg hover:last:rounded-b-lg'
+                          >
+                            <div className='flex gap-4'>
+                              <div className='h-[20px] w-[20px]'>
+                                {item.icon}
+                              </div>
+                              {item.category}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
-          <Menubar>
-            <MenubarMenu>
-              <MenubarTrigger className='flex cursor-pointer items-center gap-1 border-none !bg-transparent p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
-                Industries
-                <FaChevronDown className='text-xs' />
-              </MenubarTrigger>
-              <MenubarContent className='z-[120] min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
-                <div>
-                  <div className='h-fit rounded-lg bg-white'>
-                    <div className='z-60 flex h-fit w-[240px] cursor-pointer flex-col rounded-lg bg-[#88caec] bg-opacity-15 font-semibold text-gray-500'>
-                      {industries.map((item: any) => (
-                        <Link
-                          href={item.path}
-                          scroll={false}
-                          key={item}
-                          className='flex items-center justify-between gap-6 border-b-2 border-theme-light border-opacity-20 p-3 text-sm text-gray-500 last:border-b-0 hover:bg-theme-dark hover:text-white hover:first:rounded-t-lg hover:last:rounded-b-lg'
-                        >
-                          <div className='flex gap-4'>
-                            <div className='h-[20px] w-[20px]'>{item.icon}</div>
-                            {item.category}
-                          </div>
-                        </Link>
-                      ))}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className='flex cursor-pointer items-center gap-1 border-none p-0 text-base font-semibold text-theme-dark hover:text-gray-500'>
+                  Industries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className='z-[120] min-w-[220px] rounded-lg border-none bg-none p-0 shadow-none'>
+                  <div>
+                    <div className='h-fit rounded-lg bg-white'>
+                      <div className='z-60 flex h-fit w-[240px] cursor-pointer flex-col rounded-lg bg-[#88caec] bg-opacity-15 font-semibold text-gray-500'>
+                        {industries.map((item: any) => (
+                          <Link
+                            href={item.path}
+                            scroll={false}
+                            key={item}
+                            className='flex items-center justify-between gap-6 border-b-2 border-theme-light border-opacity-20 p-3 text-sm text-gray-500 last:border-b-0 hover:bg-theme-dark hover:text-white hover:first:rounded-t-lg hover:last:rounded-b-lg'
+                          >
+                            <div className='flex gap-4'>
+                              <div className='h-[20px] w-[20px]'>
+                                {item.icon}
+                              </div>
+                              {item.category}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <Link
             href={'/case-study'}
             className='flex cursor-pointer items-center justify-center hover:text-gray-500'

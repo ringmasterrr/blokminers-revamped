@@ -28,7 +28,7 @@ const FAQAccordion = () => {
         className='rounded-lg border px-4 py-3 shadow'
       >
         <AccordionTrigger className='text-start'>
-          What services do we offer in blockchain development?
+          What services do we offer in Blockchain development?
         </AccordionTrigger>
         <AccordionContent>
           Blockchain is a decentralized and distributed ledger technology that
@@ -42,7 +42,7 @@ const FAQAccordion = () => {
         className='rounded-lg border px-4 py-3 shadow'
       >
         <AccordionTrigger className='text-start'>
-          How do you ensure the security of blockchain applications?
+          How do you ensure the security of Blockchain applications?
         </AccordionTrigger>
         <AccordionContent>
           Blockchain is a decentralized and distributed ledger technology that
@@ -56,7 +56,7 @@ const FAQAccordion = () => {
         className='rounded-lg border px-4 py-3 shadow'
       >
         <AccordionTrigger className='text-start'>
-          What industries can benefit from blockchain development services?
+          What industries can benefit from Blockchain development services?
         </AccordionTrigger>
         <AccordionContent>
           Blockchain is a decentralized and distributed ledger technology that
@@ -70,7 +70,7 @@ const FAQAccordion = () => {
         className='rounded-lg border px-4 py-3 shadow'
       >
         <AccordionTrigger className='text-start'>
-          What are some popular use cases for blockchain development?
+          What are some popular use cases for Blockchain development?
         </AccordionTrigger>
         <AccordionContent>
           Blockchain is a decentralized and distributed ledger technology that
@@ -84,7 +84,7 @@ const FAQAccordion = () => {
         className='rounded-lg border px-4 py-3 shadow'
       >
         <AccordionTrigger className='text-start'>
-          How does blockchain technology impact industries like finance and
+          How does Blockchain technology impact industries like finance and
           supply chain?
         </AccordionTrigger>
         <AccordionContent>

@@ -17,13 +17,13 @@ export default function Finance() {
     {
       title: 'Cross-Border Payments',
       description:
-        'Facilitate faster, cheaper, and more transparent international transactions with blockchain-based payment solutions, breaking down barriers in global finance.',
+        'Facilitate faster, cheaper, and more transparent international transactions with Blockchain-based payment solutions, breaking down barriers in global finance.',
       icon: '/Industries/cross.svg',
     },
     {
       title: 'Regulatory Compliance and Reporting',
       description:
-        'Leverage blockchain’s immutable ledger for accurate, tamper-proof record-keeping, ensuring compliance with financial regulations and reporting requirements.',
+        'Leverage Blockchain’s immutable ledger for accurate, tamper-proof record-keeping, ensuring compliance with financial regulations and reporting requirements.',
       icon: '/Industries/regulatory.svg',
     },
   ]
@@ -36,10 +36,10 @@ export default function Finance() {
           </h1>
           <p className='mt-10 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
-            the power of blockchain to revolutionize the banking and finance
+            the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
             more critical than ever, BlokMiners is at the forefront of providing
-            blockchain solutions that redefine financial operations, enhance
+            Blockchain solutions that redefine financial operations, enhance
             customer trust, and streamline regulatory compliance.
           </p>
         </div>
@@ -50,10 +50,10 @@ export default function Finance() {
           </h2>
           <p className='mt-6 text-lg text-gray-700'>
             Step into the future of finance with BlokMiners, where we harness
-            the power of blockchain to revolutionize the banking and finance
+            the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
             more critical than ever, BlokMiners is at the forefront of providing
-            blockchain solutions that redefine financial operations, enhance
+            Blockchain solutions that redefine financial operations, enhance
             customer trust, and streamline regulatory compliance.
           </p>
         </div>

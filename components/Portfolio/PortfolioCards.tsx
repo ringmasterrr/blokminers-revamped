@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const CardList = ({ data }: { data: any }) => {
   return (
-    <div className='my-20 grid grid-cols-1 gap-6 p-2 2md:my-12 2md:grid-cols-2 2md:p-6 xl:grid-cols-3'>
+    <div className='mx-auto my-20 grid max-w-8xl grid-cols-1 gap-6 p-2 2md:my-12 2md:grid-cols-2 2md:p-6 xl:grid-cols-3'>
       {data.map((card: any, index: any) => (
         <div className='flex items-center justify-center' key={index}>
           <Link

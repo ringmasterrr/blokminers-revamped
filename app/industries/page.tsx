@@ -23,7 +23,7 @@ export default async function IndustriesPage({
   const portfolioData = await portfolio.getAllPortfolios(searchParams.tab ?? '')
 
   return (
-    <>
+    <div className='mx-auto max-w-8xl'>
       <IndustriesSection tab={searchParams.tab} />
       <Tab tab={tab ?? 'finance'} />
       {tab === undefined && <Finance />}
@@ -35,7 +35,8 @@ export default async function IndustriesPage({
       {tab === 'travel' && <Travel />}
       {tab === 'retail' && <Retail />}
       {tab === 'manufacturing' && <Manufacturing />}
+
       <CardList data={portfolioData} />
-    </>
+    </div>
   )
 }

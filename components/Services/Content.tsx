@@ -33,14 +33,18 @@ export default function Content({ title, summary, data }: any) {
     //     })}
     //   </div>
     // </div>
-    <div className='flex flex-col gap-36 bg-[#EBEFEF] 2md:px-16 px-4 py-16'>
+    <div className='relative flex flex-col gap-36 px-4 py-16 2md:px-16'>
+      <div className='bg-blur absolute inset-0 bg-[#D8F6FF] bg-opacity-60'></div>
+
       <div className='flex flex-col items-center gap-6 text-center'>
-        <div className='2md:text-5xl text-3xl font-bold text-theme-dark'>{title}</div>
-        <div className='max-w-[1000px] 2md:text-lg font-medium text-theme-dark'>
+        <div className='text-3xl font-bold text-theme-dark 2md:text-5xl'>
+          {title}
+        </div>
+        <div className='max-w-[1000px] font-medium text-theme-dark 2md:text-lg'>
           {summary}
         </div>
       </div>
-      <div className='grid 2md:grid-cols-3 grid-cols-1 items-center justify-items-center gap-x-24 gap-y-20'>
+      <div className='grid grid-cols-1 items-center justify-items-center gap-x-24 gap-y-20 2md:grid-cols-3'>
         {data.map((item: any, index: any) => {
           const last = data.length % 3
           return (

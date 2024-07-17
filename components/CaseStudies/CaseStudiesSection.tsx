@@ -59,12 +59,14 @@ export function CaseStudiesSection({
         <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-50'></div>
         <ParticleComponent />
       </div>
-      <CaseStudiesCards cases={cases} />
-      <Pagination
-        search={search ?? undefined}
-        page={page ?? 1}
-        totalPages={totalPages ?? 1}
-      />
+      <div className='my-20 space-y-20'>
+        <CaseStudiesCards cases={cases} />
+        <Pagination
+          search={search ?? undefined}
+          page={page ?? 1}
+          totalPages={totalPages ?? 1}
+        />
+      </div>
     </div>
   )
 }

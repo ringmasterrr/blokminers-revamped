@@ -155,7 +155,7 @@ function ContactForm() {
           <Button type='submit' className='mt-4 rounded-lg text-lg'>
             Submit
           </Button>
-          <div className='h-4'> 
+          <div className='h-4'>
             {error && (
               <p className='w-full text-center text-red-500'>{error}</p>
             )}

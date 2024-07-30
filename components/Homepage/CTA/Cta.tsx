@@ -8,19 +8,22 @@ import Link from 'next/link'
 const Cta = () => {
   return (
     <div className='flex w-full items-center justify-center'>
-      <div className='z-[100] mt-10 max-w-8xl bg-gradient-to-r from-[#0066FF] to-[#009DBF] py-10 px-2 2md:p-20'>
-        <div className='relative flex flex-col items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-6 2md:flex-row 2md:p-20'>
+      <div className='z-[100] mt-10 max-w-8xl bg-theme-dark px-2 py-10 2md:p-20'>
+        <div className='relative flex flex-col items-center justify-between gap-8 overflow-clip rounded-3xl border border-[#E0E0E0] bg-[#FFFFFF29] p-6 py-20 2md:flex-row 2md:p-20'>
           <div className='w-full space-y-8 2md:w-1/2'>
-            <h2 className='text-lg font-bold text-white 2md:text-4xl'>
+            <h2 className='text-center text-lg font-bold text-white 2md:text-left 2md:text-5xl'>
               Start your Blockchain Project with the help of our Team of
               Experts.
             </h2>
-            <p className='text-center text-white 2md:text-left'>
+            <p className='text-center text-[#d4d4d4] 2md:text-left'>
               Meet our world famous support team. They are fast, they are smart,
               and they will help you out any time.
             </p>
             <div className='flex justify-center gap-4 2md:justify-start'>
-              <Link href={'/contact-us'} className='rounded-md bg-white px-4 py-2 text-xs font-bold text-[#00283C] 2md:px-6'>
+              <Link
+                href={'/contact-us'}
+                className='rounded-md bg-white px-4 py-2 text-xs font-bold text-[#00283C] 2md:px-6'
+              >
                 Talk To An Expert
               </Link>
               <button className='rounded-md border bg-transparent px-4 py-2 text-xs font-bold text-white 2md:px-6'>
@@ -31,7 +34,7 @@ const Cta = () => {
 
           <motion.div whileHover={{ scale: 1.1 }}>
             <Image
-              src={'/logo.svg'}
+              src={'/logowhite.svg'}
               alt='logo'
               height={500}
               width={500}

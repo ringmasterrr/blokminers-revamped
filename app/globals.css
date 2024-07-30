@@ -313,6 +313,7 @@
   width: 150px;
   flex-direction: row !important;
   background-color: transparent;
+  color: #000000 !important;
 }
 
 .PhoneInputCountryIcon {

@@ -1,3 +1,4 @@
+import Cta from '@/components/Homepage/CTA/Cta'
 import Education from '@/components/Industries/Education'
 import Finance from '@/components/Industries/Finance'
 import Healthcare from '@/components/Industries/Healthcare'
@@ -37,6 +38,7 @@ export default async function IndustriesPage({
       {tab === 'manufacturing' && <Manufacturing />}
 
       <CardList data={portfolioData} />
+      <Cta/>
     </div>
   )
 }

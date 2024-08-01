@@ -12,10 +12,11 @@ import Cloud from './Cloud'
 import { Page } from '../shared/Page'
 import { serviceData } from '@/lib/services'
 import Link from 'next/link'
+import Cta from '../Homepage/CTA/Cta'
 
 function ServicesSection({ tab }: { tab: string | undefined }) {
   return (
-    <div className='relative mx-auto max-w-8xl pb-10 pt-16 2md:pt-0'>
+    <div className='relative mx-auto max-w-8xl pb-10 pt-16 2md:pt-10'>
       <ParticleComponent />
       <Page>
         <div className='bg-grid flex min-h-[500px] flex-col items-center justify-between 2md:min-h-[700px] 2md:flex-row'>
@@ -34,9 +35,9 @@ function ServicesSection({ tab }: { tab: string | undefined }) {
               Get Started
             </Link>
           </div>
-          <div className='w-[300px] 2md:w-[45%]'>
+          <div className='w-[300px]  2md:w-[40%]'>
             <Image
-              src={'/Industries/industries.svg'}
+              src={'/services/main.svg'}
               alt=''
               width={2000}
               height={2000}

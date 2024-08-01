@@ -42,7 +42,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[100] w-full px-2 2md:px-4 xl:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-[110] w-full px-2 2md:px-4 xl:px-16 ${scrolled ? 'bg-white' : 'bg-transparent'}`}
     >
       <div className='mx-auto flex h-16 max-w-8xl items-center justify-between p-4 md:p-8 2md:h-20'>
         <Link href={'/'}>

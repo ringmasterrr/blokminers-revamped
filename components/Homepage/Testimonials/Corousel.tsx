@@ -26,7 +26,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
 
   return (
     <>
-      <div className='mx-8 transform 2md:mx-0 2md:scale-x-[130%]'>
+      <div className='mx-8 transform lg:mx-0 lg:scale-x-[130%]'>
         <Swiper
           onSwiper={setSwiperInstance}
           onSlideChange={handleSlideChange}
@@ -56,10 +56,10 @@ export default function Corousel({ testimonials }: CorouselProps) {
           {testimonials.map((item, index) => (
             <SwiperSlide key={index} className={``}>
               <div
-                className={` ${index !== currentSlide && '!py-8'} mx-auto h-[300px]`}
+                className={` ${index !== currentSlide && '!py-8'} mx-auto sm:h-[230px] lg:h-[300px]`}
               >
-                <div className='flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-white border-opacity-20 bg-white bg-opacity-5 !py-8 px-8 text-white transition-all'>
-                  <div className='flex w-full items-center justify-between 2md:scale-y-[120%]'>
+                <div className='flex h-full flex-col  overflow-hidden rounded-xl border-2 border-white border-opacity-20 2md:gap-12 gap-8  bg-white bg-opacity-5 sm:!py-8 sm:px-8 text-white transition-all px-6 py-6'>
+                  <div className='flex w-full items-center justify-between lg:scale-y-[120%]'>
                     <div className='flex items-center gap-2'>
                       <div className='h-12 w-12'>
                         <Image
@@ -82,7 +82,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
                     </div>
                   </div>
                   <div
-                    className={`${index !== currentSlide && 'text-xs'} text-sm 2md:scale-y-[120%]`}
+                    className={`${index !== currentSlide && 'text-xs max-line-4'} text-sm 2md:scale-y-[120%] max-line-5`}
                   >
                     {item.testimony}
                   </div>

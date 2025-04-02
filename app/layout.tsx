@@ -1,35 +1,42 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Navbar } from '@/components/shared/Navbar/Navbar'
-import Footer from '@/components/shared/Footer/Footer'
-import { ParticleComponent } from '@/lib/particles'
-import Whatsapp from '@/components/shared/whatsapp'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script"; // Import next/script
+import "./globals.css";
+import { Navbar } from "@/components/shared/Navbar/Navbar";
+import Footer from "@/components/shared/Footer/Footer";
+import Whatsapp from "@/components/shared/whatsapp";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Blokminers',
-  description:
-    'Embarking on our journey in the dynamic realm of Blockchain, BlokMiners is committed to spearheading innovative solutions for a variety of industries. Our mission is clear — to explore, adapt, and create impactful Blockchain solutions that resonate with the evolving needs of our clients. Founded with a passion for pioneering change, BlokMiners embraces a forward-looking vision. Our roots are grounded in a commitment to unraveling the possibilities of Blockchain. Whether you’re exploring decentralized applications or optimizing operations through Blockchain, We ensures innovative Blockchain development that propel your business forward. Join us in reshaping the future with Blockchain.',
-}
+  title: "Blokminers",
+  description: "BlokMiners is committed to spearheading innovative Blockchain solutions.",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
+    <html lang="en">
       <body className={inter.className}>
+        {/* Add Weglot Script */}
+        <Script src="https://cdn.weglot.com/weglot.min.js" strategy="afterInteractive" />
+        <Script id="weglot-init" strategy="afterInteractive">
+          {`
+            Weglot.initialize({
+              api_key: 'wg_21156c80e0e0b9d4ea8887a73387c4844'
+            });
+          `}
+        </Script>
+
+        {/* Website Components */}
         <Navbar />
         {children}
         <Footer />
         <Whatsapp />
       </body>
     </html>
-  )
+  );
 }

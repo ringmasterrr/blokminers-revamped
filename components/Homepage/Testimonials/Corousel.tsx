@@ -66,7 +66,7 @@ export default function Corousel({ testimonials }: CorouselProps) {
                           src={item.logo}
                           width={100}
                           height={80}
-                          alt='zeeve'
+                          alt=''
                           className='rounded-full'
                         />
                       </div>

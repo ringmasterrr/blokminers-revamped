@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'blokminers-assets.s3.amazonaws.com',
+        hostname: 'blokminers.s3.amazonaws.com',
         port: '',
         pathname: '/**',
       },

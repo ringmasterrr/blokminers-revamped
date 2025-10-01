@@ -4,7 +4,7 @@ import { Page } from '@/components/shared/Page'
 import { PortfolioService } from '@/services/portfolio'
 const portfolio = new PortfolioService()
 
-export default async function CaseStudiesHome() {
+export default async function PortfoliosPage() {
   const portfolioData = await portfolio.getAllPortfolios('')
   console.log(portfolioData)
   return (

@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Cta from '@/components/Homepage/CTA/Cta'
 import { Portfolio } from '@/components/Portfolio/Portfolio'
 import { Page } from '@/components/shared/Page'

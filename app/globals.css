@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --animation-iteration: infinite;
+}
+
 @layer utilities {
   @keyframes spin-slow {
     from {
@@ -232,7 +236,6 @@
   z-index: -1; /* Ensure the blur stays behind the content */
 }
 
-
 .blur-background {
   position: absolute;
   top: 0;
@@ -353,4 +356,278 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes animGravity {
+  0% {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+  30%,
+  80% {
+    letter-spacing: 40px;
+    padding-left: 40px;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  92%,
+  100% {
+    letter-spacing: 35px;
+    padding-left: 35px;
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+}
+
+@keyframes animDont {
+  0%,
+  15% {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+  35%,
+  80% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  92%,
+  100% {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+}
+
+@keyframes animLet {
+  0%,
+  25% {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+  45%,
+  80% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  92%,
+  100% {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+}
+
+@keyframes animGo {
+  0%,
+  35% {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+  55%,
+  80% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  92%,
+  100% {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+}
+
+.cosmic-parallax-container {
+  position: relative;
+  width: 100%;
+  min-height: 38rem;
+  overflow: hidden;
+  /* border-radius: 32px; */
+  background: radial-gradient(
+      circle at 50% 18%,
+      rgba(36, 202, 255, 0.24),
+      transparent 22%
+    ),
+    radial-gradient(circle at 20% 0%, rgba(158, 98, 254, 0.18), transparent 26%),
+    linear-gradient(180deg, #031725 0%, #061c2d 45%, #0b2a3a 100%);
+  isolation: isolate;
+}
+
+.cosmic-stars,
+.cosmic-stars-medium,
+.cosmic-stars-large {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  animation: animStar linear var(--animation-iteration);
+}
+
+.cosmic-stars {
+  width: 1px;
+  height: 1px;
+  animation-duration: 140s;
+}
+
+.cosmic-stars-medium {
+  width: 2px;
+  height: 2px;
+  animation-duration: 180s;
+}
+
+.cosmic-stars-large {
+  width: 3px;
+  height: 3px;
+  animation-duration: 220s;
+}
+
+.cosmic-stars::after,
+.cosmic-stars-medium::after,
+.cosmic-stars-large::after {
+  content: '';
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  box-shadow: inherit;
+}
+
+#horizon {
+  position: absolute;
+  left: 50%;
+  bottom: 5.5rem;
+  width: min(72rem, 125%);
+  height: 13rem;
+  transform: translateX(-50%);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(36, 202, 255, 0.2) 0%,
+    rgba(36, 202, 255, 0.08) 34%,
+    transparent 72%
+  );
+  z-index: 2;
+}
+
+#horizon .glow {
+  position: absolute;
+  left: 50%;
+  top: -2.25rem;
+  width: min(34rem, 60vw);
+  height: 5rem;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    rgba(158, 98, 254, 0) 0%,
+    rgba(36, 202, 255, 0.82) 50%,
+    rgba(158, 98, 254, 0) 100%
+  );
+  filter: blur(26px);
+}
+
+#earth {
+  position: absolute;
+  left: 50%;
+  bottom: -17.5rem;
+  width: min(85rem, 145%);
+  height: 28rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 202, 255, 0.3) 0%,
+      rgba(0, 40, 60, 0.96) 62%
+    );
+  box-shadow:
+    0 -24px 90px rgba(36, 202, 255, 0.15),
+    inset 0 30px 80px rgba(255, 255, 255, 0.08);
+  z-index: 1;
+}
+
+#title,
+#subtitle {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#title {
+  padding: 5.5rem 1.5rem 0;
+  color: #fff;
+  font-size: clamp(2.8rem, 7vw, 6.25rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  text-shadow: 0 12px 50px rgba(0, 0, 0, 0.4);
+}
+
+#subtitle {
+  margin-top: 1.5rem;
+  padding: 0 1.5rem;
+  min-height: 3rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+}
+
+#subtitle span {
+  display: inline-block;
+}
+
+.subtitle-part-1 {
+  animation: animGravity 6s ease-in-out var(--animation-iteration);
+}
+
+.subtitle-part-2 {
+  animation: animDont 6s ease-in-out var(--animation-iteration);
+}
+
+.subtitle-part-3 {
+  animation: animLet 6s ease-in-out var(--animation-iteration);
+}
+
+.subtitle-part-4 {
+  animation: animGo 6s ease-in-out var(--animation-iteration);
+}
+
+@media screen and (max-width: 768px) {
+  .cosmic-parallax-container {
+    min-height: 32rem;
+  }
+
+  #title {
+    padding-top: 4.5rem;
+  }
+
+  #subtitle {
+    min-height: 4rem;
+    letter-spacing: 0.18em;
+    line-height: 1.8;
+  }
+
+  #horizon {
+    bottom: 4.75rem;
+    height: 10rem;
+  }
+
+  #earth {
+    bottom: -15rem;
+    height: 23rem;
+  }
 }

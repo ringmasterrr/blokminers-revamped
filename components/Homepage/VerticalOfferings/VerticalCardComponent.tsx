@@ -103,7 +103,7 @@ const images = [
 ]
 
 const Verticals = () => (
-  <div className='relative h-[50rem] w-[375px] translate-y-6 2md:w-[50rem] 2md:translate-x-20'>
+  <div className='max-w-8xl mx-auto relative h-[50rem] w-[375px] translate-y-6 2md:w-[50rem] 2md:translate-x-20'>
     {images.map((image, index) => (
       <motion.div
         key={index}

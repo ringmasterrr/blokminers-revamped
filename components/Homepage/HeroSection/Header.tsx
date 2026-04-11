@@ -7,7 +7,6 @@ import { ArrowRight } from 'lucide-react'
 import { useMemo } from 'react'
 import { FaEthereum } from 'react-icons/fa'
 import { SiOpenai, SiSolana } from 'react-icons/si'
-
 import { Button } from '@/components/ui/button'
 
 const calendlyUrl =
@@ -43,7 +42,7 @@ export function Header() {
   const schemaMarkup = useMemo(() => JSON.stringify(organizationSchema), [])
 
   return (
-    <div className='flex flex-col gap-6 pt-10'>
+    <div className='flex flex-col gap-9 pt-2'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: schemaMarkup }}
@@ -95,12 +94,12 @@ export function Header() {
           {builtOnLogos.map((logo) => (
             <div
               key={logo.name}
-              className='flex h-10 w-10 items-center justify-center grayscale transition-opacity'
+              className='flex h-5 w-5 items-center justify-center grayscale transition-opacity'
             >
               {logo.type === 'icon' ? (
                 <logo.icon
                   aria-label={logo.name}
-                  className='h-10 w-10 text-theme-light'
+                  className='h-5 w-5 text-theme-light'
                 />
               ) : (
                 <Image
@@ -108,7 +107,7 @@ export function Header() {
                   alt={logo.name}
                   width={40}
                   height={40}
-                  className='h-10 w-10 object-contain'
+                  className='h-5 w-5 object-contain'
                 />
               )}
             </div>

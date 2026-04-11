@@ -5,14 +5,14 @@ import { Numbers } from './Numbers'
 
 export function HeroSection() {
   return (
-    <div className='bg-grid relative flex flex-col items-center justify-between py-16 xl:flex-row'>
-      <div className='flex flex-col items-center gap-20 2md:items-start 2md:gap-52'>
+    <div className='bg-grid relative flex flex-col items-center justify-between pb-16 pt-8 xl:flex-row xl:pt-6'>
+      <div className='flex flex-col items-center gap-16 2md:items-start 2md:gap-40'>
         <Header />
         <div className='hidden 2md:block'>
           <Numbers />
         </div>
       </div>
-      <div className='w-fit overflow-clip xl:translate-x-10'>
+      <div className='w-fit overflow-x-clip overflow-y-visible xl:translate-x-10'>
         <Infographics />
       </div>
       <div className='block 2md:hidden'>

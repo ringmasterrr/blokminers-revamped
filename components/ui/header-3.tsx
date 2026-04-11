@@ -130,42 +130,42 @@ const serviceGroups: LinkGroup[] = [
 const industryLinks: LinkItem[] = [
   {
     title: 'Finance',
-    href: '/industries?tab=finance',
+    href: '/industries/finance',
     icon: Landmark,
     description:
       'Digital finance, fintech products, and secure transaction systems.',
   },
   {
     title: 'Healthcare',
-    href: '/industries?tab=healthcare',
+    href: '/industries/healthcare',
     icon: HeartPulse,
     description:
       'Automation and data systems for patient, provider, and operations workflows.',
   },
   {
     title: 'Education',
-    href: '/industries?tab=education',
+    href: '/industries/education',
     icon: GraduationCap,
     description:
       'Modern platforms for learning, engagement, and academic operations.',
   },
   {
     title: 'Real Estate',
-    href: '/industries?tab=realestate',
+    href: '/industries/real-estate',
     icon: Building2,
     description:
       'Proptech solutions for transactions, records, and process automation.',
   },
   {
     title: 'Retail',
-    href: '/industries?tab=retail',
+    href: '/industries/retail',
     icon: ShoppingBag,
     description:
       'Commerce systems that improve conversion, retention, and logistics visibility.',
   },
   {
     title: 'Manufacturing',
-    href: '/industries?tab=manufacturing',
+    href: '/industries/manufacturing',
     icon: Factory,
     description:
       'Operational intelligence and workflow optimization for industrial teams.',
@@ -244,7 +244,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b border-transparent bg-white text-theme-dark transition-all duration-200',
+        'sticky top-0 z-50 w-full border-b border-transparent bg-transparent text-theme-dark transition-all duration-200',
         scrolled &&
           'border-theme-light/15 bg-white/95 shadow-lg shadow-theme-light/10 backdrop-blur-lg',
       )}
@@ -357,17 +357,10 @@ export function Header() {
         </div>
 
         <div className='hidden items-center justify-end gap-2 lg:flex'>
-          <Button
-            asChild
-            variant='outline'
-            className='h-10 rounded-xl border-theme-light/20 bg-white px-4 font-medium text-theme-dark hover:bg-blue-ribbon hover:text-theme-dark'
-          >
+          <Button asChild variant='outline'>
             <Link href='/contact-us'>Contact Us</Link>
           </Button>
-          <Button
-            asChild
-            className='h-10 rounded-xl border border-theme-light/15 bg-dodger-blue px-5 font-medium text-theme-dark hover:bg-heliotrope'
-          >
+          <Button asChild>
             <a href={calendlyUrl} target='_blank' rel='noreferrer'>
               Book Free Discovery Call
             </a>
@@ -435,17 +428,10 @@ export function Header() {
         </div>
 
         <div className='flex flex-col gap-2'>
-          <Button
-            asChild
-            variant='outline'
-            className='w-full rounded-xl border-theme-light/20 bg-white text-theme-dark hover:bg-blue-ribbon hover:text-theme-dark'
-          >
+          <Button asChild variant='outline' className='w-full'>
             <Link href='/contact-us'>Contact Us</Link>
           </Button>
-          <Button
-            asChild
-            className='w-full rounded-xl border border-theme-light/15 bg-dodger-blue text-theme-dark hover:bg-heliotrope'
-          >
+          <Button asChild className='w-full'>
             <a href={calendlyUrl} target='_blank' rel='noreferrer'>
               Book Free Discovery Call
             </a>

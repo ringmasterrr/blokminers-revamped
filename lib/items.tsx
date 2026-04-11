@@ -17,42 +17,42 @@ import { SiBlockchaindotcom } from "react-icons/si";
 export const industries = [
   {
     category: 'Finance',
-    path: '/industries?tab=finance',
+    path: '/industries/finance',
     icon: <RiMoneyDollarCircleFill className='h-full w-full' />,
   },
   {
     category: 'Healthcare',
-    path: '/industries?tab=healthcare',
+    path: '/industries/healthcare',
     icon: <FaStethoscope className='h-full w-full' />,
   },
   {
     category: 'Insurance',
-    path: '/industries?tab=insurance',
+    path: '/industries/insurance',
     icon: <FaHandHoldingMedical className='h-full w-full' />,
   },
   {
     category: 'Education',
-    path: '/industries?tab=education',
+    path: '/industries/education',
     icon: <FaUserGraduate className='h-full w-full' />,
   },
   {
     category: 'Real Estate',
-    path: '/industries?tab=realestate',
+    path: '/industries/real-estate',
     icon: <HiMiniBuildingOffice2 className='h-full w-full' />,
   },
   {
     category: 'Travel & Logistics',
-    path: '/industries?tab=travel',
+    path: '/industries/travel-logistics',
     icon: <MdOutlineAirplanemodeActive className='h-full w-full' />,
   },
   {
     category: 'Retail',
-    path: '/industries?tab=retail',
+    path: '/industries/retail',
     icon: <FaShoppingCart className='h-full w-full' />,
   },
   {
     category: 'Manufacturing',
-    path: '/industries?tab=manufacturing',
+    path: '/industries/manufacturing',
     icon: <MdPrecisionManufacturing className='h-full w-full' />,
   },
 ]

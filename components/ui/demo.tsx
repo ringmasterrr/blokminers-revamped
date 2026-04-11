@@ -1,31 +1,57 @@
-import React from 'react'
+import {
+  CardCurtain,
+  CardCurtainReveal,
+  CardCurtainRevealBody,
+  CardCurtainRevealDescription,
+  CardCurtainRevealFooter,
+  CardCurtainRevealTitle,
+} from '@/components/ui/card-curtain-reveal'
+import { Button } from '@/components/ui/button'
+import { ArrowUpRight } from 'lucide-react'
 
-import { Header } from '@/components/ui/header-3'
-
-export default function Demo() {
+export const CardCurtainRevealDemo = () => {
   return (
-    <div className='w-full'>
-      <Header />
+    <div className='min-h-screen place-content-center place-items-center'>
+      <CardCurtainReveal className='h-[560px] w-96 border border-zinc-100 bg-zinc-950 text-zinc-50 shadow'>
+        <CardCurtainRevealBody>
+          <CardCurtainRevealTitle className='text-3xl font-medium tracking-tight'>
+            Behind <br />
+            the Curtain
+          </CardCurtainRevealTitle>
+          <CardCurtainRevealDescription className='my-4'>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium voluptate, eum quia temporibus fugiat rerum nobis modi
+              dolor, delectus laboriosam, quae adipisci reprehenderit officiis
+              quidem iure ducimus incidunt officia. Magni, eligendi repellendus.
+              Fugiat, natus aut?
+            </p>
+          </CardCurtainRevealDescription>
+          <Button
+            variant='secondary'
+            size='icon'
+            className='aspect-square rounded-full'
+          >
+            <ArrowUpRight />
+          </Button>
 
-      <main className='max-w-3xl mx-auto min-h-screen w-full px-4 py-12'>
-        <div className='mb-4 space-y-2'>
-          <div className='h-6 w-4/6 rounded-md border border-theme-light/10 bg-blue-ribbon' />
-          <div className='h-6 w-1/2 rounded-md border border-theme-light/10 bg-dodger-blue' />
-        </div>
-        <div className='mb-8 flex gap-2'>
-          <div className='h-3 w-14 rounded-md border border-theme-light/10 bg-heliotrope' />
-          <div className='h-3 w-12 rounded-md border border-theme-light/10 bg-limeade' />
-        </div>
+          <CardCurtain className='bg-zinc-50' />
+        </CardCurtainRevealBody>
 
-        {Array.from({ length: 7 }).map((_, i) => (
-          <div key={i} className='mb-8 space-y-2'>
-            <div className='h-4 w-full rounded-md border border-theme-light/10 bg-blue-ribbon' />
-            <div className='h-4 w-full rounded-md border border-theme-light/10 bg-dodger-blue' />
-            <div className='h-4 w-full rounded-md border border-theme-light/10 bg-heliotrope' />
-            <div className='h-4 w-1/2 rounded-md border border-theme-light/10 bg-fun-green' />
-          </div>
-        ))}
-      </main>
+        <CardCurtainRevealFooter className='mt-auto'>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            width='100%'
+            height='100%'
+            alt='Tokyo street'
+            src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          />
+        </CardCurtainRevealFooter>
+      </CardCurtainReveal>
     </div>
   )
+}
+
+export default function DemoOne() {
+  return <CardCurtainRevealDemo />
 }

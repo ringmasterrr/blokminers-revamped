@@ -1,28 +1,16 @@
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Numbers } from '../Homepage/HeroSection/Numbers'
 import CaseStudiesCards from './CaseStudies'
 import { ParticleComponent } from '@/lib/particles'
 import { ICases } from '@/types/cases'
-import Pagination from '../shared/Pagination'
 import Link from 'next/link'
 
 export interface ICasesPage {
-  search?: string
-  page?: number
-  limit?: number
-  total?: number
   cases: ICases[]
-  totalPages?: number
 }
 
 export function CaseStudiesSection({
-  search,
-  page,
   cases,
-  limit,
-  total,
-  totalPages,
 }: ICasesPage) {
   return (
     <div className='relative'>
@@ -52,20 +40,15 @@ export function CaseStudiesSection({
             alt=''
             width={2000}
             height={2000}
-            className='w-full max-w-[30rem]'
+            className='w-[30rem]'
           />
         </div>
 
         <div className='bg-blur absolute inset-0 -top-96 rounded-full bg-[#D8F6FF] bg-opacity-50'></div>
         <ParticleComponent />
       </div>
-      <div className='my-20 space-y-20'>
+      <div className='my-20'>
         <CaseStudiesCards cases={cases} />
-        <Pagination
-          search={search ?? undefined}
-          page={page ?? 1}
-          totalPages={totalPages ?? 1}
-        />
       </div>
     </div>
   )

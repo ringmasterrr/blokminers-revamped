@@ -8,23 +8,29 @@ export default async function CaseStudiesPage({
   searchParams,
 }: {
   searchParams: {
-    page?: string
     search?: string
   }
 }) {
-  const data = await cases.getAllCaseStudies({
+  const firstPageData = await cases.getAllCaseStudies({
     keyword: searchParams.search,
-    page: searchParams.page,
+    page: '1',
   })
-  console.log(data)
+
+  const allCases = [...firstPageData.data]
+
+  if (firstPageData.totalPages > 1) {
+    for (let page = 2; page <= firstPageData.totalPages; page++) {
+      const pageData = await cases.getAllCaseStudies({
+        keyword: searchParams.search,
+        page: String(page),
+      })
+      allCases.push(...pageData.data)
+    }
+  }
+
   return (
     <Page className='justify-between px-4 2md:px-8'>
-      <CaseStudiesSection
-        cases={data.data}
-        page={data.page}
-        search={searchParams.search}
-        totalPages={data.totalPages}
-      />
+      <CaseStudiesSection cases={allCases} />
     </Page>
   )
 }

@@ -249,30 +249,30 @@ export function Header() {
           'border-theme-light/15 bg-white/95 shadow-lg shadow-theme-light/10 backdrop-blur-lg',
       )}
     >
-      <nav className='mx-auto grid h-14 w-full max-w-8xl grid-cols-[1fr_auto] items-center gap-4 px-4 md:px-8 lg:h-16 lg:grid-cols-[1fr_auto_1fr]'>
+      <nav className='mx-auto grid h-20 w-full max-w-8xl grid-cols-[1fr_auto] items-center justify-center gap-4 px-4 md:px-8 lg:h-20 lg:grid-cols-[1fr_auto_1fr]'>
         <div className='flex min-w-0 items-center'>
           <Link
             href='/'
-            className='flex flex-col justify-center rounded-md px-1 py-1'
+            className='flex flex-col items-start justify-center rounded-md px-1 py-1'
           >
             <Image
               src='/Images/Navbar/logo.svg'
               alt='BlokMiners logo'
               width={160}
               height={44}
-              className='h-auto w-32 sm:w-36'
+              className='h-auto w-32 sm:w-44'
               priority
             />
-            <span className='mt-1 hidden text-[10px] leading-tight text-theme-light sm:block sm:text-xs'>
+            <span className='mt-0.5 hidden text-[8px] font-semibold leading-none text-theme-light sm:block sm:text-[10px]'>
               AI Automation <span className='mx-1 text-theme-light/40'>|</span>{' '}
               Blockchain Development
             </span>
           </Link>
         </div>
 
-        <div className='hidden justify-center lg:flex'>
+        <div className='hidden items-center justify-center lg:flex'>
           <NavigationMenu className='lg:flex'>
-            <NavigationMenuList>
+            <NavigationMenuList className='items-center'>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={cn(
@@ -453,7 +453,7 @@ function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
     <div
       id='mobile-menu'
       className={cn(
-        'fixed inset-x-0 bottom-0 top-14 z-40 flex flex-col overflow-hidden border-y border-theme-light/10 bg-white/95 text-theme-dark backdrop-blur-lg lg:hidden',
+        'fixed inset-x-0 bottom-0 top-20 z-40 flex flex-col overflow-hidden border-y border-theme-light/10 bg-white/95 text-theme-dark backdrop-blur-lg lg:hidden',
       )}
     >
       <div

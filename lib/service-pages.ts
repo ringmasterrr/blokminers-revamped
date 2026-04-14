@@ -230,6 +230,7 @@ export const homepageServiceFilters: {
   label: string
   value: ServiceCategory
 }[] = [
+  { label: 'All', value: 'all' },
   { label: 'AI & Automation', value: 'ai' },
   { label: 'Blockchain & Web3', value: 'blockchain' },
 ]

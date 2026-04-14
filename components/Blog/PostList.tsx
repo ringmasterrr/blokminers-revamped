@@ -76,9 +76,9 @@ const PostList = ({ posts }: PostListProps) => {
           <Link
             href={`/blog/${post._id}`}
             key={index}
-            className='flex w-[350px] justify-center sm:w-[400px]'
+            className='flex w-full max-w-[350px] justify-center sm:max-w-[400px]'
           >
-            <div className='shadow-custom w-[350px] cursor-pointer rounded-xl border border-[#00283C29] bg-white sm:w-[400px]'>
+            <div className='shadow-custom w-full cursor-pointer rounded-xl border border-[#00283C29] bg-white'>
               <div className='relative mb-4 h-56 w-full overflow-hidden rounded-t-xl'>
                 <Image
                   src={post.image}
@@ -105,7 +105,7 @@ const PostList = ({ posts }: PostListProps) => {
                     {format(parseISO(post.createdAt), 'MMMM do, yyyy')}
                   </p>
                 </div>
-                <h2 className='ellipsis-multiline-blog-heading text-2xl font-bold text-theme-dark'>
+                <h2 className='ellipsis-multiline-blog-heading text-xl font-bold text-theme-dark sm:text-2xl'>
                   {post.title}
                 </h2>
                 <p className='ellipsis-multiline-blog-content text-[#A3A3A3]'>

@@ -54,8 +54,8 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
   ]
 
   return (
-    <div className='mx-auto my-16 w-fit px-4'>
-      <div className='grid grid-cols-2 justify-center rounded-md bg-[#88caec] bg-opacity-15 p-2 xl:flex xl:gap-4'>
+    <div className='max-w-5xl mx-auto my-12 w-full px-4 sm:my-16'>
+      <div className='grid grid-cols-1 justify-center rounded-md bg-[#88caec] bg-opacity-15 p-2 sm:grid-cols-2 xl:flex xl:gap-4'>
         {services.map((item, index) => {
           // let i = false
           // if (index % 2 === 0) {
@@ -67,17 +67,19 @@ function ServiceTabs({ tab }: { tab: string | undefined }) {
                 href={`?tab=${item.path}`}
                 scroll={false}
                 key={index}
-                className={`flex items-center rounded-md text-gray-800 xl:justify-center`}
+                className={`flex w-full items-center rounded-md text-gray-800 xl:justify-center`}
               >
                 <div
-                  className={`flex w-full items-center gap-2 rounded-md p-3 text-xs sm:text-base ${
+                  className={`flex w-full min-w-0 items-center gap-2 rounded-md p-3 text-xs sm:text-sm 2md:text-base ${
                     tab === `${item.path}`
                       ? 'bg-theme-dark text-white'
                       : 'opacity-50'
                   }`}
                 >
-                  <div className='h-5 w-5'>{item.icon}</div>
-                  <div>{item.category}</div>
+                  <div className='h-5 w-5 shrink-0'>{item.icon}</div>
+                  <div className='min-w-0 whitespace-normal leading-tight 2md:whitespace-nowrap'>
+                    {item.category}
+                  </div>
                 </div>
               </Link>
             </>

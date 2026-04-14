@@ -130,7 +130,7 @@ function VerticalStepper({ steps }: { steps: typeof aiSteps }) {
                 delay: index * 0.15,
                 ease: 'easeOut',
               }}
-              className='group relative py-8 pl-16 pr-4 md:py-12 md:pl-32 md:pr-8'
+              className='group relative py-6 pl-14 pr-2 sm:pr-4 md:py-12 md:pl-32 md:pr-8'
             >
               {/* Stepper Node (Circle on the track) */}
               <div className='absolute left-6 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-12'>
@@ -146,7 +146,7 @@ function VerticalStepper({ steps }: { steps: typeof aiSteps }) {
               </div>
 
               {/* Step Card */}
-              <div className='relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0d2b3a] p-8 backdrop-blur-md transition-all duration-700 hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-[#123547] hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)] md:p-12'>
+              <div className='relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d2b3a] p-5 backdrop-blur-md transition-all duration-700 hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-[#123547] hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)] sm:p-7 md:rounded-[2.5rem] md:p-12'>
                 {/* Huge Watermark Number */}
                 <div className='pointer-events-none absolute -bottom-10 -right-4 select-none text-[10rem] font-black leading-none text-white/[0.03] transition-all duration-700 group-hover:scale-110 group-hover:text-cyan-300/[0.08] md:-bottom-16 md:-right-8 md:text-[14rem]'>
                   0{step.number}
@@ -161,11 +161,11 @@ function VerticalStepper({ steps }: { steps: typeof aiSteps }) {
                       <div className='h-px w-12 bg-cyan-300/30' />
                     </div>
 
-                    <h3 className='mb-6 text-3xl font-extrabold text-white md:text-4xl'>
+                    <h3 className='mb-4 text-2xl font-extrabold text-white sm:mb-6 sm:text-3xl md:text-4xl'>
                       {step.title}
                     </h3>
 
-                    <p className='text-lg leading-relaxed text-white/60 transition-colors duration-500 group-hover:text-white/75'>
+                    <p className='text-base leading-relaxed text-white/60 transition-colors duration-500 group-hover:text-white/75 sm:text-lg'>
                       {step.description}
                     </p>
                   </div>
@@ -185,30 +185,30 @@ export default function ProcessSection() {
   const steps = activeTab === 'ai' ? aiSteps : blockchainSteps
 
   return (
-    <section className='relative mx-auto max-w-8xl overflow-hidden bg-[#031d2c] py-24 lg:py-32'>
+    <section className='relative mx-auto max-w-8xl overflow-hidden bg-[#031d2c] py-16 sm:py-20 lg:py-28'>
       {/* Ambient Background Glows */}
       <div className='pointer-events-none absolute inset-0 overflow-hidden'>
         <div className='absolute -left-[10%] top-[20%] h-[800px] w-[800px] rounded-full bg-cyan-900/15 blur-[150px]' />
         <div className='absolute -right-[10%] bottom-[10%] h-[600px] w-[600px] rounded-full bg-blue-900/15 blur-[120px]' />
       </div>
 
-      <div className='max-w-8xl relative z-10 mx-auto px-6 lg:px-8'>
+      <div className='relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8'>
         {/* Header Section */}
         <div className='max-w-3xl mx-auto text-center'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-cyan-300'>
             Execution Excellence
           </p>
-          <h2 className='mt-4 text-balance text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl'>
+          <h2 className='mt-4 text-balance text-3xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl'>
             From first call to production-ready code.
           </h2>
         </div>
 
         {/* Agency-Grade Toggle Switch */}
-        <div className='mt-16 flex justify-center pb-8'>
-          <div className='relative flex rounded-full border border-white/15 bg-[#0d2b3a]/70 p-1.5 backdrop-blur-md'>
+        <div className='mt-12 flex justify-center pb-6 sm:mt-16 sm:pb-8'>
+          <div className='relative flex w-full max-w-[34rem] rounded-full border border-white/15 bg-[#0d2b3a]/70 p-1.5 backdrop-blur-md'>
             <button
               onClick={() => setActiveTab('ai')}
-              className={`relative z-10 flex items-center gap-2 rounded-full px-8 py-3 text-sm font-bold tracking-widest transition-all duration-500 ${
+              className={`relative z-10 flex w-1/2 items-center justify-center gap-2 rounded-full px-4 py-3 text-[11px] font-bold tracking-[0.12em] transition-all duration-500 sm:px-8 sm:text-sm sm:tracking-widest ${
                 activeTab === 'ai'
                   ? 'text-white'
                   : 'text-white/45 hover:text-white/70'
@@ -218,7 +218,7 @@ export default function ProcessSection() {
             </button>
             <button
               onClick={() => setActiveTab('blockchain')}
-              className={`relative z-10 flex items-center gap-2 rounded-full px-8 py-3 text-sm font-bold tracking-widest transition-all duration-500 ${
+              className={`relative z-10 flex w-1/2 items-center justify-center gap-2 rounded-full px-4 py-3 text-[11px] font-bold tracking-[0.12em] transition-all duration-500 sm:px-8 sm:text-sm sm:tracking-widest ${
                 activeTab === 'blockchain'
                   ? 'text-white'
                   : 'text-white/45 hover:text-white/70'

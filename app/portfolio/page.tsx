@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic'
 import Cta from '@/components/Homepage/CTA/Cta'
 import { Portfolio } from '@/components/Portfolio/Portfolio'
 import { Page } from '@/components/shared/Page'
@@ -10,7 +10,7 @@ export default async function PortfoliosPage() {
   console.log(portfolioData)
   return (
     <>
-      <Page className='justify-between px-8'>
+      <Page className='justify-between px-4 sm:px-6 2md:px-8'>
         <Portfolio data={portfolioData} />
       </Page>
       <Cta />

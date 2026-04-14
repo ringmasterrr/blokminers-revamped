@@ -1,0 +1,19 @@
+
+> blokminers-ui@0.1.0 dev C:\Users\theva\OneDrive\Documents\blokminers-revamped\blokminers-web-nextjs-ui
+> next dev "--port" "3001"
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 11.3s
+ ○ Compiling / ...
+ ✓ Compiled / in 11.1s (2273 modules)
+ ✓ Compiled in 3.7s (1057 modules)
+ GET / 200 in 16764ms
+ GET / 200 in 1515ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.9s (2262 modules)
+ GET /noise.webp 404 in 4071ms
+ ELIFECYCLE  Command failed with exit code 3221225786.

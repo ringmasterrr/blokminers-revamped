@@ -9,7 +9,7 @@ export function Portfolio({ data }: { data: any }) {
   return (
     <div className='relative'>
       <ParticleComponent />
-      <div className='bg-grid my-10 flex flex-col items-start justify-between pt-20 2md:min-h-[700px] 2md:flex-row'>
+      <div className='bg-grid my-10 flex flex-col items-center justify-between pt-20 2md:min-h-[700px] 2md:flex-row 2md:items-start'>
         <div className='flex w-full flex-col items-center justify-between gap-14 2md:w-1/2 2md:items-start 2md:gap-28 2md:pt-10'>
           <div className='flex flex-col items-center gap-6 2md:items-start'>
             <div className='text-center text-[32px] font-extrabold text-theme-dark md:text-6xl 2md:text-start'>
@@ -30,7 +30,7 @@ export function Portfolio({ data }: { data: any }) {
                 alt=''
                 width={2000}
                 height={2000}
-                className='w-[35rem]'
+                className='w-full max-w-[35rem]'
               />
             </div>
           </div>

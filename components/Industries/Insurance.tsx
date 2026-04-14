@@ -32,12 +32,12 @@ export default function Insurance() {
     <div className='relative'>
       <div className='bg-blur absolute inset-0 bg-[#D8F6FF] bg-opacity-60'></div>
 
-      <div className='mb-12 flex flex-col items-center gap-24 p-10 text-center 2md:p-32'>
+      <div className='mb-12 flex flex-col items-center gap-12 p-6 text-center sm:gap-16 sm:p-8 2md:gap-24 2md:p-32'>
         <div>
-          <h1 className='text-4xl font-bold text-gray-900 2md:text-6xl'>
+          <h1 className='text-3xl font-bold text-gray-900 sm:text-4xl 2md:text-6xl'>
             Insurance
           </h1>
-          <p className='mt-10 text-lg text-gray-700'>
+          <p className='mt-6 text-base text-gray-700 sm:mt-10 sm:text-lg'>
             Step into the future of finance with BlokMiners, where we harness
             the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -46,7 +46,7 @@ export default function Insurance() {
             customer trust, and streamline regulatory compliance.
           </p>
         </div>
-        <div className='h-fit rounded-xl bg-white p-4 shadow-md'>
+        <div className='2md:max-w-none h-fit w-full max-w-[26rem] rounded-xl bg-white p-4 shadow-md 2md:w-auto'>
           <Image
             height={604}
             width={424}
@@ -56,10 +56,10 @@ export default function Insurance() {
           />
         </div>
         <div className='flex flex-col items-center'>
-          <h2 className='w-[80%] text-4xl font-bold text-gray-900'>
+          <h2 className='w-full text-3xl font-bold text-gray-900 sm:text-4xl 2md:w-[80%]'>
             Innovative Approaches Deliver Customer Benefit
           </h2>
-          <p className='mt-6 text-lg text-gray-700'>
+          <p className='mt-6 text-base text-gray-700 sm:text-lg'>
             Historically, insurers have supplied financial safeguarding against
             life and property losses. Over the past ten years, their approaches
             have evolved to encompass prevention and sustainability. Prevention

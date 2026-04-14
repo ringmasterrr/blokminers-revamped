@@ -21,7 +21,7 @@ const SearchBar = ({ keyword }: { keyword?: string }) => {
   }
 
   return (
-    <div className='mb-4 flex max-w-[600px] w-full items-center justify-start rounded-2xl bg-[#D5EBFF] sm:px-8 px-4'>
+    <div className='mb-4 flex w-full max-w-[600px] items-center justify-start rounded-2xl bg-[#D5EBFF] px-4 sm:px-8'>
       <Image src={'/search.svg'} alt='' height={20} width={20} />
       <Input
         type='text'
@@ -29,7 +29,7 @@ const SearchBar = ({ keyword }: { keyword?: string }) => {
         value={searchTerm}
         onChange={handleChange}
         onKeyUp={onKeyUp}
-        className='w-full bg-transparent p-4 py-6 placeholder-[#6A6A6A] outline-none focus:border-none focus:outline-none'
+        className='w-full bg-transparent p-3 py-5 text-sm placeholder-[#6A6A6A] outline-none focus:border-none focus:outline-none sm:p-4 sm:py-6 sm:text-base'
       />
     </div>
   )

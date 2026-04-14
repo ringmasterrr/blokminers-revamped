@@ -39,9 +39,9 @@ function OrbitImage({
 
 export function Infographics() {
   return (
-    <div className='flex h-full w-full items-center justify-center overflow-x-clip overflow-y-visible py-8 xl:pb-56 xl:pt-20'>
-      <div className='relative z-50 flex h-[23rem] w-[23rem] items-center justify-center xl:ml-16 xl:translate-x-40'>
-        <div className='animate-spin-superslow absolute flex h-[18.5rem] w-[18.5rem] items-center justify-center rounded-full border-2 border-gray-300 xl:h-[38rem] xl:w-[38rem]'>
+    <div className='flex h-full w-full items-center justify-center overflow-x-clip overflow-y-visible py-6 sm:py-8 xl:pb-56 xl:pt-20'>
+      <div className='relative z-50 flex h-[19rem] w-[19rem] items-center justify-center sm:h-[23rem] sm:w-[23rem] xl:ml-16 xl:translate-x-40'>
+        <div className='animate-spin-superslow absolute flex h-[15rem] w-[15rem] items-center justify-center rounded-full border-2 border-gray-300 sm:h-[18.5rem] sm:w-[18.5rem] xl:h-[38rem] xl:w-[38rem]'>
           <OrbitImage
             src='/orbit-icons/eth.svg'
             alt='Ethereum'
@@ -74,7 +74,7 @@ export function Infographics() {
             imageClassName='w-12 rounded-full shadow-lg shadow-theme-light/15 xl:w-16'
           />
 
-          <div className='animate-spin-slow absolute flex h-[14rem] w-[14rem] items-center justify-center rounded-full border-2 border-gray-400 xl:h-[28rem] xl:w-[28rem]'>
+          <div className='animate-spin-slow absolute flex h-[11.5rem] w-[11.5rem] items-center justify-center rounded-full border-2 border-gray-400 sm:h-[14rem] sm:w-[14rem] xl:h-[28rem] xl:w-[28rem]'>
             <OrbitImage
               src='/orbit-icons/sol.svg'
               alt='Solana'
@@ -107,7 +107,7 @@ export function Infographics() {
               imageClassName='w-10 rounded-full shadow-lg shadow-theme-light/15 xl:w-14'
             />
 
-            <div className='animate-spin-slower absolute flex h-[9rem] w-[9rem] items-center justify-center rounded-full border-2 border-gray-500 xl:h-[18rem] xl:w-[18rem]'>
+            <div className='animate-spin-slower absolute flex h-[7rem] w-[7rem] items-center justify-center rounded-full border-2 border-gray-500 sm:h-[9rem] sm:w-[9rem] xl:h-[18rem] xl:w-[18rem]'>
               <OrbitImage
                 src='/orbit-icons/next.svg'
                 alt='Next.js'
@@ -116,7 +116,7 @@ export function Infographics() {
                 dotClassName='right-[160%] top-[130%] h-3 w-3 xl:top-[30%]'
               />
 
-              <div className='animate-spin-slowest absolute flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-500 xl:h-32 xl:w-32'>
+              <div className='animate-spin-slowest absolute flex h-14 w-14 items-center justify-center rounded-full border-2 border-gray-500 sm:h-16 sm:w-16 xl:h-32 xl:w-32'>
                 <OrbitImage
                   src='/orbit-icons/rust.svg'
                   alt='Rust'

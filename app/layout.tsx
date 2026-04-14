@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script"; // Import next/script
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import Whatsapp from "@/components/shared/whatsapp";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = localFont({
+  src: "./fonts/InterVariable.woff2",
+  display: "swap",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Blokminers",
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         {/* Add Weglot Script */}
         <Script src="https://cdn.weglot.com/weglot.min.js" strategy="afterInteractive" />
         <Script id="weglot-init" strategy="afterInteractive">

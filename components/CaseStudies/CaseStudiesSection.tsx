@@ -52,7 +52,7 @@ export function CaseStudiesSection({
             alt=''
             width={2000}
             height={2000}
-            className='w-[30rem]'
+            className='w-full max-w-[30rem]'
           />
         </div>
 

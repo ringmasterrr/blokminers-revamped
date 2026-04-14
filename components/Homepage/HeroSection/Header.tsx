@@ -5,8 +5,30 @@ import Link from 'next/link'
 import type { ComponentType, SVGProps } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useMemo } from 'react'
-import { FaEthereum } from 'react-icons/fa'
-import { SiOpenai, SiSolana } from 'react-icons/si'
+import {
+  SiBitcoin,
+  SiAmazonaws,
+  SiChainlink,
+  SiEthereum,
+  SiIpfs,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiOpenai,
+  SiPolygon,
+  SiSolana,
+  SiTensorflow,
+} from 'react-icons/si'
+import {
+  siBitcoin,
+  siChainlink,
+  siEthereum,
+  siIpfs,
+  siNodedotjs,
+  siNextdotjs,
+  siPolygon,
+  siSolana,
+  siTensorflow,
+} from 'simple-icons'
 import { Button } from '@/components/ui/button'
 
 const calendlyUrl =
@@ -27,22 +49,79 @@ type BuiltOnLogo =
       type: 'icon'
       name: string
       icon: ComponentType<SVGProps<SVGSVGElement>>
+      color: string
     }
 
 const builtOnLogos: BuiltOnLogo[] = [
-  { type: 'icon', name: 'OpenAI', icon: SiOpenai },
-  { type: 'icon', name: 'Ethereum', icon: FaEthereum },
-  { type: 'icon', name: 'Solana', icon: SiSolana },
-  { type: 'image', name: 'LangChain', src: '/orbit-icons/langchain.webp' },
-  { type: 'image', name: 'n8n', src: '/orbit-icons/n8n.webp' },
-  { type: 'image', name: 'LlamaIndex', src: '/orbit-icons/llamaindex.webp' },
+  {
+    type: 'icon',
+    name: 'Next.js',
+    icon: SiNextdotjs,
+    color: `#${siNextdotjs.hex}`,
+  },
+  { type: 'icon', name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
+  {
+    type: 'icon',
+    name: 'Node.js',
+    icon: SiNodedotjs,
+    color: `#${siNodedotjs.hex}`,
+  },
+  {
+    type: 'icon',
+    name: 'Ethereum',
+    icon: SiEthereum,
+    color: `#${siEthereum.hex}`,
+  },
+  { type: 'image', name: 'n8n', src: '/orbit-icons/n8n-color.svg' },
+  {
+    type: 'icon',
+    name: 'Solana',
+    icon: SiSolana,
+    color: `#${siSolana.hex}`,
+  },
+  {
+    type: 'image',
+    name: 'LlamaIndex',
+    src: '/orbit-icons/llamaindex-color.svg',
+  },
+  { type: 'icon', name: 'AWS', icon: SiAmazonaws, color: '#FF9900' },
+  {
+    type: 'icon',
+    name: 'TensorFlow',
+    icon: SiTensorflow,
+    color: `#${siTensorflow.hex}`,
+  },
+  {
+    type: 'icon',
+    name: 'Polygon',
+    icon: SiPolygon,
+    color: `#${siPolygon.hex}`,
+  },
+  {
+    type: 'icon',
+    name: 'Chainlink',
+    icon: SiChainlink,
+    color: `#${siChainlink.hex}`,
+  },
+  // { type: 'icon', name: 'IPFS', icon: SiIpfs, color: `#${siIpfs.hex}` },
+  {
+    type: 'icon',
+    name: 'Bitcoin',
+    icon: SiBitcoin,
+    color: `#${siBitcoin.hex}`,
+  },
+  {
+    type: 'image',
+    name: 'LangChain',
+    src: '/orbit-icons/langchain-color.svg',
+  },
 ]
 
 export function Header() {
   const schemaMarkup = useMemo(() => JSON.stringify(organizationSchema), [])
 
   return (
-    <div className='flex flex-col gap-9 pt-2'>
+    <div className='flex flex-col gap-7 pt-2 sm:gap-9'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: schemaMarkup }}
@@ -55,18 +134,18 @@ export function Header() {
         AI Automation & Blockchain Development Agency
       </p>
 
-      <h1 className='text-center text-4xl font-extrabold leading-tight text-theme-dark md:text-5xl 2md:text-start 2md:text-4xl'>
+      <h1 className='text-center text-3xl font-extrabold leading-tight text-theme-dark sm:text-4xl md:text-5xl 2md:text-start 2md:text-4xl'>
         We Build AI Automation and Blockchain Systems That Cut Costs, Automate
         Operations and Power the Decentralized Web
       </h1>
 
-      <h2 className='text-center text-lg font-medium leading-relaxed text-theme-light 2md:text-start'>
+      <h2 className='text-center text-base font-medium leading-relaxed text-theme-light sm:text-lg 2md:text-start'>
         From custom AI agents and workflow automation to smart contracts and
         Web3 platforms, BlokMiners helps businesses in healthcare, finance,
         logistics and retail move faster, spend less, and build to last.
       </h2>
 
-      <div className='flex w-full flex-wrap justify-center gap-4 2md:justify-start'>
+      <div className='flex w-full flex-wrap justify-center gap-3 sm:gap-4 2md:justify-start'>
         <Button asChild>
           <a href={calendlyUrl} target='_blank' rel='noreferrer'>
             Book Free Discovery Call
@@ -90,16 +169,17 @@ export function Header() {
         <p className='text-center text-sm font-medium text-theme-light 2md:text-start'>
           Built on
         </p>
-        <div className='mt-4 flex flex-wrap items-center justify-center gap-6 opacity-60 2md:justify-start'>
+        <div className='mt-4 flex flex-wrap items-center justify-center gap-6 2md:justify-start'>
           {builtOnLogos.map((logo) => (
             <div
               key={logo.name}
-              className='flex h-5 w-5 items-center justify-center grayscale transition-opacity'
+              className='flex h-5 w-5 items-center justify-center transition-opacity'
             >
               {logo.type === 'icon' ? (
                 <logo.icon
                   aria-label={logo.name}
-                  className='h-5 w-5 text-theme-light'
+                  className='h-5 w-5'
+                  style={{ color: logo.color }}
                 />
               ) : (
                 <Image

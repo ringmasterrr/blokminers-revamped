@@ -2,12 +2,14 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { motion, PanInfo } from 'framer-motion'
+import { motion, PanInfo, useInView } from 'framer-motion'
 import {
   ArrowUpRight,
   CheckCircle2,
+  Clock3,
   ChevronLeft,
   ChevronRight,
+  DollarSign,
   Shield,
   TrendingUp,
   Zap,
@@ -30,32 +32,128 @@ const staggerContainer = {
   },
 }
 
-const metrics = [
+type MetricItem = {
+  value: number
+  prefix?: string
+  suffix?: string
+  decimals?: number
+  label: string
+  context: string
+  icon: typeof TrendingUp
+}
+
+const keyMetrics: MetricItem[] = [
   {
-    value: '25%',
-    label: 'Efficiency boost',
-    context: 'Healthcare AI Ops',
+    value: 45,
+    suffix: '%',
+    label: 'Downtime Reduction',
+    context: 'Manufacturing AI',
     icon: TrendingUp,
   },
   {
-    value: '60%',
-    label: 'Task Reduction',
-    context: 'Manual Workflow Automation',
+    value: 280,
+    prefix: '$',
+    suffix: 'K',
+    label: 'Annual Saving',
+    context: 'Manufacturing (1 client)',
+    icon: DollarSign,
+  },
+  {
+    value: 68,
+    suffix: '%',
+    label: 'Queries Auto-Resolved',
+    context: 'Hospitality AI Concierge',
     icon: Zap,
   },
   {
-    value: '$2M+',
-    label: 'On-Chain Value',
-    context: 'Smart Contracts Secured',
+    value: 48,
+    suffix: 'hrs',
+    label: 'REC Settlement',
+    context: 'Energy (was 6-8 weeks)',
+    icon: Clock3,
+  },
+  {
+    value: 174,
+    prefix: '$',
+    suffix: 'K',
+    label: 'Demurrage Saved',
+    context: 'Logistics Digital BoL',
+    icon: DollarSign,
+  },
+  {
+    value: 60,
+    suffix: 'sec',
+    label: 'Credential Verification',
+    context: 'Education (was 5-10 days)',
+    icon: CheckCircle2,
+  },
+  {
+    value: 42,
+    suffix: '%',
+    label: 'Retention Rate',
+    context: 'Telecom AI Campaigns (was 15%)',
     icon: Shield,
   },
   {
-    value: '3 Weeks',
-    label: 'Speed to Market',
-    context: 'First Live Automation',
-    icon: CheckCircle2,
+    value: 4.1,
+    prefix: '$',
+    suffix: 'M',
+    decimals: 1,
+    label: 'Revenue Retained',
+    context: 'Telecom Churn Prediction',
+    icon: DollarSign,
   },
 ]
+
+function MetricValue({
+  metric,
+  start,
+  duration = 1400,
+}: {
+  metric: MetricItem
+  start: boolean
+  duration?: number
+}) {
+  const [currentValue, setCurrentValue] = useState(0)
+
+  useEffect(() => {
+    if (!start) return
+
+    let frameId = 0
+    let startTime = 0
+
+    const animate = (ts: number) => {
+      if (!startTime) startTime = ts
+      const progress = Math.min((ts - startTime) / duration, 1)
+      const nextValue = metric.value * progress
+      setCurrentValue(nextValue)
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate)
+      }
+    }
+
+    frameId = window.requestAnimationFrame(animate)
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+    }
+  }, [duration, metric.value, start])
+
+  const decimals = metric.decimals ?? 0
+  const formatted =
+    decimals > 0
+      ? currentValue.toFixed(decimals)
+      : Math.round(currentValue).toString()
+
+  return (
+    <h3 className='text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl'>
+      {metric.prefix ?? ''}
+      {formatted}
+      {metric.suffix ?? ''}
+    </h3>
+  )
+}
 
 const caseStudies = [
   {
@@ -111,6 +209,8 @@ export default function SocialProof() {
   const [centerIndex, setCenterIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const metricsRef = useRef<HTMLDivElement | null>(null)
+  const metricsInView = useInView(metricsRef, { once: true, margin: '-80px' })
   const total = caseStudies.length
 
   // Detect mobile screen width
@@ -182,8 +282,8 @@ export default function SocialProof() {
   }, [startAutoScroll])
 
   return (
-    <section className='max-w-8xl overflow-x-hidden mx-auto overflow-y-visible bg-[#031d2c] py-16 md:py-24 lg:py-32'>
-      <div className='mx-auto max-w-8xl px-4 md:px-6 lg:px-8'>
+    <section className='sm:py-18 mx-auto max-w-8xl overflow-x-hidden overflow-y-visible bg-[#031d2c] py-14 md:py-24 lg:py-28'>
+      <div className='mx-auto max-w-8xl px-4 sm:px-6 lg:px-8'>
         {/* Heading */}
         <div className='max-w-4xl mx-auto mb-12 text-center md:mb-20'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-cyan-300'>
@@ -196,29 +296,28 @@ export default function SocialProof() {
 
         {/* Metrics */}
         <motion.div
+          ref={metricsRef}
           variants={staggerContainer}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
-          className='grid grid-cols-2 gap-6 border-b border-white/10 pb-12 md:gap-8 md:pb-20 lg:grid-cols-4'
+          className='grid grid-cols-2 gap-6 border-b border-white/10 pb-12 md:grid-cols-4 md:gap-8 md:pb-20'
         >
-          {metrics.map((metric) => (
+          {keyMetrics.map((metric) => (
             <motion.div
               key={metric.label}
               variants={reveal}
-              className='space-y-2'
+              className='min-w-0 space-y-2'
             >
               <div className='mb-4 text-cyan-400'>
                 <metric.icon size={24} strokeWidth={1.5} />
               </div>
-              <h3 className='text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl'>
-                {metric.value}
-              </h3>
+              <MetricValue metric={metric} start={metricsInView} />
               <div>
                 <p className='text-sm font-bold text-white/90'>
                   {metric.label}
                 </p>
-                <p className='mt-1 text-xs uppercase tracking-widest text-white/40'>
+                <p className='mt-1 text-xs uppercase leading-relaxed tracking-widest text-white/40'>
                   {metric.context}
                 </p>
               </div>
@@ -230,7 +329,7 @@ export default function SocialProof() {
         <div className='relative mt-12 flex flex-col items-center md:mt-20'>
           <div
             className='relative flex w-full justify-center'
-            style={{ minHeight: isMobile ? 520 : 580 }}
+            style={{ minHeight: isMobile ? 600 : 580 }}
           >
             {caseStudies.map((study, idx) => {
               const position = getPosition(idx)
@@ -283,7 +382,7 @@ export default function SocialProof() {
                       goToIndex(idx)
                     }
                   }}
-                  className={`absolute flex w-[85%] max-w-[20rem] cursor-pointer select-none flex-col rounded-2xl border border-white/10 bg-[#0d2b3a] p-5 transition-colors hover:border-cyan-400/30 md:w-[88%] md:max-w-[22rem] md:rounded-3xl md:p-7 lg:w-[46%] lg:max-w-[34rem] ${
+                  className={`absolute flex w-[92%] max-w-[22rem] cursor-pointer select-none flex-col rounded-2xl border border-white/10 bg-[#0d2b3a] p-4 transition-colors hover:border-cyan-400/30 sm:w-[88%] sm:p-5 md:max-w-[24rem] md:rounded-3xl md:p-7 lg:w-[46%] lg:max-w-[34rem] ${
                     isCenter ? 'cursor-grab active:cursor-grabbing' : ''
                   }`}
                   style={{ willChange: 'transform' }}
@@ -402,7 +501,7 @@ export default function SocialProof() {
           </div>
           <Link
             href='/contact'
-            className='whitespace-nowrap rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#031d2c] transition-all hover:bg-cyan-50 hover:shadow-lg md:px-8 md:py-4 md:text-base'
+            className='rounded-xl bg-white px-6 py-3 text-center text-sm font-bold text-[#031d2c] transition-all hover:bg-cyan-50 hover:shadow-lg sm:whitespace-nowrap md:px-8 md:py-4 md:text-base'
           >
             Book Discovery Call
           </Link>

@@ -5,12 +5,12 @@ import { ServiceCategory } from '@/lib/service-pages'
 import { useState } from 'react'
 
 export default function ExploreSection() {
-  const [activeFilter, setActiveFilter] = useState<ServiceCategory>('ai')
+  const [activeFilter, setActiveFilter] = useState<ServiceCategory>('all')
 
   return (
-    <div className='relative mt-4 px-0 py-2 2md:mt-12 2md:py-24 xl:px-24'>
+    <div className='relative mt-4 px-0 py-6 sm:py-10 2md:mt-12 2md:py-20 xl:px-16'>
       <div className='bg-blur absolute inset-0 bg-[#D8F6FF] bg-opacity-60'></div>
-      <div className='relative mx-auto max-w-8xl px-4'>
+      <div className='relative mx-auto max-w-8xl px-4 sm:px-6'>
         <div className='max-w-4xl mx-auto text-center'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-theme-light'>
             Explore Our Offerings

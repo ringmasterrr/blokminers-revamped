@@ -9,7 +9,7 @@ export function Page({ children, className }: IPage) {
   return (
     <main
       className={cn(
-        `mx-auto w-full max-w-8xl p-4 md:p-8`,
+        `mx-auto w-full max-w-8xl p-4 md:p-0`,
         'pageHeight',
         className,
       )}

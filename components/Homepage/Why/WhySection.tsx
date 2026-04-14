@@ -37,7 +37,7 @@ const valueProps = [
 
 export default function WhySection() {
   return (
-    <section className='relative w-full overflow-hidden bg-white py-16 sm:py-24 lg:py-32'>
+    <section className='relative w-full overflow-hidden bg-white py-14 sm:py-20 lg:py-28'>
       {/* 1. AMBIENT BACKGROUND GLOWS */}
       <div className='pointer-events-none absolute inset-0 overflow-hidden'>
         <div className='absolute -left-[5%] top-[10%] h-[600px] w-[600px] rounded-full bg-cyan-100/50 blur-[120px]' />
@@ -45,13 +45,13 @@ export default function WhySection() {
       </div>
 
       {/* 2. FIXED WIDTH CONTAINER */}
-      <div className='relative z-10 mx-auto max-w-8xl px-6 lg:px-8'>
+      <div className='relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8'>
         {/* Header Section */}
-        <div className='max-w-4xl relative z-20 mx-auto mb-16 text-center lg:mb-24'>
+        <div className='relative z-20 mx-auto mb-12 max-w-4xl text-center sm:mb-16 lg:mb-24'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-cyan-600'>
             The BlokMiners Advantage
           </p>
-          <h2 className='relative z-30 mt-4 text-balance text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl lg:text-6xl'>
+          <h2 className='relative z-30 mt-4 text-balance text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl lg:text-6xl'>
             Why 30+ companies chose BlokMiners over a bigger agency
           </h2>
         </div>
@@ -63,12 +63,12 @@ export default function WhySection() {
             return (
               <div
                 key={item.title}
-                className='group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border border-slate-700/50 bg-[#001C2B] p-8 transition-all duration-500 sm:p-10'
+                className='group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-slate-700/50 bg-[#001C2B] p-6 transition-all duration-500 sm:rounded-[2.5rem] sm:p-10'
               >
                 {/* STATIC ILLUSTRATIONS (Top Right)
                     Locked at 35% opacity. No hover effects, transitions, or scaling.
                 */}
-                <div className='absolute right-0 top-0 h-56 w-56 -translate-y-4 translate-x-4 opacity-35'>
+                <div className='absolute right-0 top-0 h-40 w-40 -translate-y-4 translate-x-4 opacity-35 sm:h-56 sm:w-56'>
                   <img
                     src={item.image}
                     alt=''
@@ -91,7 +91,7 @@ export default function WhySection() {
 
                 {/* Text Content */}
                 <div className='relative z-10'>
-                  <h3 className='text-2xl font-bold tracking-tight text-white sm:text-3xl'>
+                  <h3 className='text-xl font-bold tracking-tight text-white sm:text-3xl'>
                     {item.title}
                   </h3>
 

@@ -172,9 +172,9 @@ export default function DualExpertise() {
   const ActiveIcon = cardContent.icon
 
   return (
-    <section className='mx-auto max-w-8xl px-4 py-16 sm:py-20 lg:py-24'>
-      <div className='max-w-7xl mx-auto space-y-10 sm:space-y-14'>
-        <div className='max-w-4xl mx-auto text-center'>
+    <section className='mx-auto max-w-8xl px-4 py-14 sm:py-18 lg:py-24'>
+      <div className='mx-auto max-w-7xl space-y-9 sm:space-y-14'>
+        <div className='mx-auto max-w-4xl text-center'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-theme-light'>
             What we do
           </p>
@@ -189,25 +189,25 @@ export default function DualExpertise() {
               head='BlokMiners'
               text='AI Automation, Blockchain, One System'
               showText={false}
-              className='min-h-[60rem] sm:min-h-[66rem] lg:min-h-[72rem]'
+              className='min-h-[62rem] sm:min-h-[66rem] lg:min-h-[72rem]'
             />
             <div className='absolute inset-0 z-10 bg-gradient-to-b from-slate-900/20 via-slate-900/45 to-slate-900/85' />
-            <div className='absolute inset-x-0 top-0 z-20 flex justify-center px-5 pt-12 sm:px-8 sm:pt-16 lg:pt-20'>
+            <div className='absolute inset-x-0 top-0 z-20 flex justify-center px-4 pt-10 sm:px-8 sm:pt-16 lg:pt-20'>
               <motion.div
                 initial='hidden'
                 whileInView='visible'
                 viewport={{ once: true, margin: '-100px' }}
                 variants={reveal}
-                className='max-w-5xl flex w-full flex-col items-center text-center'
+                className='flex w-full max-w-5xl flex-col items-center text-center'
               >
                 <span className='inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-sm'>
                   <span className='h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400' />
                   AI + Blockchain
                 </span>
-                <h3 className='max-w-5xl mt-8 text-balance text-center text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl'>
+                <h3 className='mt-7 max-w-5xl text-balance text-center text-3xl font-extrabold leading-[0.98] tracking-tight text-white sm:mt-8 sm:text-5xl md:text-6xl lg:text-7xl'>
                   AI automation and blockchain, one system.
                 </h3>
-                <div className='max-w-4xl mt-6 w-full'>
+                <div className='mt-5 w-full max-w-4xl sm:mt-6'>
                   <p className='text-balance text-center text-base leading-relaxed text-white/80 sm:text-lg lg:text-xl'>
                     Most forward-thinking businesses need both: AI automation to
                     cut operational costs and move faster today, and blockchain
@@ -218,14 +218,14 @@ export default function DualExpertise() {
 
                 <div
                   ref={cardStageRef}
-                  className='max-w-4xl mt-12 w-full pb-10 sm:pb-12'
+                  className='mt-10 w-full max-w-4xl pb-8 sm:mt-12 sm:pb-12'
                 >
                   <div className='flex w-full flex-col items-center justify-center'>
-                    <div className='mb-5 inline-flex rounded-full border border-white/10 bg-slate-950/35 p-1 backdrop-blur-md'>
+                    <div className='mb-5 inline-flex flex-wrap justify-center rounded-full border border-white/10 bg-slate-950/35 p-1 backdrop-blur-md'>
                       <button
                         type='button'
                         onClick={() => handleCardSelect('ai')}
-                        className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
+                        className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
                           activeCard === 'ai'
                             ? 'bg-cyan-400 text-slate-950'
                             : 'text-white/65 hover:text-white'
@@ -236,7 +236,7 @@ export default function DualExpertise() {
                       <button
                         type='button'
                         onClick={() => handleCardSelect('blockchain')}
-                        className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
+                        className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
                           activeCard === 'blockchain'
                             ? 'bg-cyan-400 text-slate-950'
                             : 'text-white/65 hover:text-white'
@@ -256,7 +256,7 @@ export default function DualExpertise() {
                           duration: 0.55,
                           ease: [0.22, 1, 0.36, 1],
                         }}
-                        className={`group relative mx-auto flex w-[90%] flex-col rounded-3xl border p-7 pb-20 sm:w-[32rem] sm:p-8 sm:pb-24 md:w-[36rem] lg:w-[60rem] ${cardContent.cardClassName}`}
+                        className={`group relative mx-auto flex w-full max-w-[95%] flex-col rounded-3xl border p-5 pb-16 sm:max-w-[32rem] sm:p-8 sm:pb-24 md:max-w-[40rem] lg:max-w-[60rem] ${cardContent.cardClassName}`}
                       >
                         <div
                           className={`flex h-12 w-12 items-center justify-center rounded-2xl ${cardContent.iconClassName}`}
@@ -269,7 +269,7 @@ export default function DualExpertise() {
                           {cardContent.eyebrow}
                         </p>
                         <h3
-                          className={`mt-4 text-xl font-bold sm:text-2xl ${cardContent.titleClassName}`}
+                          className={`mt-4 text-lg font-bold sm:text-2xl ${cardContent.titleClassName}`}
                         >
                           {cardContent.title}
                         </h3>
@@ -279,7 +279,7 @@ export default function DualExpertise() {
                           {cardContent.description}
                         </p>
                         <div
-                          className={`mt-6 rounded-2xl p-5 ${cardContent.panelClassName}`}
+                          className={`mt-6 rounded-2xl p-4 sm:p-5 ${cardContent.panelClassName}`}
                         >
                           <p
                             className={`mb-4 text-sm font-bold ${cardContent.panelTitleClassName}`}
@@ -303,7 +303,7 @@ export default function DualExpertise() {
                         >
                           {cardContent.footer}
                         </p>
-                        <div className='absolute bottom-6 right-6 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/70 transition-colors duration-300'>
+                        <div className='absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/70 transition-colors duration-300 sm:bottom-6 sm:right-6 sm:h-11 sm:w-11'>
                           <ArrowUpRight size={18} strokeWidth={2} />
                         </div>
                       </motion.article>

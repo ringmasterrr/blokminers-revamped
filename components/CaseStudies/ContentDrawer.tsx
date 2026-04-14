@@ -44,8 +44,8 @@ export const ContentDrawer = ({
           />
         </div>
       </DrawerTrigger>
-      <DrawerContent className='z-[1000] h-full w-[70%]'>
-        <div className='overflow-y-auto px-2 py-4 scrollbar-hide'>
+      <DrawerContent className='z-[1000] h-full w-[min(85vw,24rem)]'>
+        <div className='overflow-y-auto px-3 py-4 scrollbar-hide sm:px-4'>
           <div className='mb-8 p-2 text-[20px] font-bold'>Contents</div>
           {sections &&
             sections.map((item: any, index: any) => (

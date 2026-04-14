@@ -17,9 +17,14 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.simpleicons.org',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }
 
 export default nextConfig
-

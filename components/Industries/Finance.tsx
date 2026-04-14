@@ -31,12 +31,12 @@ export default function Finance() {
     <div className='relative'>
       <div className='bg-blur absolute inset-0 bg-[#D8F6FF] bg-opacity-60'></div>
 
-      <div className='mb-2 flex flex-col items-center gap-24 p-10 text-center 2md:p-32'>
+      <div className='mb-2 flex flex-col items-center gap-12 p-6 text-center sm:gap-16 sm:p-8 2md:gap-24 2md:p-32'>
         <div>
-          <h1 className='text-4xl font-bold text-gray-900 2md:text-6xl'>
+          <h1 className='text-3xl font-bold text-gray-900 sm:text-4xl 2md:text-6xl'>
             Finance and Banking
           </h1>
-          <p className='mt-10 text-lg text-gray-700'>
+          <p className='mt-6 text-base text-gray-700 sm:mt-10 sm:text-lg'>
             Step into the future of finance with BlokMiners, where we harness
             the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -46,11 +46,11 @@ export default function Finance() {
           </p>
         </div>
         <div className='flex flex-col items-center'>
-          <h2 className='w-[80%] text-4xl font-bold text-gray-900'>
+          <h2 className='w-full text-3xl font-bold text-gray-900 sm:text-4xl 2md:w-[80%]'>
             Transforming Finance and Banking with BlokMiners&apos; Blockchain
             Solutions
           </h2>
-          <p className='mt-6 text-lg text-gray-700'>
+          <p className='mt-6 text-base text-gray-700 sm:text-lg'>
             Step into the future of finance with BlokMiners, where we harness
             the power of Blockchain to revolutionize the banking and finance
             industry. In an era where transparency, security, and efficiency are
@@ -60,11 +60,11 @@ export default function Finance() {
           </p>
         </div>
       </div>
-      <div className='grid grid-cols-1 gap-8 p-10 md:grid-cols-2 2md:p-32'>
+      <div className='grid grid-cols-1 gap-6 p-6 sm:gap-8 sm:p-8 md:grid-cols-2 2md:p-32'>
         {section.map((item) => (
           <div
             key={item.title}
-            className='rounded-2xl bg-white p-8 text-start shadow-md'
+            className='rounded-2xl bg-white p-6 text-start shadow-md sm:p-8'
           >
             <h3 className='text-xl font-semibold text-gray-900'>
               {item.title}

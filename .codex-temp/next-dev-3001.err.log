@@ -1,0 +1,7 @@
+[Error: EPERM: operation not permitted, open 'C:\Users\theva\OneDrive\Documents\blokminers-revamped\blokminers-web-nextjs-ui\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\theva\\OneDrive\\Documents\\blokminers-revamped\\blokminers-web-nextjs-ui\\.next\\trace'
+}
+^C

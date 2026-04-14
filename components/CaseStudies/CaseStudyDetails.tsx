@@ -68,15 +68,15 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
 
   return (
     <>
-      <div className='mt-20 flex w-full flex-col items-center justify-between gap-10 p-2 pb-10 2md:mt-28 2md:flex-row 2md:p-8'>
-        <div className='h-[100%] 2md:w-[60%]'>
+      <div className='mt-20 flex w-full flex-col items-center justify-between gap-10 p-4 pb-10 sm:p-6 2md:mt-28 2md:flex-row 2md:p-8'>
+        <div className='h-[100%] w-full 2md:w-[60%]'>
           <h1 className='mb-6 text-3xl font-extrabold text-theme-dark xl:text-5xl xl:leading-tight'>
             {caseStudy?.title}
           </h1>
           <p className='mb-6 text-lg font-medium text-theme-dark 2md:text-xl'>
             {caseStudy?.summary}
           </p>
-          <div className='flex items-center space-x-4'>
+          <div className='flex flex-wrap items-center gap-3 sm:gap-4'>
             <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
               <Image
                 src={`/avatar.png`}
@@ -85,30 +85,30 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                 width={1000}
                 className='h-8 w-8 rounded-full object-cover'
               />
-              <span className='text-sm text-theme-dark 2md:text-lg'>
+              <span className='text-xs text-theme-dark sm:text-sm 2md:text-lg'>
                 {caseStudy.authorName}
               </span>
             </div>
             <div className='flex h-8 items-center rounded-full border-2 border-theme-dark/50 px-4'>
-              <span className='text-sm text-theme-dark 2md:text-lg'>
+              <span className='text-xs text-theme-dark sm:text-sm 2md:text-lg'>
                 {format(parseISO(caseStudy.createdAt), 'MMMM do, yyyy ')}
               </span>
             </div>
           </div>
         </div>
-        <div className='flex h-[100%] items-center justify-center 2md:w-[40%]'>
+        <div className='2md:max-w-none flex h-[100%] w-full max-w-[32rem] items-center justify-center 2md:w-[40%]'>
           <Image
             src={caseStudy.image}
             alt='Blog image'
             height={1000}
             width={1000}
-            className=''
+            className='h-auto w-full'
           />
         </div>
       </div>
 
       {caseStudy.sections.length > 0 && (
-        <div className='relative my-24 flex flex-col justify-between p-2 2md:flex-row 2md:p-8'>
+        <div className='relative my-16 flex flex-col justify-between p-4 sm:my-20 sm:p-6 2md:my-24 2md:flex-row 2md:p-8'>
           <div className='fixed left-0 top-[50%] block h-full items-center 2md:hidden'>
             <ContentDrawer
               sections={caseStudy.sections}
@@ -137,7 +137,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
               ))}
           </div>
 
-          <div className='2md:w-[744px]'>
+          <div className='w-full min-w-0 2md:w-[744px]'>
             {caseStudy.sections &&
               caseStudy.sections.map((item: any, index: any) => (
                 <div
@@ -147,7 +147,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                     sectionRefs.current[index] = el as HTMLDivElement
                   }}
                 >
-                  <p className='mb-6 w-[85%] text-2xl font-bold leading-tight text-theme-dark 2md:text-4xl'>
+                  <p className='mb-6 w-full text-2xl font-bold leading-tight text-theme-dark sm:text-3xl 2md:w-[85%] 2md:text-4xl'>
                     {item.title}
                   </p>
                   {item.image && (
@@ -161,7 +161,7 @@ export default function CaseStudyDetail({ caseStudy }: IBlogProp) {
                       />
                     </div>
                   )}
-                  <div className='mt-4 text-lg font-medium tracking-wide 2md:mt-12 2md:text-xl'>
+                  <div className='mt-4 text-base font-medium tracking-wide sm:text-lg 2md:mt-12 2md:text-xl'>
                     {item.content}
                   </div>
                 </div>

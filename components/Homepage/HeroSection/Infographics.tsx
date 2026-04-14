@@ -40,7 +40,7 @@ function OrbitImage({
 export function Infographics() {
   return (
     <div className='flex h-full w-full items-center justify-center overflow-x-clip overflow-y-visible py-6 sm:py-8 xl:pb-56 xl:pt-20'>
-      <div className='relative z-50 flex h-[19rem] w-[19rem] items-center justify-center sm:h-[23rem] sm:w-[23rem] xl:ml-16 xl:translate-x-40'>
+      <div className='relative z-50 flex h-[19rem] w-[19rem] scale-[1.15] items-center justify-center sm:h-[23rem] sm:w-[23rem] sm:scale-100 xl:ml-16 xl:translate-x-40'>
         <div className='animate-spin-superslow absolute flex h-[15rem] w-[15rem] items-center justify-center rounded-full border-2 border-gray-300 sm:h-[18.5rem] sm:w-[18.5rem] xl:h-[38rem] xl:w-[38rem]'>
           <OrbitImage
             src='/orbit-icons/eth.svg'
@@ -53,7 +53,7 @@ export function Infographics() {
           <OrbitImage
             src='/orbit-icons/polygon.svg'
             alt='Polygon'
-            className='left-24 -bottom-6 xl:-bottom-0'
+            className='-bottom-6 left-24 xl:-bottom-0'
             imageClassName='w-12 rotate-[80deg] xl:w-20 xl:rotate-[100deg]'
             dotClassName='-left-[80%] bottom-[90%] h-3 w-3'
           />

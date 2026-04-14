@@ -38,7 +38,7 @@ const FAQs = () => {
   }, [displayedItems, searchQuery])
 
   return (
-    <section className='relative w-full overflow-hidden bg-[#031725] py-20 sm:py-24'>
+    <section className='relative w-full overflow-hidden bg-[#031725] py-16 sm:py-24'>
       {/* Background Ambience */}
       <div className='pointer-events-none absolute inset-0 overflow-hidden'>
         <div className='absolute -right-[10%] top-[12%] h-[560px] w-[560px] rounded-full bg-cyan-500/10 blur-[120px]' />
@@ -46,29 +46,29 @@ const FAQs = () => {
         <div className='absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[150px]' />
       </div>
 
-      <div className='max-w-7xl relative z-10 mx-auto space-y-6 px-6 lg:px-8'>
+      <div className='max-w-7xl relative z-10 mx-auto space-y-5 px-0 sm:space-y-6 sm:px-6 lg:px-8'>
         {/* Header Section */}
-        <div className='flex flex-col items-center justify-center gap-6 text-center'>
-          <div className='rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 backdrop-blur-sm'>
+        <div className='flex flex-col items-center justify-center gap-4 px-3 text-center sm:gap-6 sm:px-0'>
+          <div className='rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1 backdrop-blur-sm sm:px-4 sm:py-1.5'>
             <span className='text-[10px] font-bold uppercase tracking-[0.25em] text-cyan-400'>
               Common Queries
             </span>
           </div>
 
-          <h2 className='text-balance text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl'>
+          <h2 className='text-balance text-2xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl'>
             Frequently Asked Questions
           </h2>
-          <p className='max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg'>
+          <p className='max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-lg'>
             Clear answers for teams evaluating AI automation and blockchain
             development with BlokMiners.
           </p>
         </div>
 
-        <div>
+        <div className='px-0 sm:px-0'>
           {/* Top bar: theme toggle (kept from original) */}
-          <div className='mb-6 flex flex-wrap items-center justify-between gap-4'>
+          <div className='mb-4 flex flex-wrap items-center justify-between gap-3 px-3 sm:mb-6 sm:gap-4 sm:px-0'>
             {/* Filter Buttons */}
-            <div className='flex flex-wrap gap-2'>
+            <div className='flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap'>
               {/* <button
                 onClick={() => setSelectedService('all')}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
@@ -83,7 +83,7 @@ const FAQs = () => {
                 <button
                   key={service}
                   onClick={() => setSelectedService(service)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
+                  className={`w-full rounded-full px-4 py-2 text-xs font-medium transition-all sm:w-auto sm:py-1.5 sm:text-sm ${
                     selectedService === service
                       ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
                       : 'bg-slate-800/70 text-slate-300 hover:bg-slate-700/80'
@@ -96,19 +96,19 @@ const FAQs = () => {
           </div>
 
           {/* Search Bar */}
-          <label className='mb-7 flex items-center gap-3 rounded-2xl border border-slate-700/80 bg-slate-900/65 px-4 py-3 text-slate-400 focus-within:border-cyan-400/55 focus-within:text-cyan-200'>
-            <Search className='h-5 w-5' />
+          <label className='mb-5 flex items-center gap-2 rounded-none border-y border-slate-700/80 bg-slate-900/65 px-3 py-2 text-slate-400 focus-within:border-cyan-400/55 focus-within:text-cyan-200 sm:mb-7 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3'>
+            <Search className='h-4 w-4 sm:h-5 sm:w-5' />
             <input
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               type='text'
               placeholder='Search FAQ...'
-              className='w-full bg-transparent text-base text-slate-100 outline-none placeholder:text-slate-500'
+              className='w-full bg-transparent text-sm text-slate-100 outline-none placeholder:text-slate-500 sm:text-base'
             />
           </label>
 
           {/* FAQ Accordion */}
-          <div className='rounded-3xl border border-slate-800/80 bg-slate-900/35 p-2 sm:p-3'>
+          <div className='border-y border-slate-800/80 bg-slate-900/35 p-0 px-3 sm:rounded-3xl sm:border sm:p-3'>
             <FAQAccordion items={filteredItems} searchQuery={searchQuery} />
           </div>
         </div>

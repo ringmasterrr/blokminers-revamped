@@ -170,11 +170,98 @@ export default function DualExpertise() {
         }
 
   const ActiveIcon = cardContent.icon
+  const cardPanel = (
+    <div className='flex w-full flex-col items-center justify-center'>
+      <div className='mb-5 inline-flex flex-wrap justify-center rounded-full border border-white/10 bg-slate-950/35 p-1 backdrop-blur-md'>
+        <button
+          type='button'
+          onClick={() => handleCardSelect('ai')}
+          className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
+            activeCard === 'ai'
+              ? 'bg-cyan-400 text-slate-950'
+              : 'text-white/65 hover:text-white'
+          }`}
+        >
+          AI & Automation
+        </button>
+        <button
+          type='button'
+          onClick={() => handleCardSelect('blockchain')}
+          className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
+            activeCard === 'blockchain'
+              ? 'bg-cyan-400 text-slate-950'
+              : 'text-white/65 hover:text-white'
+          }`}
+        >
+          Blockchain & Web3
+        </button>
+      </div>
+
+      <AnimatePresence mode='wait'>
+        <motion.article
+          key={cardContent.key}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{
+            duration: 0.55,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className={`group relative mx-auto flex w-full flex-col rounded-3xl border p-5 pb-16 sm:max-w-[32rem] sm:p-8 sm:pb-24 md:max-w-[40rem] md:max-w-[95%] lg:max-w-[60rem] ${cardContent.cardClassName}`}
+        >
+          <div
+            className={`flex h-12 w-12 items-center justify-center rounded-2xl ${cardContent.iconClassName}`}
+          >
+            <ActiveIcon size={24} strokeWidth={1.5} />
+          </div>
+          <p
+            className={`mt-6 text-sm font-bold uppercase tracking-[0.26em] ${cardContent.eyebrowClassName}`}
+          >
+            {cardContent.eyebrow}
+          </p>
+          <h3
+            className={`mt-4 text-lg font-bold sm:text-2xl ${cardContent.titleClassName}`}
+          >
+            {cardContent.title}
+          </h3>
+          <p
+            className={`mt-4 text-sm leading-relaxed sm:text-base ${cardContent.descriptionClassName}`}
+          >
+            {cardContent.description}
+          </p>
+          <div
+            className={`mt-6 rounded-2xl p-4 sm:p-5 ${cardContent.panelClassName}`}
+          >
+            <p
+              className={`mb-4 text-sm font-bold ${cardContent.panelTitleClassName}`}
+            >
+              {cardContent.panelLabel}
+            </p>
+            <motion.div initial='hidden' animate='visible' variants={reveal}>
+              <InfoList
+                items={cardContent.points}
+                dotClassName={cardContent.dotClassName}
+                textClassName={cardContent.textClassName}
+              />
+            </motion.div>
+          </div>
+          <p
+            className={`mt-6 text-xs font-bold uppercase tracking-[0.2em] ${cardContent.footerClassName}`}
+          >
+            {cardContent.footer}
+          </p>
+          <div className='absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/70 transition-colors duration-300 sm:bottom-6 sm:right-6 sm:h-11 sm:w-11'>
+            <ArrowUpRight size={18} strokeWidth={2} />
+          </div>
+        </motion.article>
+      </AnimatePresence>
+    </div>
+  )
 
   return (
-    <section className='mx-auto max-w-8xl px-4 py-14 sm:py-18 lg:py-24'>
-      <div className='mx-auto max-w-7xl space-y-9 sm:space-y-14'>
-        <div className='mx-auto max-w-4xl text-center'>
+    <section className='sm:py-18 mx-auto max-w-8xl px-4 py-14 lg:py-24'>
+      <div className='max-w-7xl mx-auto space-y-9 sm:space-y-14'>
+        <div className='max-w-4xl mx-auto text-center'>
           <p className='text-sm font-bold uppercase tracking-[0.28em] text-theme-light'>
             What we do
           </p>
@@ -183,13 +270,13 @@ export default function DualExpertise() {
           </h2>
         </div>
 
-        <div className='shadow-2xl shadow-slate-900/10'>
+        <div ref={cardStageRef} className='shadow-2xl shadow-slate-900/10'>
           <div className='relative overflow-hidden rounded-3xl'>
             <CosmicParallaxBg
               head='BlokMiners'
               text='AI Automation, Blockchain, One System'
               showText={false}
-              className='min-h-[62rem] sm:min-h-[66rem] lg:min-h-[72rem]'
+              className='min-h-[86rem] sm:min-h-[66rem] lg:min-h-[72rem]'
             />
             <div className='absolute inset-0 z-10 bg-gradient-to-b from-slate-900/20 via-slate-900/45 to-slate-900/85' />
             <div className='absolute inset-x-0 top-0 z-20 flex justify-center px-4 pt-10 sm:px-8 sm:pt-16 lg:pt-20'>
@@ -198,16 +285,16 @@ export default function DualExpertise() {
                 whileInView='visible'
                 viewport={{ once: true, margin: '-100px' }}
                 variants={reveal}
-                className='flex w-full max-w-5xl flex-col items-center text-center'
+                className='max-w-5xl flex w-full flex-col items-center text-center'
               >
                 <span className='inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-sm'>
                   <span className='h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400' />
                   AI + Blockchain
                 </span>
-                <h3 className='mt-7 max-w-5xl text-balance text-center text-3xl font-extrabold leading-[0.98] tracking-tight text-white sm:mt-8 sm:text-5xl md:text-6xl lg:text-7xl'>
+                <h3 className='max-w-5xl mt-7 text-balance text-center text-3xl font-extrabold leading-[0.98] tracking-tight text-white sm:mt-8 sm:text-5xl md:text-6xl lg:text-7xl'>
                   AI automation and blockchain, one system.
                 </h3>
-                <div className='mt-5 w-full max-w-4xl sm:mt-6'>
+                <div className='max-w-4xl mt-5 w-full sm:mt-6'>
                   <p className='text-balance text-center text-base leading-relaxed text-white/80 sm:text-lg lg:text-xl'>
                     Most forward-thinking businesses need both: AI automation to
                     cut operational costs and move faster today, and blockchain
@@ -216,103 +303,14 @@ export default function DualExpertise() {
                   </p>
                 </div>
 
-                <div
-                  ref={cardStageRef}
-                  className='mt-10 w-full max-w-4xl pb-8 sm:mt-12 sm:pb-12'
-                >
-                  <div className='flex w-full flex-col items-center justify-center'>
-                    <div className='mb-5 inline-flex flex-wrap justify-center rounded-full border border-white/10 bg-slate-950/35 p-1 backdrop-blur-md'>
-                      <button
-                        type='button'
-                        onClick={() => handleCardSelect('ai')}
-                        className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
-                          activeCard === 'ai'
-                            ? 'bg-cyan-400 text-slate-950'
-                            : 'text-white/65 hover:text-white'
-                        }`}
-                      >
-                        AI & Automation
-                      </button>
-                      <button
-                        type='button'
-                        onClick={() => handleCardSelect('blockchain')}
-                        className={`rounded-full px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-xs sm:tracking-[0.18em] ${
-                          activeCard === 'blockchain'
-                            ? 'bg-cyan-400 text-slate-950'
-                            : 'text-white/65 hover:text-white'
-                        }`}
-                      >
-                        Blockchain & Web3
-                      </button>
-                    </div>
-
-                    <AnimatePresence mode='wait'>
-                      <motion.article
-                        key={cardContent.key}
-                        initial={{ opacity: 0, y: 28 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{
-                          duration: 0.55,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className={`group relative mx-auto flex w-full max-w-[95%] flex-col rounded-3xl border p-5 pb-16 sm:max-w-[32rem] sm:p-8 sm:pb-24 md:max-w-[40rem] lg:max-w-[60rem] ${cardContent.cardClassName}`}
-                      >
-                        <div
-                          className={`flex h-12 w-12 items-center justify-center rounded-2xl ${cardContent.iconClassName}`}
-                        >
-                          <ActiveIcon size={24} strokeWidth={1.5} />
-                        </div>
-                        <p
-                          className={`mt-6 text-sm font-bold uppercase tracking-[0.26em] ${cardContent.eyebrowClassName}`}
-                        >
-                          {cardContent.eyebrow}
-                        </p>
-                        <h3
-                          className={`mt-4 text-lg font-bold sm:text-2xl ${cardContent.titleClassName}`}
-                        >
-                          {cardContent.title}
-                        </h3>
-                        <p
-                          className={`mt-4 text-sm leading-relaxed sm:text-base ${cardContent.descriptionClassName}`}
-                        >
-                          {cardContent.description}
-                        </p>
-                        <div
-                          className={`mt-6 rounded-2xl p-4 sm:p-5 ${cardContent.panelClassName}`}
-                        >
-                          <p
-                            className={`mb-4 text-sm font-bold ${cardContent.panelTitleClassName}`}
-                          >
-                            {cardContent.panelLabel}
-                          </p>
-                          <motion.div
-                            initial='hidden'
-                            animate='visible'
-                            variants={reveal}
-                          >
-                            <InfoList
-                              items={cardContent.points}
-                              dotClassName={cardContent.dotClassName}
-                              textClassName={cardContent.textClassName}
-                            />
-                          </motion.div>
-                        </div>
-                        <p
-                          className={`mt-6 text-xs font-bold uppercase tracking-[0.2em] ${cardContent.footerClassName}`}
-                        >
-                          {cardContent.footer}
-                        </p>
-                        <div className='absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/70 transition-colors duration-300 sm:bottom-6 sm:right-6 sm:h-11 sm:w-11'>
-                          <ArrowUpRight size={18} strokeWidth={2} />
-                        </div>
-                      </motion.article>
-                    </AnimatePresence>
-                  </div>
+                <div className='max-w-4xl mt-10 hidden w-full pb-8 sm:mt-12 sm:block sm:pb-12'>
+                  {cardPanel}
                 </div>
               </motion.div>
             </div>
           </div>
+
+          <div className='pb-2 pt-4 sm:hidden'>{cardPanel}</div>
         </div>
       </div>
     </section>

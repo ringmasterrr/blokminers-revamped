@@ -262,7 +262,7 @@ export const industries = [
     link: '/industries?tab=education',
     icon: GraduationCap,
     image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80',
+      'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop',
   },
   {
     title: 'Agriculture',
@@ -346,7 +346,7 @@ export const industries = [
     link: '/industries?tab=hr',
     icon: Users,
     image:
-      'https://images.unsplash.com/photo-1521737711867-6a9f1d3b1b9c?auto=format&fit=crop&w=1800&q=80',
+      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop',
   },
   {
     title: 'Government',
